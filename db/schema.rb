@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_170152) do
+ActiveRecord::Schema.define(version: 2019_11_25_172542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "planted_veggies", force: :cascade do |t|
     t.bigint "planter_id"
-    t.bigint "veggie_id"
     t.date "sowing_day"
     t.date "planting_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "veggy_id"
     t.index ["planter_id"], name: "index_planted_veggies_on_planter_id"
-    t.index ["veggie_id"], name: "index_planted_veggies_on_veggie_id"
+    t.index ["veggy_id"], name: "index_planted_veggies_on_veggy_id"
   end
 
   create_table "planters", force: :cascade do |t|
@@ -45,13 +45,13 @@ ActiveRecord::Schema.define(version: 2019_11_25_170152) do
 
   create_table "to_dos", force: :cascade do |t|
     t.bigint "to_do_template_id"
-    t.bigint "planted_veggie_id"
     t.boolean "done"
     t.date "due_at"
     t.date "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["planted_veggie_id"], name: "index_to_dos_on_planted_veggie_id"
+    t.bigint "planted_veggy_id"
+    t.index ["planted_veggy_id"], name: "index_to_dos_on_planted_veggy_id"
     t.index ["to_do_template_id"], name: "index_to_dos_on_to_do_template_id"
   end
 
@@ -67,18 +67,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_170152) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "veggie_to_dos", force: :cascade do |t|
-    t.bigint "veggie_id"
-    t.bigint "to_do_template_id"
-    t.integer "periodicity"
-    t.boolean "initial"
-    t.integer "after_planting_delay"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["to_do_template_id"], name: "index_veggie_to_dos_on_to_do_template_id"
-    t.index ["veggie_id"], name: "index_veggie_to_dos_on_veggie_id"
-  end
-
   create_table "veggies", force: :cascade do |t|
     t.string "name"
     t.string "sun_orientation"
@@ -92,11 +80,20 @@ ActiveRecord::Schema.define(version: 2019_11_25_170152) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "veggy_to_dos", force: :cascade do |t|
+    t.bigint "to_do_template_id"
+    t.integer "periodicity"
+    t.boolean "initial"
+    t.integer "after_planting_delay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "veggy_id"
+    t.index ["to_do_template_id"], name: "index_veggy_to_dos_on_to_do_template_id"
+    t.index ["veggy_id"], name: "index_veggy_to_dos_on_veggy_id"
+  end
+
   add_foreign_key "planted_veggies", "planters"
-  add_foreign_key "planted_veggies", "veggies", column: "veggie_id"
   add_foreign_key "planters", "users"
-  add_foreign_key "to_dos", "planted_veggies", column: "planted_veggie_id"
   add_foreign_key "to_dos", "to_do_templates"
-  add_foreign_key "veggie_to_dos", "to_do_templates"
-  add_foreign_key "veggie_to_dos", "veggies", column: "veggie_id"
+  add_foreign_key "veggy_to_dos", "to_do_templates"
 end
