@@ -1,0 +1,2 @@
+class ToDoTemplate < ApplicationRecord
+end
