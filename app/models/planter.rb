@@ -3,12 +3,20 @@
 # Table name: planters
 #
 #  id          :bigint           not null, primary key
-#  user_id     :bigint
-#  size        :integer
-#  orientation :string
 #  name        :string
+#  orientation :string
+#  size        :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :bigint
+#
+# Indexes
+#
+#  index_planters_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 
 class Planter < ApplicationRecord

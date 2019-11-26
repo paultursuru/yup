@@ -1,0 +1,33 @@
+.tab-content {
+  display: none;
+  &.active {
+    display:block;
+  }
+}
+
+.tab-content.potager {
+  display: flex;
+
+}
+
+.planters {
+  border: 1px solid black;
+}
+
+.todo-list {
+  border: 1px solid black;
+}
+
+.tabs {
+  display:flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.tab {
+  padding: 5px 10px;
+  margin: 0px 5px;
+  &.active {
+    border-bottom: 1px solid black;
+  }
+}
