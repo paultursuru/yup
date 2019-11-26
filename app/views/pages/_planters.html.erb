@@ -1,0 +1,21 @@
+<div class="planters col-8">
+  <div class="d-flex justify-content-between">
+    <h2>My planters</h2>
+      <%= link_to 'Add a planter', '#' %>
+  </div>
+  <% @planters.each do |planter| %>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex">
+        <h2><%= planter.name %></h2>
+        <% if planter.planted_veggies.present? %>
+        <% planter.planted_veggies.each do |planted_veggy| %>
+          <p><%= planted_veggy.veggy.name %></p>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+<!--     <#%= link_to 'Add veggy to planter', edit_planter_planted_veggy_path(planted_veggy.planter, planted_veggy),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
+ -->  </div>
+  <% end %>
+</div>
