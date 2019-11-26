@@ -1,0 +1,36 @@
+.tab-content {
+  display: none;
+  margin: 10px 0px;
+  &.active {
+    display:block;
+  }
+}
+
+.potager {
+  display: flex;
+  justify-content: space-between;
+}
+
+.planters {
+  border: 1px solid black;
+}
+
+.todo-list {
+  border: 1px solid black;
+}
+
+.tabs {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background: $yup_green_light;
+  padding: 10px 0px;
+}
+
+.tab {
+  padding: 5px 10px;
+  margin: 0px 5px;
+  &.active {
+    border-bottom: 1px solid black;
+  }
+}
