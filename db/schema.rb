@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_172542) do
+ActiveRecord::Schema.define(version: 2019_11_26_142421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 2019_11_25_172542) do
 
   create_table "to_dos", force: :cascade do |t|
     t.bigint "to_do_template_id"
-    t.boolean "done"
     t.date "due_at"
     t.date "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "planted_veggy_id"
+    t.boolean "done", default: false
     t.index ["planted_veggy_id"], name: "index_to_dos_on_planted_veggy_id"
     t.index ["to_do_template_id"], name: "index_to_dos_on_to_do_template_id"
   end
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_172542) do
     t.string "last_name"
     t.string "address"
     t.integer "level", default: 1
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

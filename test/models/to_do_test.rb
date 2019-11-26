@@ -4,7 +4,7 @@
 #
 #  id                :bigint           not null, primary key
 #  completed_at      :date
-#  done              :boolean
+#  done              :boolean          default(FALSE)
 #  due_at            :date
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
