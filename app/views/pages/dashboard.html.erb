@@ -1,18 +1,21 @@
 <div class="dashboard container">
   <div class="tabs">
-    <div class="tab active">
+    <div id='potager' class="tab">
       My potager
     </div>
-    <div class="tab">
+    <div id='calentab' class="tab">
       Calendar
     </div>
-    <div class="tab">
+    <div id='library' class="tab active">
       Veggie library
     </div>
   </div>
 
   <div class="tabs-contents">
-    <div class="tab-content d-flex justify-content-between active">
+    <div id='potager-content' class="tab-content ">
+      <!-- <div class="d-flex justify-content-between">
+
+      </div> -->
       <div class="planters col-8">
         <div class="d-flex justify-content-between">
           <h2>My planters</h2>
@@ -38,11 +41,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, sapiente, fugit. Optio iure labore neque iusto quibusdam, doloremque minus nostrum dolorum quo sed vitae debitis ipsam impedit id architecto a.</p>
       </div>
     </div>
-    <div class="tab-content calendar">
+    <div id='calentab-content' class="tab-content calendar">
       <h2>My calendar</h2>
     </div>
-    <div class="tab-content library">
-      <h2>My calendar</h2>
+    <div id='library-content' class="tab-content library">
+      <%= render 'library' %>
     </div>
   </div>
 </div>

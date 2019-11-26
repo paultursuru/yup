@@ -6,7 +6,8 @@ class PagesController < ApplicationController
 
   def calendar
   end
-  
+
   def dashboard
+    @veggies = Veggy.all
   end
 end
