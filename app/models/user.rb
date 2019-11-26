@@ -29,7 +29,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :planters
+  has_many :planters, dependent: :destroy
   has_many :planted_veggies, through: :planters
   has_many :to_dos, through: :planted_veggies
 end
