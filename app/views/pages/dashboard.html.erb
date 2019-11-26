@@ -1,5 +1,5 @@
-<div class="dashboard">
-  <div class="tabs container">
+<div class="dashboard container">
+  <div class="tabs">
     <div class="tab active">
       My potager
     </div>
@@ -12,13 +12,30 @@
   </div>
 
   <div class="tabs-contents">
-    <div class="tab-content potager active">
-      <div class="planters">
-        <h2>My potager</h2>
-
+    <div class="tab-content d-flex justify-content-between active">
+      <div class="planters col-8">
+        <div class="d-flex justify-content-between">
+          <h2>My planters</h2>
+          <%= link_to 'Add a planter', '#' %>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex">
+              <h2>Kitchen planter</h2>
+              <%= link_to 'Edit planter', '#' %>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex">
+              <h2>Living room planter</h2>
+              <%= link_to 'Edit planter', '#' %>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="todo-list">
+      <div class="todo-list col-3">
         <h2>My todo list</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, sapiente, fugit. Optio iure labore neque iusto quibusdam, doloremque minus nostrum dolorum quo sed vitae debitis ipsam impedit id architecto a.</p>
       </div>
     </div>
     <div class="tab-content calendar">
@@ -29,3 +46,6 @@
     </div>
   </div>
 </div>
+
+<!-- Edit modal -->
+

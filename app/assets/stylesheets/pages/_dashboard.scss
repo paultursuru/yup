@@ -1,13 +1,14 @@
 .tab-content {
   display: none;
+  margin: 10px 0px;
   &.active {
     display:block;
   }
 }
 
-.tab-content.potager {
+.potager {
   display: flex;
-
+  justify-content: space-between;
 }
 
 .planters {
@@ -19,9 +20,11 @@
 }
 
 .tabs {
-  display:flex;
+  display: flex;
   text-align: center;
   justify-content: center;
+  background: $yup_green_light;
+  padding: 10px 0px;
 }
 
 .tab {
