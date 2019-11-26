@@ -21,10 +21,10 @@
 #  fk_rails_...  (to_do_template_id => to_do_templates.id)
 #
 
-class ToDo < ApplicationRecord
-  belongs_to :to_do_template
-  belongs_to :planted_veggy
-  # TODO validations
+require 'test_helper'
 
-  delegate :description, to: :to_do_template
+class ToDoTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

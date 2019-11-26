@@ -19,8 +19,10 @@
 #  fk_rails_...  (user_id => users.id)
 #
 
-class Planter < ApplicationRecord
-  belongs_to :user
-  has_many :planted_veggies
-  has_many :veggies, through: :planted_veggies
+require 'test_helper'
+
+class PlanterTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
