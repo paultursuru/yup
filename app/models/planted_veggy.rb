@@ -3,6 +3,7 @@
 # Table name: planted_veggies
 #
 #  id           :bigint           not null, primary key
+
 #  planting_day :date
 #  sowing_day   :date
 #  created_at   :datetime         not null
@@ -18,8 +19,6 @@
 # Foreign Keys
 #
 #  fk_rails_...  (planter_id => planters.id)
-#
-
 class PlantedVeggy < ApplicationRecord
   belongs_to :planter
   belongs_to :veggy
