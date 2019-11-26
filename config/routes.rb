@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   get 'calendar', to: 'pages#calendar', as: :calendar
   # get 'todos/:id/mark_as_done', to: 'events#mark_as_done', as: :mark_as_done
+
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
+
 end
