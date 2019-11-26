@@ -21,7 +21,7 @@
 
 class Planter < ApplicationRecord
   belongs_to :user
-  has_many :planted_veggies
+  has_many :planted_veggies, dependent: :destroy
   has_many :veggies, through: :planted_veggies
   has_many :to_dos, through: :planted_veggies
 end

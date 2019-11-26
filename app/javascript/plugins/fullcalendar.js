@@ -9,7 +9,7 @@ const calendar = () => {
       const calendar = new Calendar(calendarEl, {
         plugins: [ dayGridPlugin, listPlugin ],
         events: '/api/events',
-        defaultView: 'listDay',
+        defaultView: 'listWeek',
         eventClick: function(info) {
           console.log(info.event.extendedProps.todo_id);
           // Creer un lien et y passer l'id de la todo à marquer comme done.
