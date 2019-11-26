@@ -4,6 +4,7 @@
 #
 #  id                     :bigint           not null, primary key
 #  address                :string
+#  authentication_token   :string(30)
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  first_name             :string
@@ -17,14 +18,18 @@
 #
 # Indexes
 #
+#  index_users_on_authentication_token  (authentication_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
 class User < ApplicationRecord
+  acts_as_token_authenticatable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :planters
+  has_many :planters, dependent: :destroy
+  has_many :planted_veggies, through: :planters
+  has_many :to_dos, through: :planted_veggies
 end

@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'annotate'
 gem 'erd'
 
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

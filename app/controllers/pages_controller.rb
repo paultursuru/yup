@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def calendar
+  end
+  
   def dashboard
     @planters = current_user.planters
   end

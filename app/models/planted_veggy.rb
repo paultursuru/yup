@@ -22,4 +22,5 @@
 class PlantedVeggy < ApplicationRecord
   belongs_to :planter
   belongs_to :veggy
+  has_many :to_dos
 end
