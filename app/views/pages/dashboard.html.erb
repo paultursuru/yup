@@ -13,33 +13,7 @@
 
   <div class="tabs-contents">
     <div id='potager-content' class="tab-content ">
-      <!-- <div class="d-flex justify-content-between">
-
-      </div> -->
-      <div class="planters col-8">
-        <div class="d-flex justify-content-between">
-          <h2>My planters</h2>
-          <%= link_to 'Add a planter', '#' %>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex">
-              <h2>Kitchen planter</h2>
-              <%= link_to 'Edit planter', '#' %>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="d-flex">
-              <h2>Living room planter</h2>
-              <%= link_to 'Edit planter', '#' %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="todo-list col-3">
-        <h2>My todo list</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, sapiente, fugit. Optio iure labore neque iusto quibusdam, doloremque minus nostrum dolorum quo sed vitae debitis ipsam impedit id architecto a.</p>
-      </div>
+      <%= render 'planters' %>
     </div>
     <div id='calentab-content' class="tab-content calendar">
       <h2>My calendar</h2>
@@ -49,6 +23,3 @@
     </div>
   </div>
 </div>
-
-<!-- Edit modal -->
-
