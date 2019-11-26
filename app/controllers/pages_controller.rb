@@ -8,5 +8,6 @@ class PagesController < ApplicationController
   end
   
   def dashboard
+    @planters = current_user.planters
   end
 end
