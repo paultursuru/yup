@@ -4,7 +4,7 @@
 #
 #  id                :bigint           not null, primary key
 #  completed_at      :date
-#  done              :boolean
+#  done              :boolean          default(FALSE)
 #  due_at            :date
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
@@ -26,5 +26,14 @@ class ToDo < ApplicationRecord
   belongs_to :planted_veggy
   # TODO validations
 
-  delegate :description, to: :to_do_template
+  delegate :name, :description, to: :to_do_template
+
+  # def due_at_end
+  #   due_at + 15 * 60
+  # end
+
+  def mark_as_done!
+    self.done = true
+    save
+  end
 end
