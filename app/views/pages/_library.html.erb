@@ -1,0 +1,8 @@
+<div>
+  <h2>Seeds Library</h2>
+  <ul>
+    <% @veggies.each do |veggy| %>
+      <li><%= veggy.name %> <%= link_to 'Show', '#' %></li>
+    <% end %>
+  </ul>
+</div>

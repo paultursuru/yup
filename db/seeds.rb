@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 #  name                :string
 #  sun_orientation     :string
 #  seed_level          :integer
@@ -126,13 +125,3 @@ VeggyToDo.create(
 # action1.due_at = '2019-11-26'
 # action1.planted_veggy_id = planted_tomato
 # action1.to_do_template_id =
-
-
-
-
-
-
-
-
-
-

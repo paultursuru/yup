@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :events, only: [:index, :update]
   end
 
+  resources :veggies, only: [:index, :show]
+
   get 'calendar', to: 'pages#calendar', as: :calendar
   # get 'todos/:id/mark_as_done', to: 'events#mark_as_done', as: :mark_as_done
 
