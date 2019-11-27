@@ -60,41 +60,113 @@
         <% end %>
         <% end %>
 
-        <div class="card">
-            <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
-            <div class="card-body">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
-                Add new veggie!!!!
-              </button>
-              <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
+        <% if planter.size == "Pot" && planter.planted_veggies.empty? %>
+          <div class="card">
+              <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
+              <div class="card-body">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>">
+                  Add new veggie!!!!
+                </button>
+                <div class="modal fade" id="planter_veggy_modal_<%= planter.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
 
 
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= f.association :veggy %>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
-                    </div>
-                    <% end %>
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= f.association :veggy %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+                      </div>
+                      <% end %>
 
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        </div>
+          </div>
+          <% elsif planter.size == "Planter-small" && planter.planted_veggies.count < 3 %>
+          <% (3 - planter.planted_veggies.count).times do %>
+          <div class="card">
+              <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
+              <div class="card-body">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>">
+                  Add new veggie!!!!
+                </button>
+                <div class="modal fade" id="planter_veggy_modal_<%= planter.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
+
+
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= f.association :veggy %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+                      </div>
+                      <% end %>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <% end  %>
+          <% elsif planter.size == "Planter-large" && planter.planted_veggies.count < 5 %>
+          <% (5 - planter.planted_veggies.count).times do %>
+          <div class="card">
+              <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
+              <div class="card-body">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>">
+                  Add new veggie!!!!
+                </button>
+                <div class="modal fade" id="planter_veggy_modal_<%= planter.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
+
+
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= f.association :veggy %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+                      </div>
+                      <% end %>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <% end  %>
+        <% end %>
+
     </div>
   </div>
   <% end %>
-
 </div>
 

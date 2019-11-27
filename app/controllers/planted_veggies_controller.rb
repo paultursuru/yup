@@ -13,11 +13,12 @@ class PlantedVeggiesController < ApplicationController
 
   def create
     @planted_veggy = PlantedVeggy.new(planted_veggy_params)
+    @planter = Planter.find(params[:planter_id])
 
-    @planted_veggy.planter = Planter.find(params[:planter_id])
+    @planted_veggy.planter = @planter
 
     if @planted_veggy.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -36,7 +37,7 @@ class PlantedVeggiesController < ApplicationController
 
   def destroy
     @planted_veggy.destroy
-    redirect_to dashb
+    redirect_to dashboard_path
   end
 
   private
