@@ -13,7 +13,8 @@ class PlantedVeggiesController < ApplicationController
 
   def create
     @planted_veggy = PlantedVeggy.new(planted_veggy_params)
-    @planted_veggy.user = current_user
+
+    @planted_veggy.planter = Planter.find(params[:planter_id])
 
     if @planted_veggy.save
       redirect_to root_path
@@ -42,7 +43,7 @@ class PlantedVeggiesController < ApplicationController
   private
 
   def planted_veggy_params
-    params.require(:planted_veggy).permit(:name, :size, :orientation)
+    params.require(:planted_veggy).permit(:name, :size, :orientation, :veggy_id)
   end
 
   def set_planted_veggy

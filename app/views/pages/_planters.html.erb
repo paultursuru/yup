@@ -57,8 +57,40 @@
         </div>
         <% end %>
         <% end %>
-    </div>
-<!--     <#%= link_to 'Add veggy to planter', edit_planter_planted_veggy_path(planted_veggy.planter, planted_veggy),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
- -->  </div>
+      <div class="card">
+        <div class="card-body">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+          Add new veggie!!!!
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
+
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= f.association :veggy %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+              </div>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
   <% end %>
 </div>
