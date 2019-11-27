@@ -17,11 +17,124 @@
 [Veggy, User, Planter, PlantedVeggy, ToDoTemplate, VeggyToDo].each(&:destroy_all)
 
 carrot = Veggy.create(
-  name: "carrot",
-  sun_orientation: "sud-ouest",
-  planting_start_date: "2019-11-30",
-  planting_end_date: "2019-12-30",
-  growing_time: 200
+  name: "Carrot",
+  sun_orientation: "south",
+  seed_level: 3,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-03-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 90
+  )
+
+radish = Veggy.create(
+  name: "Radish",
+  sun_orientation: "south",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-03-22",
+  planting_end_date: "2020-09-21",
+  growing_time: 35
+  )
+
+arugula = Veggy.create(
+  name: "Arugula",
+  sun_orientation: "north",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-03-22",
+  planting_end_date: "2020-09-21",
+  growing_time: 60
+  )
+
+onion = Veggy.create(
+  name: "Onion",
+  sun_orientation: "east",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-03-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 120
+  )
+
+garlic = Veggy.create(
+  name: "Garlic",
+  sun_orientation: "east",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2019-10-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 150
+  )
+
+bears_garlic = Veggy.create(
+  name: "Bear's Garlic",
+  sun_orientation: "north",
+  seed_level: 3,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2019-06-22",
+  planting_end_date: "2020-07-21",
+  growing_time: 365
+  )
+
+snow_pea = Veggy.create(
+  name: "Snow Pea",
+  sun_orientation: "south",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2019-09-22",
+  planting_end_date: "2019-11-21",
+  growing_time: 150
+  )
+
+tomato = Veggy.create(
+  name: "Tomato",
+  sun_orientation: "south",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-02-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 120
+  )
+
+cherry_tomato = Veggy.create(
+  name: "Cherry Tomato",
+  sun_orientation: "south",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-02-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 150
+  )
+
+zuchini = Veggy.create(
+  name: "Zuchini",
+  sun_orientation: "south",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-03-22",
+  planting_end_date: "2020-05-21",
+  growing_time: 90
+  )
+
+sun_root = Veggy.create(
+  name: "Sun Root",
+  sun_orientation: "south",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-01-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 240
   )
 
 # salad = Veggy.create(
