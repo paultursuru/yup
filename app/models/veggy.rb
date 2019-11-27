@@ -17,9 +17,9 @@
 #
 
 class Veggy < ApplicationRecord
-  has_many :planted_veggies
+  has_many :planted_veggies, dependent: :destroy
   has_many :planters, through: :planted_veggies
-  has_many :veggy_to_dos
+  has_many :veggy_to_dos, dependent: :destroy
   has_many :to_do_templates, through: :veggy_to_dos
   has_one_attached :photo
 end

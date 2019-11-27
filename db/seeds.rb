@@ -1,22 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-#  name                :string
-#  sun_orientation     :string
-#  seed_level          :integer
-#  sowing_start_date   :date
-#  sowing_end_date     :date
-#  planting_start_date :date
-#  planting_end_date   :date
-#  growing_time
+# [Veggy, User, Planter, PlantedVeggy, ToDoTemplate, VeggyToDo, ToDo].each(&:destroy_all)
+ToDo.destroy_all
+ToDoTemplate.destroy_all
+PlantedVeggy.destroy_all
+VeggyToDo.destroy_all
+Veggy.destroy_all
+Planter.destroy_all
+User.destroy_all
 
-[Veggy, User, Planter, PlantedVeggy, ToDoTemplate, VeggyToDo, ToDo].each(&:destroy_all)
+puts "generating veggies"
 
-carrot = Veggy.create(
+carrot = Veggy.new(
   name: "Carrot",
   sun_orientation: "south",
   seed_level: 3,
@@ -27,7 +20,13 @@ carrot = Veggy.create(
   growing_time: 90
   )
 
-radish = Veggy.create(
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-23624_1200x1200-carotte-rothild-ab.net.jpg')
+carrot.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+carrot.save!
+
+
+radish = Veggy.create!(
   name: "Radish",
   sun_orientation: "south",
   seed_level: 2,
@@ -38,7 +37,7 @@ radish = Veggy.create(
   growing_time: 35
   )
 
-arugula = Veggy.create(
+arugula = Veggy.create!(
   name: "Arugula",
   sun_orientation: "north",
   seed_level: 1,
@@ -49,7 +48,7 @@ arugula = Veggy.create(
   growing_time: 60
   )
 
-onion = Veggy.create(
+onion = Veggy.create!(
   name: "Onion",
   sun_orientation: "east",
   seed_level: 2,
@@ -60,7 +59,7 @@ onion = Veggy.create(
   growing_time: 120
   )
 
-garlic = Veggy.create(
+garlic = Veggy.create!(
   name: "Garlic",
   sun_orientation: "east",
   seed_level: 1,
@@ -71,7 +70,7 @@ garlic = Veggy.create(
   growing_time: 150
   )
 
-bears_garlic = Veggy.create(
+bears_garlic = Veggy.create!(
   name: "Bear's Garlic",
   sun_orientation: "north",
   seed_level: 3,
@@ -82,7 +81,7 @@ bears_garlic = Veggy.create(
   growing_time: 365
   )
 
-snow_pea = Veggy.create(
+snow_pea = Veggy.create!(
   name: "Snow Pea",
   sun_orientation: "south",
   seed_level: 1,
@@ -93,7 +92,7 @@ snow_pea = Veggy.create(
   growing_time: 150
   )
 
-tomato = Veggy.create(
+tomato = Veggy.create!(
   name: "Tomato",
   sun_orientation: "south",
   seed_level: 1,
@@ -104,7 +103,7 @@ tomato = Veggy.create(
   growing_time: 120
   )
 
-cherry_tomato = Veggy.create(
+cherry_tomato = Veggy.create!(
   name: "Cherry Tomato",
   sun_orientation: "south",
   seed_level: 2,
@@ -115,7 +114,7 @@ cherry_tomato = Veggy.create(
   growing_time: 150
   )
 
-zuchini = Veggy.create(
+zuchini = Veggy.create!(
   name: "Zuchini",
   sun_orientation: "south",
   seed_level: 2,
@@ -126,7 +125,7 @@ zuchini = Veggy.create(
   growing_time: 90
   )
 
-sun_root = Veggy.create(
+sun_root = Veggy.create!(
   name: "Sun Root",
   sun_orientation: "south",
   seed_level: 1,
@@ -137,7 +136,9 @@ sun_root = Veggy.create(
   growing_time: 240
   )
 
-# salad = Veggy.create(
+puts "generated 11 veggies"
+
+# salad = Veggy.create!(
 #   name: "salad",
 #   sun_orientation: "nord-ouest",
 #   planting_start_date: "2019-12-15",
@@ -145,7 +146,7 @@ sun_root = Veggy.create(
 #   growing_time: 100
 #   )
 
-# tomato = Veggy.create(
+# tomato = Veggy.create!(
 #   name: "tomato",
 #   sun_orientation: "sud",
 #   planting_start_date: "2019-11-26",
@@ -153,22 +154,26 @@ sun_root = Veggy.create(
 #   growing_time: 300
 #   )
 
-# jean = User.create(
+# jean = User.create!(
 #   email: 'jean@yup.com',
 #   password: '123456',
 #   first_name: "Jean"
 #   )
 
-brigitte = User.create(
+puts "generating user Brigitte"
+
+brigitte = User.create!(
   email: 'brigitte@yup.com',
   password: '123456',
   first_name: "Brigitte"
   )
 
-brigitte_jardinere = Planter.create(
+brigitte_jardinere = Planter.create!(
   name: 'jjj',
   user: brigitte
   )
+
+puts "generated Brigitte"
 
 # jean_jardinere = Planter.new(
 #   name: 'autrejard'
@@ -189,7 +194,9 @@ brigitte_jardinere = Planter.create(
 # planted_tomato.planter_id = brigitte_jardinere
 # planted_tomato.save!
 
-planted_carrot = PlantedVeggy.create(
+puts "generating planted veggies"
+
+planted_carrot = PlantedVeggy.create!(
   veggy: carrot,
   planter: brigitte_jardinere
   )
@@ -203,13 +210,15 @@ planted_carrot = PlantedVeggy.create(
 # planted_salad2.veggy_id = salad
 # planted_salad2.planter_id = jean_jardinere2
 # planted_salad2.save!
+puts "generating todo templates"
 
-watering = ToDoTemplate.create(
+
+watering = ToDoTemplate.create!(
   name: 'watering',
   description: "it's time to water your plant"
 )
 
-thining = ToDoTemplate.create(
+thining = ToDoTemplate.create!(
   name: 'thining',
   description: "it's time to thin your plant"
 )
@@ -224,15 +233,19 @@ thining = ToDoTemplate.create(
 # salad_to_do.to_do_template = watering
 # salad_to_do.save!
 
-VeggyToDo.create(
+puts "generating veggy-todos"
+
+VeggyToDo.create!(
   veggy: carrot,
   to_do_template: watering
 )
 
-VeggyToDo.create(
+VeggyToDo.create!(
   veggy: carrot,
   to_do_template: thining
 )
+
+puts "generating all the things"
 
 # action1 = ToDo.new
 # action1.due_at = '2019-11-26'
