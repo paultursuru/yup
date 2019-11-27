@@ -11,5 +11,7 @@ class PagesController < ApplicationController
   def dashboard
     @veggies = Veggy.all
     @planters = current_user.planters
+    @new_planter = Planter.new
+    @new_planted_veggy = PlantedVeggy.new
   end
 end

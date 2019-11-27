@@ -1,21 +1,96 @@
 <div class="planters col-8">
   <div class="d-flex justify-content-between">
     <h2>My planters</h2>
-      <%= link_to 'Add a planter', '#' %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      Add new Planter
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <%= simple_form_for(@new_planter) do |f| %>
+
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= f.input :name, placeholder: 'Kitchen Planter' %>
+            <%= f.input :orientation, collection: ['North', 'North-East','North-West', 'South', 'South-East', 'South-West', 'West', 'East'] %>
+            <%= f.input :size, collection: ['Pot', 'Planter-small', 'Planter-large' ] %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
   </div>
+
+
   <% @planters.each do |planter| %>
   <div class="card">
     <div class="card-body">
-      <div class="d-flex">
+      <div class="d-flex justify-content-between">
         <h2><%= planter.name %></h2>
+        <%= link_to "Delete", planter_path(planter), method: :delete, data: { confirm: "Delete #{planter.name}?" } %>
+        </h2>
+      </div>
+        <p><%= planter.orientation %></p>
+        <p>My Veggies:</p>
         <% if planter.planted_veggies.present? %>
         <% planter.planted_veggies.each do |planted_veggy| %>
-          <p><%= planted_veggy.veggy.name %></p>
+        <div class="card">
+          <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
+          <div class="class-body">
+            <p><%= planted_veggy.veggy.name %></p>
+            <p><%= link_to "Delete", planter_planted_veggy_path(planted_veggy.planter, planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" } %></p>
+          </div>
+        </div>
         <% end %>
         <% end %>
+      <div class="card">
+        <div class="card-body">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+          Add new veggie!!!!
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
+
+
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= f.association :veggy %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+              </div>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+
+
+        </div>
       </div>
-    </div>
-<!--     <#%= link_to 'Add veggy to planter', edit_planter_planted_veggy_path(planted_veggy.planter, planted_veggy),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
- -->  </div>
   <% end %>
 </div>

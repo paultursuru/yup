@@ -1,3 +1,4 @@
+
 <div class="container dashboard">
   <div class="tabs">
     <div id='potager' class="tab active">
@@ -12,11 +13,13 @@
   </div>
 
   <div class="tabs-contents">
-    <div id='potager-content' class="tab-content ">
+    <div id='potager-content' class="tab-content">
       <%= render 'planters' %>
+      <%= render 'todolist' %>
     </div>
-    <div id='calentab-content' class="tab-content calendar">
+    <div id='calentab-content' class="tab-content todolist">
       <h2>My calendar</h2>
+        <%= render 'calendar' %>
     </div>
     <div id='library-content' class="tab-content library">
       <%= render 'library' %>

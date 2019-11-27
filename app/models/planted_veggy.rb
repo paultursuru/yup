@@ -38,5 +38,5 @@
 class PlantedVeggy < ApplicationRecord
   belongs_to :planter
   belongs_to :veggy
-  has_many :to_dos
+  has_many :to_dos, dependent: :destroy
 end

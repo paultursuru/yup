@@ -1,4 +1,6 @@
 class PlantersController < ApplicationController
+  before_action :set_planter, only: %I[show edit update destroy]
+
   def index
     @planters = Planter.all
   end
@@ -15,7 +17,7 @@ class PlantersController < ApplicationController
     @planter.user = current_user
 
     if @planter.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -32,10 +34,9 @@ class PlantersController < ApplicationController
     end
   end
 
-  def dead
-    @planter.dead = true
-    @planter.save
-    redirect_to home_path(@planter)
+  def destroy
+    @planter.destroy
+    redirect_to dashboard_path
   end
 
   private

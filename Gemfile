@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
@@ -17,8 +18,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'annotate'
 gem 'erd'
-
+gem 'jquery-rails'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
+gem 'cloudinary', '~> 1.12.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
