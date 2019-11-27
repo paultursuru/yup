@@ -14,7 +14,7 @@
 #  planting_end_date   :date
 #  growing_time
 
-[Veggy, User, Planter, PlantedVeggy, ToDoTemplate, VeggyToDo].each(&:destroy_all)
+
 
 carrot = Veggy.create(
   name: "Carrot",
