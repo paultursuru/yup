@@ -14,6 +14,7 @@
 
 h1 {
   font-size: 32px;
+  font-family: Lobster;
 }
 
 h2 {
@@ -26,4 +27,8 @@ h3 {
 
 p {
   font-size: 12px;
+}
+
+.container-yup {
+  min-height: calc(100vh - 166px);
 }
