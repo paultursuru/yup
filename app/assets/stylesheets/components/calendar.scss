@@ -1,5 +1,10 @@
 .fc-list-item {
+
   &:hover {
     cursor: pointer;
   }
+}
+
+.fc-unthemed .fc-list-view {
+  border-color: $yup_blue !important;
 }
