@@ -10,6 +10,6 @@
 #
 
 class ToDoTemplate < ApplicationRecord
-  has_many :veggy_to_dos
+  has_many :veggy_to_dos, dependent: :destroy
   has_many :veggies, through: :veggy_to_dos
 end
