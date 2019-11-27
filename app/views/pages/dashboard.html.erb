@@ -14,14 +14,13 @@
 
   <div class="tabs-contents">
     <div id='potager-content' class="tab-content">
-        <%= render 'planters' %>
+        <%#= render 'planters' %>
         <%= render 'todolist' %>
     </div>
-    <div id='calentab-content' class="tab-content other calendar">
-      <h2>My calendar</h2>
+    <div id='calentab-content' class="tab-content d-none calendar">
         <%= render 'calendar' %>
     </div>
-    <div id='library-content' class="tab-content other library">
+    <div id='library-content' class="tab-content d-none library">
       <%= render 'library' %>
     </div>
   </div>
