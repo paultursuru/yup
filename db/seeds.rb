@@ -1,4 +1,3 @@
-# [Veggy, User, Planter, PlantedVeggy, ToDoTemplate, VeggyToDo, ToDo].each(&:destroy_all)
 ToDo.destroy_all
 ToDoTemplate.destroy_all
 PlantedVeggy.destroy_all

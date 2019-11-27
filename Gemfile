@@ -18,7 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'annotate'
 gem 'erd'
-
+gem 'jquery-rails'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 gem 'cloudinary', '~> 1.12.0'
 
