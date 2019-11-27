@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_142421) do
+ActiveRecord::Schema.define(version: 2019_11_27_133651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_142421) do
     t.integer "growing_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "nutritional_infos", default: "more infos soon !"
   end
 
   create_table "veggy_to_dos", force: :cascade do |t|
