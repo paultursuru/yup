@@ -1,5 +1,5 @@
 class PlantedVeggiesController < ApplicationController
-  before_action :set_planted_veggy, only: %I[show edit update]
+  before_action :set_planted_veggy, only: %I[show edit update destroy]
   def index
     @planted_veggies = PlantedVeggy.all
   end
@@ -34,10 +34,9 @@ class PlantedVeggiesController < ApplicationController
     end
   end
 
-  def dead
-    @planted_veggy.dead = true
-    @planted_veggy.save
-    redirect_to home_path(@planted_veggy)
+  def destroy
+    @planted_veggy.destroy
+    redirect_to dashboard_path
   end
 
   private
