@@ -48,10 +48,11 @@
 
         <p><%= planter.orientation %></p>
         <p>My Veggies:</p>
+        <div class="cards">
         <% if planter.planted_veggies.present? %>
         <% planter.planted_veggies.each do |planted_veggy| %>
         <div class="card planted-veggy-card">
-          <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
+          <%= cl_image_tag planted_veggy.veggy.photo.key %>
           <div class="class-body">
             <p><%= planted_veggy.veggy.name %></p>
             <p><%= link_to "Delete", planter_planted_veggy_path(planted_veggy.planter, planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" } %></p>
@@ -166,6 +167,7 @@
         <% end %>
 
     </div>
+  </div>
   </div>
   <% end %>
 </div>
