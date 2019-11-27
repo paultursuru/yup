@@ -20,7 +20,7 @@ gem 'annotate'
 gem 'erd'
 
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
