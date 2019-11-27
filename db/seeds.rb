@@ -51,6 +51,10 @@ arugula = Veggy.new(
   planting_end_date: "2020-09-21",
   growing_time: 60
   )
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
+arugula.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+arugula.save!
 
 onion = Veggy.new(
   name: "Onion",
@@ -62,6 +66,10 @@ onion = Veggy.new(
   planting_end_date: "2020-04-21",
   growing_time: 120
   )
+file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-23155_1200x1200-oignon-jaune-stuttgart-ab.net.jpg')
+onion.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+onion.save!
 
 garlic = Veggy.new(
   name: "Garlic",
@@ -73,6 +81,10 @@ garlic = Veggy.new(
   planting_end_date: "2020-04-21",
   growing_time: 150
   )
+file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-17823_1200x1200-ail-blanc-messidrome-nt.net.jpg')
+garlic.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+garlic.save!
 
 bears_garlic = Veggy.new(
   name: "Bear's Garlic",
@@ -84,6 +96,10 @@ bears_garlic = Veggy.new(
   planting_end_date: "2020-07-21",
   growing_time: 365
   )
+file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23147_1200x1200-ail-des-ours-plant.net.jpg')
+bears_garlic.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+bears_garlic.save!
 
 snow_pea = Veggy.new(
   name: "Snow Pea",
@@ -95,6 +111,10 @@ snow_pea = Veggy.new(
   planting_end_date: "2019-11-21",
   growing_time: 150
   )
+file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-26015_1200x1200-pois-a-rames-caroubel-mangetout-nt.net.jpg')
+snow_pea.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+snow_pea.save!
 
 tomato = Veggy.new(
   name: "Tomato",
@@ -106,6 +126,10 @@ tomato = Veggy.new(
   planting_end_date: "2020-04-21",
   growing_time: 120
   )
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-24854_1200x1200-tomate-saint-pierre-ab.net.jpg')
+tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+tomato.save!
 
 cherry_tomato = Veggy.new(
   name: "Cherry Tomato",
@@ -117,6 +141,10 @@ cherry_tomato = Veggy.new(
   planting_end_date: "2020-04-21",
   growing_time: 150
   )
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-22509_1200x1200-tomate-cerise-ab.net.jpg')
+cherry_tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+cherry_tomato.save!
 
 zuchini = Veggy.new(
   name: "Zuchini",
@@ -128,6 +156,11 @@ zuchini = Veggy.new(
   planting_end_date: "2020-05-21",
   growing_time: 90
   )
+file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-24838_1200x1200-courgette-verte-de-milan-ab.net.jpg')
+zuchini.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+zuchini.save!
+
 
 sun_root = Veggy.new(
   name: "Sun Root",
@@ -139,6 +172,10 @@ sun_root = Veggy.new(
   planting_end_date: "2020-04-21",
   growing_time: 240
   )
+file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-18782_1200x1200-topinambour-patate-ab.net.jpg')
+sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+sun_root.save!
 
 puts "generated 11 veggies"
 
