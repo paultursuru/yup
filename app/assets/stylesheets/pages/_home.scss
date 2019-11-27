@@ -10,7 +10,7 @@
   h1 {
     color: white;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 60px;
   }
   p {
     color: white;
@@ -22,4 +22,10 @@
   .btn {
     padding: 15px 50px;
   }
+}
+
+.home-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
