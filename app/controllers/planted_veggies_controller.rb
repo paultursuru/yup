@@ -36,7 +36,7 @@ class PlantedVeggiesController < ApplicationController
 
   def destroy
     @planted_veggy.destroy
-    redirect_to dashboard_path
+    redirect_to dashb
   end
 
   private
