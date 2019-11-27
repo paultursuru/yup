@@ -1,22 +1,25 @@
-<div class="container">
+
+<div class="container dashboard">
   <div class="tabs">
-    <div id='potager' class="tab">
+    <div id='potager' class="tab active">
       My potager
     </div>
     <div id='calentab' class="tab">
       Calendar
     </div>
-    <div id='library' class="tab active">
+    <div id='library' class="tab">
       Veggie library
     </div>
   </div>
 
   <div class="tabs-contents">
-    <div id='potager-content' class="tab-content ">
+    <div id='potager-content' class="tab-content">
       <%= render 'planters' %>
+      <%= render 'todolist' %>
     </div>
-    <div id='calentab-content' class="tab-content calendar">
+    <div id='calentab-content' class="tab-content todolist">
       <h2>My calendar</h2>
+        <%= render 'calendar' %>
     </div>
     <div id='library-content' class="tab-content library">
       <%= render 'library' %>
