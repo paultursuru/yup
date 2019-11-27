@@ -25,7 +25,7 @@ carrot.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/j
 carrot.save!
 
 
-radish = Veggy.create!(
+radish = Veggy.new(
   name: "Radish",
   sun_orientation: "south",
   seed_level: 2,
@@ -36,7 +36,12 @@ radish = Veggy.create!(
   growing_time: 35
   )
 
-arugula = Veggy.create!(
+file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-25593_1200x1200-radis-national-2-ab.net.jpg')
+radish.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+radish.save!
+
+arugula = Veggy.new(
   name: "Arugula",
   sun_orientation: "north",
   seed_level: 1,
@@ -47,7 +52,7 @@ arugula = Veggy.create!(
   growing_time: 60
   )
 
-onion = Veggy.create!(
+onion = Veggy.new(
   name: "Onion",
   sun_orientation: "east",
   seed_level: 2,
@@ -58,7 +63,7 @@ onion = Veggy.create!(
   growing_time: 120
   )
 
-garlic = Veggy.create!(
+garlic = Veggy.new(
   name: "Garlic",
   sun_orientation: "east",
   seed_level: 1,
@@ -69,7 +74,7 @@ garlic = Veggy.create!(
   growing_time: 150
   )
 
-bears_garlic = Veggy.create!(
+bears_garlic = Veggy.new(
   name: "Bear's Garlic",
   sun_orientation: "north",
   seed_level: 3,
@@ -80,7 +85,7 @@ bears_garlic = Veggy.create!(
   growing_time: 365
   )
 
-snow_pea = Veggy.create!(
+snow_pea = Veggy.new(
   name: "Snow Pea",
   sun_orientation: "south",
   seed_level: 1,
@@ -91,7 +96,7 @@ snow_pea = Veggy.create!(
   growing_time: 150
   )
 
-tomato = Veggy.create!(
+tomato = Veggy.new(
   name: "Tomato",
   sun_orientation: "south",
   seed_level: 1,
@@ -102,7 +107,7 @@ tomato = Veggy.create!(
   growing_time: 120
   )
 
-cherry_tomato = Veggy.create!(
+cherry_tomato = Veggy.new(
   name: "Cherry Tomato",
   sun_orientation: "south",
   seed_level: 2,
@@ -113,7 +118,7 @@ cherry_tomato = Veggy.create!(
   growing_time: 150
   )
 
-zuchini = Veggy.create!(
+zuchini = Veggy.new(
   name: "Zuchini",
   sun_orientation: "south",
   seed_level: 2,
@@ -124,7 +129,7 @@ zuchini = Veggy.create!(
   growing_time: 90
   )
 
-sun_root = Veggy.create!(
+sun_root = Veggy.new(
   name: "Sun Root",
   sun_orientation: "south",
   seed_level: 1,
@@ -167,12 +172,26 @@ brigitte = User.create!(
   first_name: "Brigitte"
   )
 
-brigitte_jardinere = Planter.create!(
-  name: 'jjj',
-  user: brigitte
+puts "generated Brigitte"
+puts "generating a few planters"
+
+brigitte_pot = Planter.create!(
+  name: 'My little pot',
+  user: brigitte,
+  size: "Pot"
   )
 
-puts "generated Brigitte"
+brigitte_jardinere1 = Planter.create!(
+  name: 'My small planter',
+  user: brigitte,
+  size: "Planter-small"
+  )
+brigitte_jardinere2 = Planter.create!(
+  name: 'My large planter',
+  user: brigitte,
+  size: "Planter-large"
+  )
+puts "generated three planters"
 
 # jean_jardinere = Planter.new(
 #   name: 'autrejard'
@@ -197,7 +216,7 @@ puts "generating planted veggies"
 
 planted_carrot = PlantedVeggy.create!(
   veggy: carrot,
-  planter: brigitte_jardinere
+  planter: brigitte_pot
   )
 
 # planted_salad = PlantedVeggy.new
