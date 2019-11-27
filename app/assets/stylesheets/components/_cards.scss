@@ -3,3 +3,26 @@
   width: 100%;
   object-fit: cover;
 }
+
+.card-planter {
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.planted-veggy-card {
+
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-auto-rows: auto;
+grid-gap: 16px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  border-radius: 5px;
+}
