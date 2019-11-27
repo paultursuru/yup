@@ -1,5 +1,5 @@
-<div class="planters col-8">
-  <div class="d-flex justify-content-between">
+<div class="planters col-8 mt-5 mb-3">
+  <div class="d-flex justify-content-between mb-4">
     <h2>My planters</h2>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -37,7 +37,7 @@
 
 
   <% @planters.each do |planter| %>
-  <div class="card">
+  <div class="card card-planter">
     <div class="card-body">
 
       <div class="d-flex justify-content-between">
@@ -50,7 +50,7 @@
         <p>My Veggies:</p>
         <% if planter.planted_veggies.present? %>
         <% planter.planted_veggies.each do |planted_veggy| %>
-        <div class="card">
+        <div class="card planted-veggy-card">
           <img src="https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg" alt="">
           <div class="class-body">
             <p><%= planted_veggy.veggy.name %></p>
