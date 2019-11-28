@@ -305,15 +305,15 @@ VeggyToDo.create!(
   to_do_template: thining
 )
 
-VeggyToDo.create!(
-  veggy: argula,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: argula,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: argula,
-  to_do_template: thining
-)
+# VeggyToDo.create!(
+#   veggy: argula,
+#   to_do_template: thining
+# )
 
 VeggyToDo.create!(
   veggy: radish,
