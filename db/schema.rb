@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_142030) do
+ActiveRecord::Schema.define(version: 2019_11_28_130311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_142030) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "veggy_id"
+    t.boolean "status", default: false
     t.index ["planter_id"], name: "index_planted_veggies_on_planter_id"
     t.index ["veggy_id"], name: "index_planted_veggies_on_veggy_id"
   end
@@ -106,6 +107,9 @@ ActiveRecord::Schema.define(version: 2019_11_27_142030) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "nutritional_infos", default: "more infos soon !"
+    t.string "description"
+    t.string "category"
+    t.integer "thining_delay"
   end
 
   create_table "veggy_to_dos", force: :cascade do |t|
