@@ -16,7 +16,8 @@ carrot = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-06-21",
-  growing_time: 90
+  growing_time: 90,
+  thining_delay: 20
   )
 
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-23624_1200x1200-carotte-rothild-ab.net.jpg')
@@ -33,7 +34,8 @@ radish = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-09-21",
-  growing_time: 35
+  growing_time: 35,
+  thining_delay: 16
   )
 
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-25593_1200x1200-radis-national-2-ab.net.jpg')
@@ -49,7 +51,8 @@ arugula = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-09-21",
-  growing_time: 60
+  growing_time: 60,
+  thining_delay: 10
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
 arugula.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -124,7 +127,8 @@ tomato = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
-  growing_time: 120
+  growing_time: 120,
+  thining_delay: 20
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-24854_1200x1200-tomate-saint-pierre-ab.net.jpg')
 tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -176,6 +180,7 @@ file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-18782_1200x1200-to
 sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 sun_root.save!
+
 
 puts "generated 11 veggies"
 
@@ -299,6 +304,77 @@ VeggyToDo.create!(
   veggy: carrot,
   to_do_template: thining
 )
+
+VeggyToDo.create!(
+  veggy: argula,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: argula,
+  to_do_template: thining
+)
+
+VeggyToDo.create!(
+  veggy: radish,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: radish,
+  to_do_template: thining
+)
+
+VeggyToDo.create!(
+  veggy: onion,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: garlic,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: bears_garlic,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: snow_pea,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: snow_pea,
+  to_do_template: thining
+)
+
+VeggyToDo.create!(
+  veggy: tomato,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: tomato,
+  to_do_template: thining
+)
+
+VeggyToDo.create!(
+  veggy: cherry_tomato,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: zuchini,
+  to_do_template: watering
+)
+
+VeggyToDo.create!(
+  veggy: sun_root,
+  to_do_template: watering
+)
+
 
 puts "generating all the things"
 

@@ -5,6 +5,7 @@
 #  id           :bigint           not null, primary key
 #  planting_day :date
 #  sowing_day   :date
+#  status       :boolean          default(FALSE)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  planter_id   :bigint
