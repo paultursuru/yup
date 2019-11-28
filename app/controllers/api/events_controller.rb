@@ -3,6 +3,7 @@ class Api::EventsController < Api::BaseController
 
   def index
     @to_dos = current_user.to_dos
+
     events = @to_dos.map do |todo|
       {
         title: todo.name,
