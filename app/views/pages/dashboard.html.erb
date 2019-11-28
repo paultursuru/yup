@@ -13,9 +13,15 @@
   </div>
 
   <div class="tabs-contents">
-    <div id='potager-content' class="tab-content">
+    <div id='potager-content' class="row tab-content d-flex">
+      <div class="col-sm-12 col-md-8">
         <%= render 'planters' %>
-        <%= render 'todolist' %>
+      </div>
+      <div class="col-sm-12 col-md-4 mt-5 mb-3">
+        <div class=todo-layout>
+          <%= render 'todolist' %>
+        </div>
+      </div>
     </div>
     <div id='calentab-content' class="tab-content d-none calendar">
         <%= render 'calendar' %>

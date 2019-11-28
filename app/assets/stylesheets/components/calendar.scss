@@ -8,3 +8,24 @@
 .fc-unthemed .fc-list-view {
   border-color: $yup_blue !important;
 }
+
+// .fc-toolbar.fc-header-toolbar {
+//       width:auto;
+// }
+
+.todo-layout {
+  border-radius: 5px;
+  padding: 12px;
+}
+
+#todolist .fc-button {
+  padding: 0;
+}
+
+#todolist .fc-toolbar h2 {
+  font-size: 16px;
+}
+
+.fc-toolbar {
+  padding-top: 8px;
+}
