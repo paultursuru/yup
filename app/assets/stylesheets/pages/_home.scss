@@ -24,8 +24,30 @@
   }
 }
 
+.howitworks {
+  h1 {
+    color: $yup-green;
+    font-size: 40px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
 .home-cards {
   display: flex;
+  margin-top: 30px;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.home-card {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home-card img {
+  height: 150px;
+  width: auto;
+  color: $yup-green;
 }
