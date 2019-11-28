@@ -2,15 +2,25 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  position: relative;
+  border-radius: 5px;
+}
+
+#delete-planted-veggy {
+  position: absolute;
+  top: 10px; left: 185px;
 }
 
 .card-planter {
   border-radius: 8px;
   margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.planted-veggy-card {
-
+#planted-veg-name {
+  font-size: 22px;
+  text-align: center;
+  font-family: Lobster;
 }
 
 .cards {
@@ -25,4 +35,39 @@ grid-gap: 16px;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   border-radius: 5px;
+
 }
+
+#delete-planted-veggy a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition: ease .3s;
+}
+
+.planted-veggy-card:hover {
+  #delete-planted-veggy a {
+    opacity: 1;
+  }
+}
+
+.card > img:hover {
+  filter: brightness(70%);
+  transition: ease .3s;
+}
+
+#add-veggy-to-plant {
+  position: absolute;
+  top: 60px; left: 70px;
+  font-size: 80px;
+  color: white;
+}
+
+#add-veggy-to-plant:hover {
+  position: absolute;
+  top: 55px; left: 65px;
+  font-size: 90px;
+  color: white;
+}
+
