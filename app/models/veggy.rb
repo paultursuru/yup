@@ -3,6 +3,8 @@
 # Table name: veggies
 #
 #  id                  :bigint           not null, primary key
+#  category            :string
+#  description         :string
 #  growing_time        :integer
 #  name                :string
 #  nutritional_infos   :text             default("more infos soon !")
@@ -12,6 +14,7 @@
 #  sowing_end_date     :date
 #  sowing_start_date   :date
 #  sun_orientation     :string
+#  thining_delay       :integer
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #

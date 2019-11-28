@@ -1,5 +1,5 @@
 class PlantedVeggiesController < ApplicationController
-  before_action :set_planted_veggy, only: %I[show edit update destroy]
+  before_action :set_planted_veggy, only: %I[show edit update destroy plant]
   def index
     @planted_veggies = PlantedVeggy.all
   end
@@ -26,6 +26,23 @@ class PlantedVeggiesController < ApplicationController
 
   def edit
   end
+
+  def plant
+    # @veggy_to_do.initial = true
+    @veggy = @planted_veggy.veggy.name
+    @watering = ToDoTemplate.new(name: 'watering', description: "it's time to water your #{@veggy}")
+    @watering.save!
+    today = Date.today.strftime("%Y-%m-%d")
+    @planted_veggy.planting_day = today
+    @planted_veggy.save
+    # num_of_water = @veggy_to_dos.planted_veggy.growing_time / 3
+    # num_of_water.times do
+    water = ToDo.new(planted_veggy: @planted_veggy, to_do_template: @watering)
+    water.due_at = today
+    water.save
+    # end
+  end
+
 
   def update
     @planted_veggy = set_planted_veggy

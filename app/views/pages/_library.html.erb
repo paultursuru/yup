@@ -15,15 +15,25 @@
                 <%= cl_image_tag veggy.photo.key %>
               </div>
               <div>
-                <p>Descripition: TBD</p>
+                <p>Description: <b><%= veggy.description %></b></p>
                 <p>Sun orientation: <b><%= veggy.sun_orientation.capitalize %></b></p>
                 <p>Difficulty: <b><%= veggy.seed_level %></b></p>
+                <p>Growing season: <b><%= veggy.planting_start_date.strftime('%b') %> - <%= veggy.planting_end_date.strftime('%b') %></b></p>
                 <p>Grows in: <b><%= veggy.growing_time / 7 %> weeks</b></p>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Add to a planter</button>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add to a planter
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <% @planters.each do |planter| %>
+                    <%= link_to planter.name, '#', class: 'dropdown-item' %>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ class TodosController < ApplicationController
     @event = ToDo.find(params[:id])
     @event.mark_as_done!
   end
+
 end
 
 
