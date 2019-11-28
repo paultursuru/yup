@@ -295,15 +295,15 @@ planted_carrot = PlantedVeggy.create!(
 
 puts "generating veggy-todos"
 
-VeggyToDo.create!(
-  veggy: carrot,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: carrot,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: carrot,
-  to_do_template: thining
-)
+# VeggyToDo.create!(
+#   veggy: carrot,
+#   to_do_template: thining
+# )
 
 # VeggyToDo.create!(
 #   veggy: argula,
@@ -315,65 +315,65 @@ VeggyToDo.create!(
 #   to_do_template: thining
 # )
 
-VeggyToDo.create!(
-  veggy: radish,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: radish,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: radish,
-  to_do_template: thining
-)
+# VeggyToDo.create!(
+#   veggy: radish,
+#   to_do_template: thining
+# )
 
-VeggyToDo.create!(
-  veggy: onion,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: onion,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: garlic,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: garlic,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: bears_garlic,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: bears_garlic,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: snow_pea,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: snow_pea,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: snow_pea,
-  to_do_template: thining
-)
+# VeggyToDo.create!(
+#   veggy: snow_pea,
+#   to_do_template: thining
+# )
 
-VeggyToDo.create!(
-  veggy: tomato,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: tomato,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: tomato,
-  to_do_template: thining
-)
+# VeggyToDo.create!(
+#   veggy: tomato,
+#   to_do_template: thining
+# )
 
-VeggyToDo.create!(
-  veggy: cherry_tomato,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: cherry_tomato,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: zuchini,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: zuchini,
+#   to_do_template: watering
+# )
 
-VeggyToDo.create!(
-  veggy: sun_root,
-  to_do_template: watering
-)
+# VeggyToDo.create!(
+#   veggy: sun_root,
+#   to_do_template: watering
+# )
 
 
 puts "generating all the things"
