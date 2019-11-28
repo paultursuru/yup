@@ -4,6 +4,10 @@
   object-fit: cover;
 }
 
+.card > img:hover {
+  opacity: 1;
+}
+
 .card-planter {
   border-radius: 8px;
   margin-bottom: 10px;
@@ -11,6 +15,12 @@
 
 .planted-veggy-card {
 
+}
+
+.veg-name {
+  font-size: 25px;
+  text-align: center;
+  font-family: Lobster;
 }
 
 .cards {
@@ -25,4 +35,45 @@ grid-gap: 16px;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   border-radius: 5px;
+}
+
+.cards-library {
+display: flex;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.card-library > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-library > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.card-library > img:hover {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(70%)
+}
+
+.modal-body p {
+  font-size: 15px;
+}
+
+.modal-body-image img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.modal-header {
+  background: $yup-light-green;
+  color: white;
 }
