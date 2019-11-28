@@ -1,8 +1,35 @@
-<div>
-  <h2>Seeds Library</h2>
-  <ul>
-    <% @veggies.each do |veggy| %>
-      <li><%= veggy.name %> <%= link_to 'Show', '#' %></li>
-    <% end %>
-  </ul>
+<div class="cards-library">
+  <% @veggies.each do |veggy| %>
+    <div class="card-library col-12 col-md-6 col-lg-3" data-toggle="modal" data-target="#veggy_<%= veggy.id %>">
+      <div class="modal fade" id="veggy_<%= veggy.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title veg-name" id="exampleModalLabel"><%= veggy.name %></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body d-flex">
+              <div class="modal-body-image mr-3">
+                <%= cl_image_tag veggy.photo.key %>
+              </div>
+              <div>
+                <p>Descripition: TBD</p>
+                <p>Sun orientation: <b><%= veggy.sun_orientation.capitalize %></b></p>
+                <p>Difficulty: <b><%= veggy.seed_level %></b></p>
+                <p>Grows in: <b><%= veggy.growing_time / 7 %> weeks</b></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add to a planter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= cl_image_tag veggy.photo.key %>
+      <p class="veg-name" ><%= veggy.name %></p>
+    </div>
+  <% end %>
 </div>
