@@ -12,7 +12,7 @@ class PlantedVeggiesController < ApplicationController
   end
 
   def create
-    @planted_veggy = PlantedVeggy.new(planted_veggy_params)
+    @planted_veggy = PlantedVeggy.new(planter_params)
     @planter = Planter.find(params[:planter_id])
 
     @planted_veggy.planter = @planter
@@ -20,7 +20,7 @@ class PlantedVeggiesController < ApplicationController
     if @planted_veggy.save
       redirect_to dashboard_path
     else
-      render :new
+      redirect_to dashboard_path
     end
   end
 
@@ -28,10 +28,14 @@ class PlantedVeggiesController < ApplicationController
   end
 
   def update
-    if @planted_veggy.update(planted_veggy_params)
-      redirect_to @planted_veggy, notice: "#{@planted_veggy.name} was successfully updated."
+    @planted_veggy = set_planted_veggy
+    if @planted_veggy.planting_day.nil?
+      @planted_veggy.planting_day = Date.today()
+
+      @planted_veggy.save
+      redirect_to dashboard_path
     else
-      render :edit
+      redirect_to dashboard_path
     end
   end
 
@@ -42,8 +46,12 @@ class PlantedVeggiesController < ApplicationController
 
   private
 
-  def planted_veggy_params
+  def planter_params
     params.require(:planted_veggy).permit(:name, :size, :orientation, :veggy_id)
+  end
+
+  def planted_veggy_params
+    params.require(:planted_veggy).permit(:planting_day, :sewing_day)
   end
 
   def set_planted_veggy
