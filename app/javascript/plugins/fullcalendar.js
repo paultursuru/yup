@@ -25,6 +25,11 @@ const calendar = () => {
     const calendar = new Calendar(todoEl, {
       plugins: [ dayGridPlugin, listPlugin ],
       events: '/api/events',
+      header: {
+          left:   'title',
+          center: '',
+          right:  'prev,next'
+      },
       defaultView: 'listWeek',
       eventClick: function(info) {
         console.log(info.event.extendedProps.todo_id);

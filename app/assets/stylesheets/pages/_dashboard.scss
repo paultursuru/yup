@@ -13,7 +13,12 @@
 
 .todo-list {
   border: 1px solid black;
+  margin: 0 auto;
 }
+
+.fc-toolbar.fc-header-toolbar {
+    margin: 0 auto;
+  }
 
 .tabs {
   display: flex;
@@ -29,4 +34,8 @@
   &.active {
     border-bottom: 1px solid black;
   }
+}
+
+.todo-layout {
+  background-color: #2c7873;
 }
