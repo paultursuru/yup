@@ -23,16 +23,30 @@
 .tabs {
   display: flex;
   text-align: center;
-  justify-content: center;
-  background: $yup-light-green;
-  padding: 10px 0px;
+  justify-content: space-around;
+  align-items: center;
+  background: $yup-gray;
+  margin: 20px auto;
+  border-radius: 50px;
+  width: 80%;
+}
+
+#potager {
+  border-radius: 50px 0 0 50px;
+}
+
+#library {
+  border-radius: 0px 50px 50px 0;
 }
 
 .tab {
-  padding: 5px 10px;
-  margin: 0px 5px;
+  padding: 10px;
+  margin: 0px;
+  width: 33.333%;
+  transition: all 0.7s ease;
   &.active {
-    border-bottom: 1px solid black;
+    background: $yup_light_green;
+    color: white;
   }
 }
 
