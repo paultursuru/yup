@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 my-3">
+      <% if @planted_veggies.nil? %>
+        <h4>You haven't planted anything yet...</h4>
+        <p>Go back to your dashboard to add planters and seeds to your potager !</p>
+      <% else %>
+        <% @planted_veggies.each do |planted_veggy| %>
+          <div class="card text-center">
+            <h4>
+              <%= planted_veggy.name %>
+            </h4>
+            <h5>
+              <%= planted_veggy.planter.name %>
+            </h5>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
