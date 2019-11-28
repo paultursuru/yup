@@ -270,18 +270,18 @@ planted_carrot = PlantedVeggy.create!(
 # planted_salad2.veggy_id = salad
 # planted_salad2.planter_id = jean_jardinere2
 # planted_salad2.save!
-puts "generating todo templates"
+# puts "generating todo templates"
 
 
-watering = ToDoTemplate.create!(
-  name: 'watering',
-  description: "it's time to water your plant"
-)
+# watering = ToDoTemplate.create!(
+#   name: 'watering',
+#   description: "it's time to water your plant"
+# )
 
-thining = ToDoTemplate.create!(
-  name: 'thining',
-  description: "it's time to thin your plant"
-)
+# thining = ToDoTemplate.create!(
+#   name: 'thining',
+#   description: "it's time to thin your plant"
+# )
 
 # tomato_to_do = VeggyToDo.new
 # tomato_to_do.veggy_id = tomato
