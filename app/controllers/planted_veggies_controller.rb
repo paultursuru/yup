@@ -27,9 +27,11 @@ class PlantedVeggiesController < ApplicationController
   def edit
   end
 
-  def plant # custom route PATCH /planted_veggy/:id
+  def plant
     # @veggy_to_do.initial = true
-    @watering = ToDoTemplate.where(name: 'watering')
+    @veggy = @planted_veggy.veggy.name
+    @watering = ToDoTemplate.new(name: 'watering', description: "it's time to water your #{@veggy}")
+    @watering.save!
     today = Date.today.strftime("%Y-%m-%d")
     @planted_veggy.planting_day = today
     @planted_veggy.save
