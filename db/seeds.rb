@@ -161,7 +161,7 @@ cherry_tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: '
 cherry_tomato.save!
 
 zuchini = Veggy.new(
-  name: "Zuchini",
+  name: "Zucchini",
   sun_orientation: "south",
   seed_level: 2,
   sowing_start_date: "",
