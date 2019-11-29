@@ -51,7 +51,7 @@
         <div class="cards">
         <% if planter.planted_veggies.present? %>
         <% planter.planted_veggies.each do |planted_veggy| %>
-          
+
         <div class="planted-veggy-card">
           <div class="card-image">
             <%= cl_image_tag planted_veggy.veggy.photo.key, class: "w-100" %>
@@ -74,7 +74,7 @@
         <% end %>
 
         <% if planter.size == "Pot" && planter.planted_veggies.empty? %>
-          
+
           <div class="planted-veggy-card ">
             <div class="card-image">
               <img src="http://www.terre-vegetale-bonnardel.fr/wp-content/uploads/2017/01/crbst_nnnn_20018.jpg" alt="" class="w-100 add-veggy-image">
