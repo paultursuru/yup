@@ -72,6 +72,7 @@ onion = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-04-21",
   growing_time: 120,
+  thining_delay: 0,
   description: "They are rich in in anti-bacterial and anti-fungal properties. They contain vitamin C and phytochemicals which help in improving the overall immunity."
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-23155_1200x1200-oignon-jaune-stuttgart-ab.net.jpg')
@@ -88,6 +89,7 @@ garlic = Veggy.new(
   planting_start_date: "2019-10-22",
   planting_end_date: "2020-04-21",
   growing_time: 150,
+  thining_delay: 0,
   description: "Garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-17823_1200x1200-ail-blanc-messidrome-nt.net.jpg')
@@ -104,6 +106,7 @@ bears_garlic = Veggy.new(
   planting_start_date: "2019-06-22",
   planting_end_date: "2020-07-21",
   growing_time: 365,
+  thining_delay: 0,
   description: "Bear's garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23147_1200x1200-ail-des-ours-plant.net.jpg')
@@ -120,6 +123,7 @@ snow_pea = Veggy.new(
   planting_start_date: "2019-09-22",
   planting_end_date: "2019-11-21",
   growing_time: 150,
+  thining_delay: 0,
   description: "Snow peas are packed with vitamin A, vitamin C, iron, potassium and dietary fibers that could possibly keep the issue of constipation at bay."
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-26015_1200x1200-pois-a-rames-caroubel-mangetout-nt.net.jpg')
@@ -153,6 +157,7 @@ cherry_tomato = Veggy.new(
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
   growing_time: 150,
+  thining_delay: 0,
   description: "Cherry tomatoes contain plenty of fiber, as well as vitamins and lycopene, an antioxidant that lowers your risk of certain diseases."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-22509_1200x1200-tomate-cerise-ab.net.jpg')
@@ -169,6 +174,7 @@ zuchini = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-05-21",
   growing_time: 90,
+  thining_delay: 0,
   description: "Also known as courgette, this veggie is widely cultivated in America. Though zucchini is a fruit, but it is often cooked as a vegetable and provides us with essential vitamins and nutrients."
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-24838_1200x1200-courgette-verte-de-milan-ab.net.jpg')
@@ -186,6 +192,7 @@ sun_root = Veggy.new(
   planting_start_date: "2020-01-22",
   planting_end_date: "2020-04-21",
   growing_time: 240,
+  thining_delay: 0,
   description: 'This root vegetable is starchy, just like potatoes. They are rich in non-digestive inulin which helps keep the bowel movement healthy.'
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-18782_1200x1200-topinambour-patate-ab.net.jpg')
