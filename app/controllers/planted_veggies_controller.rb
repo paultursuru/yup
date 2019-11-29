@@ -45,6 +45,12 @@ class PlantedVeggiesController < ApplicationController
     event_date = Date.today
     @planted_veggy.planting_day = event_date
     @planted_veggy.save
+    if @planted_veggy.save
+      respond_to do |format|
+        #format.html { redirect_to restaurant_path(@restaurant) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    end
     # thining event : only once
     if @planted_veggy.veggy.thining_delay > 0
       thin_date = event_date + @planted_veggy.veggy.thining_delay
