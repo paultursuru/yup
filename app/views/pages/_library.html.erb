@@ -15,9 +15,15 @@
                 <%= cl_image_tag veggy.photo.key %>
               </div>
               <div>
-                <p>Description: <b><%= veggy.description %></b></p>
+                <p><%= veggy.description %></p>
                 <p>Sun orientation: <b><%= veggy.sun_orientation.capitalize %></b></p>
-                <p>Difficulty: <b><%= veggy.seed_level %></b></p>
+                <% if veggy.seed_level == 1 %>
+                  <p>Difficulty: <b>Easy</b></p>
+                <% elsif veggy.seed_level == 2 %>
+                  <p>Difficulty: <b>Average</b></p>
+                <% else %>
+                  <p>Difficulty: <b>Demanding</b></p>
+                <% end %>
                 <p>Growing season: <b><%= veggy.planting_start_date.strftime('%b') %> - <%= veggy.planting_end_date.strftime('%b') %></b></p>
                 <p>Grows in: <b><%= veggy.growing_time / 7 %> weeks</b></p>
               </div>

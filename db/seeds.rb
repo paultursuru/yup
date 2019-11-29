@@ -1,3 +1,5 @@
+puts 'Destroying all databases...'
+
 ToDo.destroy_all
 ToDoTemplate.destroy_all
 PlantedVeggy.destroy_all
@@ -6,7 +8,7 @@ Veggy.destroy_all
 Planter.destroy_all
 User.destroy_all
 
-puts "generating veggies"
+puts "Generating veggies..."
 
 carrot = Veggy.new(
   name: "Carrot",
@@ -17,14 +19,14 @@ carrot = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-06-21",
   growing_time: 90,
-  thining_delay: 20
+  thining_delay: 20,
+  description: "Carrots are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging."
   )
 
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-23624_1200x1200-carotte-rothild-ab.net.jpg')
 carrot.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 carrot.save!
-
 
 radish = Veggy.new(
   name: "Radish",
@@ -35,7 +37,8 @@ radish = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-09-21",
   growing_time: 35,
-  thining_delay: 16
+  thining_delay: 16,
+  description: "Radishes are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging."
   )
 
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-25593_1200x1200-radis-national-2-ab.net.jpg')
@@ -52,7 +55,8 @@ arugula = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-09-21",
   growing_time: 60,
-  thining_delay: 10
+  thining_delay: 10,
+  description: "Arugula is known for its smooth and loosely bunched leaves. It is rich in essential nutrients and can add a great nutritional value to salads and sandwiches."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
 arugula.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -67,7 +71,8 @@ onion = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-04-21",
-  growing_time: 120
+  growing_time: 120,
+  description: "They are rich in in anti-bacterial and anti-fungal properties. They contain vitamin C and phytochemicals which help in improving the overall immunity."
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-23155_1200x1200-oignon-jaune-stuttgart-ab.net.jpg')
 onion.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -82,7 +87,8 @@ garlic = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2019-10-22",
   planting_end_date: "2020-04-21",
-  growing_time: 150
+  growing_time: 150,
+  description: "Garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-17823_1200x1200-ail-blanc-messidrome-nt.net.jpg')
 garlic.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -97,7 +103,8 @@ bears_garlic = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2019-06-22",
   planting_end_date: "2020-07-21",
-  growing_time: 365
+  growing_time: 365,
+  description: "Bear's garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23147_1200x1200-ail-des-ours-plant.net.jpg')
 bears_garlic.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -112,7 +119,8 @@ snow_pea = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2019-09-22",
   planting_end_date: "2019-11-21",
-  growing_time: 150
+  growing_time: 150,
+  description: "Snow peas are packed with vitamin A, vitamin C, iron, potassium and dietary fibers that could possibly keep the issue of constipation at bay."
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-26015_1200x1200-pois-a-rames-caroubel-mangetout-nt.net.jpg')
 snow_pea.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -128,7 +136,8 @@ tomato = Veggy.new(
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
   growing_time: 120,
-  thining_delay: 20
+  thining_delay: 20,
+  description: "Tomato has been widely used across the globe as one of the major ingredients in food. It is known to be one of the best sources to provide with maximum amount of vitamin C."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-24854_1200x1200-tomate-saint-pierre-ab.net.jpg')
 tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -143,7 +152,8 @@ cherry_tomato = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
-  growing_time: 150
+  growing_time: 150,
+  description: "Cherry tomatoes contain plenty of fiber, as well as vitamins and lycopene, an antioxidant that lowers your risk of certain diseases."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-22509_1200x1200-tomate-cerise-ab.net.jpg')
 cherry_tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -158,7 +168,8 @@ zuchini = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-05-21",
-  growing_time: 90
+  growing_time: 90,
+  description: "Also known as courgette, this veggie is widely cultivated in America. Though zucchini is a fruit, but it is often cooked as a vegetable and provides us with essential vitamins and nutrients."
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-24838_1200x1200-courgette-verte-de-milan-ab.net.jpg')
 zuchini.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -174,7 +185,8 @@ sun_root = Veggy.new(
   sowing_end_date: "",
   planting_start_date: "2020-01-22",
   planting_end_date: "2020-04-21",
-  growing_time: 240
+  growing_time: 240,
+  description: 'This root vegetable is starchy, just like potatoes. They are rich in non-digestive inulin which helps keep the bowel movement healthy.'
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-18782_1200x1200-topinambour-patate-ab.net.jpg')
 sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -182,7 +194,7 @@ sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image
 sun_root.save!
 
 
-puts "generated 11 veggies"
+# puts "generated 11 veggies"
 
 # salad = Veggy.create!(
 #   name: "salad",
@@ -206,7 +218,7 @@ puts "generated 11 veggies"
 #   first_name: "Jean"
 #   )
 
-puts "generating user Brigitte"
+puts "Generating 1 user: Brigitte..."
 
 brigitte = User.create!(
   email: 'brigitte@yup.com',
@@ -214,8 +226,8 @@ brigitte = User.create!(
   first_name: "Brigitte"
   )
 
-puts "generated Brigitte"
-puts "generating a few planters"
+# puts "generated Brigitte"
+puts "Generating 3 planters"
 
 brigitte_pot = Planter.create!(
   name: 'My little pot',
@@ -233,7 +245,7 @@ brigitte_jardinere2 = Planter.create!(
   user: brigitte,
   size: "Planter-large"
   )
-puts "generated three planters"
+# puts "generated three planters"
 
 # jean_jardinere = Planter.new(
 #   name: 'autrejard'
@@ -254,7 +266,7 @@ puts "generated three planters"
 # planted_tomato.planter_id = brigitte_jardinere
 # planted_tomato.save!
 
-puts "generating planted veggies"
+puts "Generating planted veggies..."
 
 planted_carrot = PlantedVeggy.create!(
   veggy: carrot,
@@ -293,7 +305,7 @@ planted_carrot = PlantedVeggy.create!(
 # salad_to_do.to_do_template = watering
 # salad_to_do.save!
 
-puts "generating veggy-todos"
+puts "Generating veggy-todos..."
 
 # VeggyToDo.create!(
 #   veggy: carrot,
@@ -376,9 +388,11 @@ puts "generating veggy-todos"
 # )
 
 
-puts "generating all the things"
+puts "Generating all the things..."
 
 # action1 = ToDo.new
 # action1.due_at = '2019-11-26'
 # action1.planted_veggy_id = planted_tomato
 # action1.to_do_template_id =
+
+puts "Finished!"
