@@ -3,6 +3,7 @@
 # Table name: planters
 #
 #  id          :bigint           not null, primary key
+#  color       :string
 #  name        :string
 #  orientation :string
 #  size        :string

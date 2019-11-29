@@ -11,8 +11,10 @@ class Api::EventsController < Api::BaseController
         allDay: true,
         extendedProps: {
           description: todo.description,
-          todo_id: todo.id
-        }
+          todo_id: todo.id,
+          done_status: todo.done
+        },
+        backgroundColor: "#{todo.planted_veggy.planter.color}"
       }
     end
 
