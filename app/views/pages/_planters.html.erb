@@ -37,7 +37,7 @@
 
 
   <% @planters.each do |planter| %>
-  <div class="card-planter">
+  <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px;">
     <div class="card-body-planter">
 
       <div class="d-flex justify-content-between">
@@ -76,7 +76,7 @@
 
           <div class="planted-veggy-card ">
             <div class="card-image">
-              <%= cl_image_tag("crbst_nnnn_20018_zsvbxe", class: "w-100") %>
+              <%= cl_image_tag("cl-terre-card", class: "w-100") %>
 
               <!-- <div class="card-body"> -->
               <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
@@ -111,7 +111,7 @@
           <% (3 - planter.planted_veggies.count).times do %>
           <div class="planted-veggy-card">
             <div class="w-100 card-image">
-              <%= cl_image_tag("crbst_nnnn_20018_zsvbxe", class: "w-100") %>
+              <%= cl_image_tag("cl-terre-card", class: "w-100") %>
 
               <!-- <div class="card-body"> -->
               <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
@@ -147,7 +147,7 @@
           <% (5 - planter.planted_veggies.count).times do %>
           <div class="planted-veggy-card">
             <div class="w-100 card-image">
-              <%= cl_image_tag("crbst_nnnn_20018_zsvbxe", class: "w-100 add-veggy-image", height: 200, crop: :fill) %>
+              <%= cl_image_tag("cl-terre-card", class: "w-100 add-veggy-image", height: 200, crop: :fill) %>
 
               <!-- <div class="card-body"> -->
               <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
