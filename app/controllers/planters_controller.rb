@@ -15,6 +15,9 @@ class PlantersController < ApplicationController
   def create
     @planter = Planter.new(planter_params)
     @planter.user = current_user
+    @planter.color = ["#004445", "#2c7873", "#ffd800", "#016075", "#931621"].sample
+
+    # @planter.color = ["red", "green"].sample
 
     if @planter.save
       redirect_to dashboard_path
