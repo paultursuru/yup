@@ -36,7 +36,11 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <% @planters.each do |planter| %>
-                    <%= link_to planter.name, '#', class: 'dropdown-item' %>
+                    <% if planter.size == "Planter-small" && planter.planted_veggies.count < 3 || planter.size == "Planter-large" && planter.planted_veggies.count < 5 || planter.size == "Pot" && planter.planted_veggies.empty? %>
+                      <%= link_to planter.name, '#', class: 'dropdown-item' %>
+                    <% else %>
+                      <button class="dropdown-item disabled"><%= planter.name %> (full)</button>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
