@@ -22,6 +22,9 @@
   margin-bottom: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-color: white;
+  border-style: solid;
+  border-color: #FCD833;
+  border-width: 2px;
 }
 
 #planted-veg-name {
@@ -57,7 +60,7 @@ grid-gap: 16px;
   }
   #add-veggy-to-plant {
   position: absolute;
-  top: 60px; left: 65px;
+  // top: 60px; left: 65px;
   font-size: 90px;
   color: white;
   transition: ease .3s;
@@ -75,23 +78,19 @@ grid-gap: 16px;
 
 #add-veggy-to-plant {
   position: absolute;
-  top: 60px; left: 70px;
+  top: 30%; left: 33%;
   font-size: 80px;
   color: white;
 }
 
-.add-veggy-image {
-  height: 207px;
-  object-fit: cover;
-}
 
 
-#add-veggy-to-plant:hover {
-  position: absolute;
-  top: 55px; left: 65px;
-  font-size: 90px;
-  color: white;
-}
+// #add-veggy-to-plant:hover {
+//   position: absolute;
+//   top: 55px; left: 65px;
+//   font-size: 90px;
+//   color: white;
+// }
 
 .cards-library {
 display: flex;
@@ -138,3 +137,5 @@ margin-top: 20px;
 .veggy-is-planted{
   visibility: hidden;
 }
+
+
