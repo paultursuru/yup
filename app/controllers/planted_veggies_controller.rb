@@ -35,6 +35,12 @@ class PlantedVeggiesController < ApplicationController
     today = Date.today.strftime("%Y-%m-%d")
     @planted_veggy.planting_day = today
     @planted_veggy.save
+    if @planted_veggy.save
+      respond_to do |format|
+        #format.html { redirect_to restaurant_path(@restaurant) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    end
     # num_of_water = @veggy_to_dos.planted_veggy.growing_time / 3
     # num_of_water.times do
     water = ToDo.new(planted_veggy: @planted_veggy, to_do_template: @watering)
