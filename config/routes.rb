@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
       resources :events, only: [ :index ]
   end
+
+  get '/todos/:id/mark_as_done', to: 'todos#mark_as_done', as: 'mark_as_done'
+
+
 end
