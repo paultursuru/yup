@@ -11,7 +11,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <%= simple_form_for(@new_planter) do |f| %>
-
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
@@ -23,7 +24,7 @@
             <%= f.input :name, placeholder: 'Kitchen Planter' %>
             <%= f.input :orientation, collection: ['North', 'North-East','North-West', 'South', 'South-East', 'South-West', 'West', 'East'] %>
             <%= f.input :size, collection: ['Pot', 'Planter-small', 'Planter-large' ] %>
-            <%= f.input :color, collection: ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise','lightgreen', 'mediumaquamarine'] %>
+            <%#= f.input :color, collection: ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise','lightgreen', 'mediumaquamarine'] %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -40,7 +41,8 @@
     <%= cl_image_tag("map_to_garden_xkcfly", class: "w-100") %>
   <% else %>
     <% @planters.each do |planter| %>
-    <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px;">
+    <div class="card-planter" style="box-shadow: 0 0 15px rgba(0,0,0,0.2);
+">
       <div class="card-body-planter">
 
         <div class="d-flex justify-content-between">
