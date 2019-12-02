@@ -22,7 +22,7 @@
           </div>
           <div class="modal-body">
             <%= f.input :name, placeholder: 'Kitchen Planter' %>
-            <%= f.input :orientation, collection: ['North', 'North-East','North-West', 'South', 'South-East', 'South-West', 'West', 'East'] %>
+            <%= f.input :sun, collection: ['Full sun', 'Part sun', 'Full shade'] %>
             <%= f.input :size, collection: ['Pot', 'Planter-small', 'Planter-large' ] %>
             <%#= f.input :color, collection: ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise','lightgreen', 'mediumaquamarine'] %>
           </div>
@@ -51,7 +51,7 @@
           </h2>
         </div>
 
-          <p><%= planter.orientation %></p>
+          <p><%= planter.sun %></p>
           <p>My Veggies:</p>
           <div class="cards">
           <% if planter.planted_veggies.present? %>
