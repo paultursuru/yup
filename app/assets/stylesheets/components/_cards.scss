@@ -19,9 +19,9 @@
 
 .card-planter {
   border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px;
   background-color: white;
+
 }
 
 #planted-veg-name {
@@ -134,5 +134,10 @@ margin-top: 20px;
 .veggy-is-planted{
   visibility: hidden;
 }
-
+.planters {
+  padding: 10px;
+  border-radius: 5px;
+  // background-color: white;
+  color: #004445;
+}
 
