@@ -15,7 +15,6 @@
                 <%= cl_image_tag veggy.photo.key %>
                 <div class="mt-3">
                   <p>Price: <b><%= veggy.price %> €</b></p>
-                  <button type="button" class="btn btn-info" data-dismiss="modal">Add to cart</button>
                 </div>
               </div>
               <div>
@@ -28,7 +27,7 @@
                 <% else %>
                   <p>Difficulty: <b>Demanding</b></p>
                 <% end %>
-                <p>Growing season: <b><%= veggy.planting_start_date.strftime('%b') %> - <%= veggy.planting_end_date.strftime('%b') %></b></p>
+                <p>Planting season: <b><%= veggy.planting_start_date.strftime('%b') %> - <%= veggy.planting_end_date.strftime('%b') %></b></p>
                 <p>Grows in: <b><%= veggy.growing_time / 7 %> weeks</b></p>
               </div>
             </div>

@@ -1,15 +1,22 @@
-<div class="container">
-  <h1>Cart</h1>
-  <ul>
-    <% @order.order_items.each do |item| %>
-      <li><%= item.veggy.name %> <%= item.veggy.price %> €</li>
-    <% end %>
-  </ul>
-  <p>Total: <%= @order.amount_cents %> €</p>
-  <%= simple_form_for @order do |f| %>
-    <%= f.input :amount_cents_cents, as: :hidden %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
+<div class="container mt-3 d-flex justify-content-center">
+  <div class="card col-10 col-lg-6">
+    <div class="card-body">
+      <h1>Cart</h1>
+      <% @order.order_items.each do |item| %>
+        <div class="container mt-4 d-flex justify-content-between align-items-center">
+          <div>
+            <%= cl_image_tag item.veggy.photo.key, class: "checkout-img" %>
+            <%= item.veggy.name %>
+          </div>
+          <div><%= item.veggy.price %> €</div>
+        </div>
+        <hr>
+      <% end %>
+      <div class="text-right"><b>Total: <%= @order.amount_cents %> €</b></div>
+      <%= simple_form_for @order do |f| %>
+        <%= f.input :amount_cents_cents, as: :hidden %>
+        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-

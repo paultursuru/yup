@@ -40,7 +40,7 @@
     <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px">
       <div class="card-body-planter">
         <div class="d-flex justify-content-between">
-          <h2><%= planter.name %></h2>
+          <h1><%= planter.name %></h1>
           <%= link_to "Delete", planter_path(planter), method: :delete, data: { confirm: "Delete #{planter.name}?" } %>
           </h2>
         </div>
@@ -56,8 +56,8 @@
           <% end %>
 
         </div>
-          <p>My Veggies:</p>
-          <div class="cards">
+          <h3>My Veggies:</h3>
+          <div class="cards mt-3">
           <% if planter.planted_veggies.present? %>
           <% planter.planted_veggies.each do |planted_veggy| %>
           <div class="planted-veggy-card">
