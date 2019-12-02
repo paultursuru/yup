@@ -18,9 +18,15 @@ class PlantedVeggiesController < ApplicationController
     @planted_veggy.planter = @planter
 
     if @planted_veggy.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js  # <-- idem
+      end
     end
   end
 

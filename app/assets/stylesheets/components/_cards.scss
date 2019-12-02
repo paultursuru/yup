@@ -106,6 +106,7 @@ margin-top: 20px;
   width: 100%;
   object-fit: cover;
   transition: 0.3s ease;
+  border-radius: 5px;
 }
 
 .card-library > img:hover {
@@ -134,10 +135,14 @@ margin-top: 20px;
 .veggy-is-planted{
   visibility: hidden;
 }
-.planters {
-  padding: 10px;
-  border-radius: 5px;
-  // background-color: white;
-  color: #004445;
+
+.fa-sun{
+  color: #FCD833;
+  font-size: 24px;
+  vertical-align: middle;
 }
+
+
+
+
 
