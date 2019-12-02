@@ -44,31 +44,32 @@ class PlantedVeggiesController < ApplicationController
     # creating the planting day here
     event_date = Date.today
     @planted_veggy.planting_day = event_date
-    @planted_veggy.save
+    # @planted_veggy.save
     if @planted_veggy.save
+      # thining event : only once
+      if @planted_veggy.veggy.thining_delay > 0
+        thin_date = event_date + @planted_veggy.veggy.thining_delay
+        ToDo.create(planted_veggy: @planted_veggy, to_do_template: @thining, due_at: thin_date.strftime("%Y-%m-%d"))
+      end
+      # computing the number of events needed
+      num_of_water = @planted_veggy.veggy.growing_time / 3
+      num_of_water.times do
+        ToDo.create(planted_veggy: @planted_veggy, to_do_template: @watering, due_at: event_date.strftime("%Y-%m-%d"))
+        event_date += 3
+      end
+      # binding.pry
+      hi_event = Date.today + (@planted_veggy.veggy.growing_time / 4)
+      ToDo.create(planted_veggy: @planted_veggy, to_do_template: @say_hi, due_at: hi_event.strftime("%Y-%m-%d"))
+      love_event = Date.today + (@planted_veggy.veggy.growing_time / 2)
+      ToDo.create(planted_veggy: @planted_veggy, to_do_template: @give_love, due_at: love_event.strftime("%Y-%m-%d"))
+      eat_event = Date.today + @planted_veggy.veggy.growing_time
+      ToDo.create(planted_veggy: @planted_veggy, to_do_template: @food_time, due_at: eat_event.strftime("%Y-%m-%d"))
+
       respond_to do |format|
         #format.html { redirect_to restaurant_path(@restaurant) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
     end
-    # thining event : only once
-    if @planted_veggy.veggy.thining_delay > 0
-      thin_date = event_date + @planted_veggy.veggy.thining_delay
-      ToDo.create(planted_veggy: @planted_veggy, to_do_template: @thining, due_at: thin_date.strftime("%Y-%m-%d"))
-    end
-    # computing the number of events needed
-    num_of_water = @planted_veggy.veggy.growing_time / 3
-    num_of_water.times do
-      ToDo.create(planted_veggy: @planted_veggy, to_do_template: @watering, due_at: event_date.strftime("%Y-%m-%d"))
-      event_date += 3
-    end
-    # binding.pry
-    hi_event = Date.today + (@planted_veggy.veggy.growing_time / 4)
-    ToDo.create(planted_veggy: @planted_veggy, to_do_template: @say_hi, due_at: hi_event.strftime("%Y-%m-%d"))
-    love_event = Date.today + (@planted_veggy.veggy.growing_time / 2)
-    ToDo.create(planted_veggy: @planted_veggy, to_do_template: @give_love, due_at: love_event.strftime("%Y-%m-%d"))
-    eat_event = Date.today + @planted_veggy.veggy.growing_time
-    ToDo.create(planted_veggy: @planted_veggy, to_do_template: @food_time, due_at: eat_event.strftime("%Y-%m-%d"))
   end
 
 
