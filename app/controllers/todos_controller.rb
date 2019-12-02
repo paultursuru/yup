@@ -1,7 +1,10 @@
 class TodosController < ApplicationController
   def mark_as_done
-    @event = ToDo.find(params[:id])
-    @event.mark_as_done!
+    @todo = ToDo.find(params[:id])
+    @todo.mark_as_done!
+    respond_to do |format|
+      format.js
+    end
   end
 
 end

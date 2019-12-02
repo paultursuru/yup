@@ -12,7 +12,7 @@ puts "Generating veggies..."
 
 carrot = Veggy.new(
   name: "Carrot",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 3,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -21,6 +21,7 @@ carrot = Veggy.new(
   growing_time: 90,
   price_cents: 730,
   thining_delay: 20,
+  watering_period: 5,
   description: "Carrots are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging."
   )
 
@@ -31,7 +32,7 @@ carrot.save!
 
 radish = Veggy.new(
   name: "Radish",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -40,6 +41,7 @@ radish = Veggy.new(
   growing_time: 35,
   price_cents: 900,
   thining_delay: 16,
+  watering_period: 4,
   description: "Radishes are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging."
   )
 
@@ -50,7 +52,7 @@ radish.save!
 
 arugula = Veggy.new(
   name: "Arugula",
-  sun_orientation: "north",
+  sun_need: "Full shade",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -59,6 +61,7 @@ arugula = Veggy.new(
   growing_time: 60,
   price_cents: 450,
   thining_delay: 10,
+  watering_period: 3,
   description: "Arugula is known for its smooth and loosely bunched leaves. It is rich in essential nutrients and can add a great nutritional value to salads and sandwiches."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
@@ -68,7 +71,7 @@ arugula.save!
 
 onion = Veggy.new(
   name: "Onion",
-  sun_orientation: "east",
+  sun_need: "Full sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -77,6 +80,7 @@ onion = Veggy.new(
   growing_time: 120,
   price_cents: 300,
   thining_delay: 0,
+  watering_period: 3,
   description: "They are rich in in anti-bacterial and anti-fungal properties. They contain vitamin C and phytochemicals which help in improving the overall immunity."
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-23155_1200x1200-oignon-jaune-stuttgart-ab.net.jpg')
@@ -86,7 +90,7 @@ onion.save!
 
 garlic = Veggy.new(
   name: "Garlic",
-  sun_orientation: "east",
+  sun_need: "Full sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -95,6 +99,7 @@ garlic = Veggy.new(
   growing_time: 150,
   price_cents: 500,
   thining_delay: 0,
+  watering_period: 4,
   description: "Garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-17823_1200x1200-ail-blanc-messidrome-nt.net.jpg')
@@ -104,7 +109,7 @@ garlic.save!
 
 bears_garlic = Veggy.new(
   name: "Bear's Garlic",
-  sun_orientation: "north",
+  sun_need: "Full shade",
   seed_level: 3,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -113,6 +118,7 @@ bears_garlic = Veggy.new(
   growing_time: 365,
   price_cents: 850,
   thining_delay: 0,
+  watering_period: 2,
   description: "Bear's garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23147_1200x1200-ail-des-ours-plant.net.jpg')
@@ -122,7 +128,7 @@ bears_garlic.save!
 
 snow_pea = Veggy.new(
   name: "Snow Pea",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -131,6 +137,7 @@ snow_pea = Veggy.new(
   growing_time: 150,
   price_cents: 330,
   thining_delay: 0,
+  watering_period: 2,
   description: "Snow peas are packed with vitamin A, vitamin C, iron, potassium and dietary fibers that could possibly keep the issue of constipation at bay."
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-26015_1200x1200-pois-a-rames-caroubel-mangetout-nt.net.jpg')
@@ -140,7 +147,7 @@ snow_pea.save!
 
 tomato = Veggy.new(
   name: "Tomato",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -149,6 +156,7 @@ tomato = Veggy.new(
   growing_time: 120,
   price_cents: 600,
   thining_delay: 20,
+  watering_period: 2,
   description: "Tomato has been widely used across the globe as one of the major ingredients in food. It is known to be one of the best sources to provide with maximum amount of vitamin C."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-24854_1200x1200-tomate-saint-pierre-ab.net.jpg')
@@ -158,7 +166,7 @@ tomato.save!
 
 cherry_tomato = Veggy.new(
   name: "Cherry Tomato",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -167,6 +175,7 @@ cherry_tomato = Veggy.new(
   growing_time: 150,
   price_cents: 500,
   thining_delay: 0,
+  watering_period: 3,
   description: "Cherry tomatoes contain plenty of fiber, as well as vitamins and lycopene, an antioxidant that lowers your risk of certain diseases."
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-22509_1200x1200-tomate-cerise-ab.net.jpg')
@@ -176,7 +185,7 @@ cherry_tomato.save!
 
 zuchini = Veggy.new(
   name: "Zucchini",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -185,6 +194,7 @@ zuchini = Veggy.new(
   growing_time: 90,
   price_cents: 700,
   thining_delay: 0,
+  watering_period: 3,
   description: "Also known as courgette, this veggie is widely cultivated in America. Though zucchini is a fruit, but it is often cooked as a vegetable and provides us with essential vitamins and nutrients."
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-24838_1200x1200-courgette-verte-de-milan-ab.net.jpg')
@@ -195,7 +205,7 @@ zuchini.save!
 
 sun_root = Veggy.new(
   name: "Sun Root",
-  sun_orientation: "south",
+  sun_need: "Part sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -204,6 +214,7 @@ sun_root = Veggy.new(
   growing_time: 240,
   price_cents: 450,
   thining_delay: 0,
+  watering_period: 5,
   description: 'This root vegetable is starchy, just like potatoes. They are rich in non-digestive inulin which helps keep the bowel movement healthy.'
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-18782_1200x1200-topinambour-patate-ab.net.jpg')
@@ -211,12 +222,101 @@ sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 sun_root.save!
 
+cucumber = Veggy.new(
+  name: "Cucumber",
+  sun_need: "Part sun",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-02-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 120,
+  thining_delay: 0,
+  watering_period: 3,
+  description: 'Cucumber is a widely cultivated plant in the gourd family, Cucurbitaceae.'
+  )
+file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-24345_1200x1200-concombre-jieyangdiaogua-ab.net.jpg')
+cucumber.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+cucumber.save!
+
+squash = Veggy.new(
+  name: "Squash",
+  sun_need: "Full sun",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-02-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 240,
+  thining_delay: 0,
+  watering_period: 5,
+  description: 'The fruits of the genus Cucurbita are good sources of nutrients, such as vitamin A and vitamin C, among other nutrients.'
+  )
+file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-25540_1200x1200-potiron-courge-du-perou-ab.net.jpg')
+squash.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+squash.save!
+
+pepper = Veggy.new(
+  name: "Cayenne Pepper",
+  sun_need: "Full sun",
+  seed_level: 3,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-01-22",
+  planting_end_date: "2020-03-21",
+  growing_time: 150,
+  thining_delay: 0,
+  watering_period: 4,
+  description: 'The cayenne pepper is a type of Capsicum annuum. It is usually a moderately hot chili pepper used to flavor dishes.'
+  )
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-6394_1200x1200-piment-de-cayenne-ab.net.jpg')
+pepper.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+pepper.save!
+
+rosemary = Veggy.new(
+  name: "Rosemary",
+  sun_need: "Full sun",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-04-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 240,
+  thining_delay: 0,
+  watering_period: 5,
+  description: 'Salvia rosmarinus, commonly known as rosemary, is a woody, perennial herb with fragrant, evergreen, needle-like leaves and white, pink, purple, or blue flowers, native to the Mediterranean region.'
+  )
+file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23132_1200x1200-romarin-ab.net.jpg')
+rosemary.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+rosemary.save!
+
+basil = Veggy.new(
+  name: "Genovese basil",
+  sun_need: "Full sun",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-04-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 200,
+  thining_delay: 0,
+  watering_period: 2,
+  description: 'Genovese basil is a cultivar of Ocimum basilicum. It is one of the most popular basils for culinary use, particularly for its use in pesto, the traditional Genoese sauce.'
+  )
+file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-24862_1200x1200-basilic-genovese-ab.net.jpg')
+basil.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+basil.save!
 
 # puts "generated 11 veggies"
 
 # salad = Veggy.create!(
 #   name: "salad",
-#   sun_orientation: "nord-ouest",
+#   sun_need: "nord-ouest",
 #   planting_start_date: "2019-12-15",
 #   planting_end_date: "2020-02-10",
 #   growing_time: 100
@@ -224,7 +324,7 @@ sun_root.save!
 
 # tomato = Veggy.create!(
 #   name: "tomato",
-#   sun_orientation: "sud",
+#   sun_need: "sud",
 #   planting_start_date: "2019-11-26",
 #   planting_end_date: "2020-01-18",
 #   growing_time: 300

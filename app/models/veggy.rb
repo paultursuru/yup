@@ -14,8 +14,9 @@
 #  seed_level          :integer
 #  sowing_end_date     :date
 #  sowing_start_date   :date
-#  sun_orientation     :string
+#  sun_need            :string
 #  thining_delay       :integer
+#  watering_period     :integer
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #

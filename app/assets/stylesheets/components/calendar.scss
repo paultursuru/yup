@@ -6,16 +6,20 @@
 }
 
 .fc-unthemed .fc-list-view {
-  border-color: $yup_blue !important;
+  border-color: #1B4445 !important;
 }
 
-// .fc-toolbar.fc-header-toolbar {
-//       width:auto;
-// }
+
+.todo-list {
+  border: 1px solid black;
+  margin: 0 auto;
+}
 
 .todo-layout {
   border-radius: 5px;
   padding: 12px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3)
 }
 
 #todolist .fc-button {
@@ -29,9 +33,16 @@
 .fc-toolbar {
   padding-top: 8px;
 }
-// .spfont {
-//   font-size: 8px !important;
-// }
-// .todo-layout {
-//   background-color: #2c7873;
-// }
+
+.fas.fa-check.light {
+  color: #C2C2C2;
+}
+
+.fc-scroller {
+  overflow: hidden auto !important;
+  height: 600px !important;
+}
+
+.fc-list-view {
+  height: 600px;
+}

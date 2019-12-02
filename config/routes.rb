@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :update] do
     resources :payments, only: :new
   end
+
+  get '/todos/:id/mark_as_done', to: 'todos#mark_as_done', as: 'mark_as_done'
 end
