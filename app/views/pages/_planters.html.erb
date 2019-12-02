@@ -67,7 +67,12 @@
               <p id="planted-veg-name"><%= planted_veggy.veggy.name.capitalize %></p>
               <% if planted_veggy.planting_day.nil? %>
                 <div class='planted-veggies' data-veggy-id="planted-veggy-id-<%= planted_veggy.id %>">
-                  <%= link_to "Plant now!", plant_planted_veggy_path(planted_veggy), method: :post, class: 'btn btn-outline-secondary w-100', remote: true %>
+                  <!-- <button type="button" class="btn btn-info w-100" data-dismiss="modal">Add to cart (<%= planted_veggy.veggy.price %> €)</button> -->
+                  <%= form_tag order_items_path do %>
+                    <%= hidden_field_tag 'veggy_id', planted_veggy.veggy.id %>
+                    <%= submit_tag "Add to cart (#{planted_veggy.veggy.price}€)", class: 'btn btn-info w-100' %>
+                  <% end %>
+                  <%= link_to "Plant now!", plant_planted_veggy_path(planted_veggy), method: :post, class: 'btn btn-outline-secondary w-100 mt-2', remote: true %>
                 </div>
               <% end %>
             </div>

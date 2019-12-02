@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
       resources :events, only: [ :index ]
   end
+
+  resources :orders, only: [:show, :create]
+  resources :order_items
 end

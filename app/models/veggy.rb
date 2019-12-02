@@ -10,6 +10,7 @@
 #  nutritional_infos   :text             default("more infos soon !")
 #  planting_end_date   :date
 #  planting_start_date :date
+#  price_cents         :integer          default(0), not null
 #  seed_level          :integer
 #  sowing_end_date     :date
 #  sowing_start_date   :date
@@ -25,4 +26,5 @@ class Veggy < ApplicationRecord
   has_many :veggy_to_dos, dependent: :destroy
   has_many :to_do_templates, through: :veggy_to_dos
   has_one_attached :photo
+  monetize :price_cents
 end

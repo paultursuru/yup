@@ -19,6 +19,7 @@ carrot = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-06-21",
   growing_time: 90,
+  price_cents: 730,
   thining_delay: 20,
   description: "Carrots are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging."
   )
@@ -37,6 +38,7 @@ radish = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-09-21",
   growing_time: 35,
+  price_cents: 900,
   thining_delay: 16,
   description: "Radishes are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging."
   )
@@ -55,6 +57,7 @@ arugula = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-09-21",
   growing_time: 60,
+  price_cents: 450,
   thining_delay: 10,
   description: "Arugula is known for its smooth and loosely bunched leaves. It is rich in essential nutrients and can add a great nutritional value to salads and sandwiches."
   )
@@ -72,6 +75,7 @@ onion = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-04-21",
   growing_time: 120,
+  price_cents: 300,
   thining_delay: 0,
   description: "They are rich in in anti-bacterial and anti-fungal properties. They contain vitamin C and phytochemicals which help in improving the overall immunity."
   )
@@ -89,6 +93,7 @@ garlic = Veggy.new(
   planting_start_date: "2019-10-22",
   planting_end_date: "2020-04-21",
   growing_time: 150,
+  price_cents: 500,
   thining_delay: 0,
   description: "Garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
@@ -106,6 +111,7 @@ bears_garlic = Veggy.new(
   planting_start_date: "2019-06-22",
   planting_end_date: "2020-07-21",
   growing_time: 365,
+  price_cents: 850,
   thining_delay: 0,
   description: "Bear's garlic is widely known for its antibacterial, antibiotic and possibly antiviral properties, and contains vitamins A and C, calcium, iron, phosphorus, sodium and copper."
   )
@@ -123,6 +129,7 @@ snow_pea = Veggy.new(
   planting_start_date: "2019-09-22",
   planting_end_date: "2019-11-21",
   growing_time: 150,
+  price_cents: 330,
   thining_delay: 0,
   description: "Snow peas are packed with vitamin A, vitamin C, iron, potassium and dietary fibers that could possibly keep the issue of constipation at bay."
   )
@@ -140,6 +147,7 @@ tomato = Veggy.new(
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
   growing_time: 120,
+  price_cents: 600,
   thining_delay: 20,
   description: "Tomato has been widely used across the globe as one of the major ingredients in food. It is known to be one of the best sources to provide with maximum amount of vitamin C."
   )
@@ -157,6 +165,7 @@ cherry_tomato = Veggy.new(
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
   growing_time: 150,
+  price_cents: 500,
   thining_delay: 0,
   description: "Cherry tomatoes contain plenty of fiber, as well as vitamins and lycopene, an antioxidant that lowers your risk of certain diseases."
   )
@@ -174,6 +183,7 @@ zuchini = Veggy.new(
   planting_start_date: "2020-03-22",
   planting_end_date: "2020-05-21",
   growing_time: 90,
+  price_cents: 700,
   thining_delay: 0,
   description: "Also known as courgette, this veggie is widely cultivated in America. Though zucchini is a fruit, but it is often cooked as a vegetable and provides us with essential vitamins and nutrients."
   )
@@ -192,6 +202,7 @@ sun_root = Veggy.new(
   planting_start_date: "2020-01-22",
   planting_end_date: "2020-04-21",
   growing_time: 240,
+  price_cents: 450,
   thining_delay: 0,
   description: 'This root vegetable is starchy, just like potatoes. They are rich in non-digestive inulin which helps keep the bowel movement healthy.'
   )

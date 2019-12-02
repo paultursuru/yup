@@ -21,6 +21,8 @@ gem 'erd'
 gem 'jquery-rails'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 gem 'cloudinary', '~> 1.12.0'
+gem 'money-rails'
+gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
