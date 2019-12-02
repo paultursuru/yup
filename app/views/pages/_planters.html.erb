@@ -37,7 +37,7 @@
     <%= cl_image_tag("map_to_garden_xkcfly", class: "w-100") %>
   <% else %>
     <% @planters.each do |planter| %>
-    <div class="card-planter" style="box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px;
 ">
       <div class="card-body-planter">
         <div class="d-flex justify-content-between">
