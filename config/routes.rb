@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
+  get 'confirmation', to: 'pages#confirmation', as: :confirmation
 
   # get 'all_my_planted_veggies', to: 'pages#all_my_planted_veggies', as: :all_my_planted_veggies
   resources :planters do
@@ -21,7 +22,11 @@ Rails.application.routes.draw do
       resources :events, only: [ :index ]
   end
 
+  resources :order_items
+
+  resources :orders, only: [:show, :update] do
+    resources :payments, only: :new
+  end
+
   get '/todos/:id/mark_as_done', to: 'todos#mark_as_done', as: 'mark_as_done'
-
-
 end

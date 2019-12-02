@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Cart</h1>
+  <ul>
+    <% @order.order_items.each do |item| %>
+      <li><%= item.veggy.name %> <%= item.veggy.price %> €</li>
+    <% end %>
+  </ul>
+  <p>Total: <%= @order.amount_cents %> €</p>
+  <%= simple_form_for @order do |f| %>
+    <%= f.input :amount_cents_cents, as: :hidden %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+

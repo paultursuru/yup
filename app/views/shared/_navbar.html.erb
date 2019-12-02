@@ -4,9 +4,12 @@
     <h1 class="yup-logo position-absolute"><%= 'Yup!' %></h1>
   <% end %>
 
-  <div class="d-flex">
+  <div class="d-flex align-items-center">
     <% if user_signed_in? %>
       <%= link_to "Dashboard", dashboard_path, class: "nav-link btn btn-outline-info mr-3" %>
+      <% if current_user.orders.find_by(state: 'pending') %>
+        <%= link_to "", order_path(current_user.orders.find_by(state: 'pending')), class: 'fa fa-shopping-cart' %>
+      <% end %>
       <div class="btn-group">
         <button class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>

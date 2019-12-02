@@ -32,4 +32,5 @@ class User < ApplicationRecord
   has_many :planters, dependent: :destroy
   has_many :planted_veggies, through: :planters
   has_many :to_dos, through: :planted_veggies
+  has_many :orders
 end
