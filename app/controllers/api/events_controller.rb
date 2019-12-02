@@ -9,6 +9,7 @@ class Api::EventsController < Api::BaseController
         title: todo.name,
         start: todo.due_at.strftime("%Y-%m-%d"),
         allDay: true,
+        lazyFetching: false,
         extendedProps: {
           description: todo.description,
           todo_id: todo.id,

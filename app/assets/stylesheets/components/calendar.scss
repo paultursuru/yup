@@ -9,9 +9,11 @@
   border-color: $yup_blue !important;
 }
 
-// .fc-toolbar.fc-header-toolbar {
-//       width:auto;
-// }
+
+.todo-list {
+  border: 1px solid black;
+  margin: 0 auto;
+}
 
 .todo-layout {
   border-radius: 5px;
@@ -29,9 +31,4 @@
 .fc-toolbar {
   padding-top: 8px;
 }
-// .spfont {
-//   font-size: 8px !important;
-// }
-// .todo-layout {
-//   background-color: #2c7873;
-// }
+

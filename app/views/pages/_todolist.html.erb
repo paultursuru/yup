@@ -1,1 +1,6 @@
 <div id="todolist" ></div>
+<%= form_for(@to_dos) do |f| %>
+
+<%= f.hidden_field :todo_id, :value => @todo.id %>
+
+<% end %>

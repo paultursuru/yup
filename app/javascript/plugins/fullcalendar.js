@@ -48,9 +48,11 @@ const calendar = () => {
         const check = info.el.querySelector('.fas.fa-times');
         console.log(check);
         check.addEventListener('click', function(event){
-          event.currentTarget.parentElement.innerHTML = `<td class='fc-list-item-title fc-widget-content'><i class="fas fa-check"></i></td>`
+          //event.currentTarget.parentElement.innerHTML = `<td class='fc-list-item-title fc-widget-content'><i class="fas fa-check"></i></td>`
+          event.currentTarget.parentElement.innerHTML = `<a href="/api/events/${info.event.extendedProps.todo_id}"></a>"<td class='fc-list-item-title fc-widget-content'><i class="fas fa-check"></i></td>`
           })
         // eventRow.append(`<td class='fc-list-item-title fc-widget-content'>${info.event.extendedProps.description}</td>`);
+        const form = document.getElementById('form');
         }
       });
 
