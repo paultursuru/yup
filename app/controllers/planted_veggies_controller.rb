@@ -82,6 +82,7 @@ class PlantedVeggiesController < ApplicationController
       eat_event = Date.today + @planted_veggy.veggy.growing_time
       ToDo.create(planted_veggy: @planted_veggy, to_do_template: @food_time, due_at: eat_event.strftime("%Y-%m-%d"))
 
+
       respond_to do |format|
         #format.html { redirect_to restaurant_path(@restaurant) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
