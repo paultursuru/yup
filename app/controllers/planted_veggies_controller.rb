@@ -40,17 +40,17 @@ class PlantedVeggiesController < ApplicationController
     @num_of_water = (@planted_veggy.veggy.growing_time / @watering_period).round
     # binding.pry
 
-    @watering = ToDoTemplate.new(name: 'watering  💦', description: "You should water your #{@veggy.downcase}")
+    @watering = ToDoTemplate.new(name: 'Water  💦', description: "your #{@veggy.downcase}")
     @watering.save!
-    @thining = ToDoTemplate.new(name: 'thining ✂️', description: "Time to thin your #{@veggy.downcase}")
+    @thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your #{@veggy.downcase}")
     @thining.save!
-    @pruning = ToDoTemplate.new(name: 'pruning ✂️', description: "You should prune your #{@veggy.downcase} plant")
+    @pruning = ToDoTemplate.new(name: 'Prune ✂️', description: "your #{@veggy.downcase}")
     @pruning.save!
-    @say_hi = ToDoTemplate.new(name: 'say hi 👋', description: "Go check on your favorite #{@veggy.downcase}")
+    @say_hi = ToDoTemplate.new(name: 'Say hi 👋', description: "to your favorite #{@veggy.downcase}")
     @say_hi.save!
-    @give_love = ToDoTemplate.new(name: 'give love ❤️', description: "Your #{@veggy.downcase} needs love")
+    @give_love = ToDoTemplate.new(name: 'Give love ❤️', description: "to #{@veggy.downcase}")
     @give_love.save!
-    @food_time = ToDoTemplate.new(name: 'time to eat 🍴', description: "Your #{@veggy.downcase} should be ready to eat !")
+    @food_time = ToDoTemplate.new(name: 'Harvest 🍴', description: "your #{@veggy.downcase}!")
     @food_time.save!
 
 
@@ -64,7 +64,7 @@ class PlantedVeggiesController < ApplicationController
         prune_date = event_date + (@planted_veggy.veggy.growing_time / 2).round
         ToDo.create(planted_veggy: @planted_veggy, to_do_template: @pruning, due_at: prune_date.strftime("%Y-%m-%d"))
       end
-   
+
     # thining event : only once
     if @planted_veggy.veggy.thining_delay > 0
       thin_date = event_date + @planted_veggy.veggy.thining_delay
@@ -76,7 +76,7 @@ class PlantedVeggiesController < ApplicationController
       ToDo.create(planted_veggy: @planted_veggy, to_do_template: @watering, due_at: event_date.strftime("%Y-%m-%d"))
       event_date += @watering_period
     end
-       
+
     # binding.pry
     hi_event = Date.today + (@planted_veggy.veggy.growing_time / 4).round
     ToDo.create(planted_veggy: @planted_veggy, to_do_template: @say_hi, due_at: hi_event.strftime("%Y-%m-%d"))
