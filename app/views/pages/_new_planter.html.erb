@@ -1,0 +1,20 @@
+<%= simple_form_for new_planter, remote: true do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <%= f.input :name, placeholder: 'Kitchen Planter' %>
+    <%= f.input :sun, collection: ['Full sun', 'Part sun', 'Full shade'] %>
+    <%= f.input :size, collection: ['Pot', 'Planter-small', 'Planter-large' ] %>
+    <%#= f.input :color, collection: ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise','lightgreen', 'mediumaquamarine'] %>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
+  </div>
+<% end %>
+

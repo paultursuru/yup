@@ -339,18 +339,21 @@ puts "Generating 3 planters"
 brigitte_pot = Planter.create!(
   name: 'My little pot',
   user: brigitte,
-  size: "Pot"
+  size: "Pot",
+  sun: "Full sun"
   )
 
 brigitte_jardinere1 = Planter.create!(
   name: 'My small planter',
   user: brigitte,
-  size: "Planter-small"
+  size: "Planter-small",
+  sun: "Full sun"
   )
 brigitte_jardinere2 = Planter.create!(
   name: 'My large planter',
   user: brigitte,
-  size: "Planter-large"
+  size: "Planter-large",
+  sun: "Part sun"
   )
 # puts "generated three planters"
 
