@@ -21,6 +21,7 @@
 
 class Order < ApplicationRecord
   belongs_to :user
+  has_many :order_items, dependent: :destroy
   has_many :veggies, through: :order_items
-  monetize :amount_cents
+  monetize :amount_cents_cents
 end
