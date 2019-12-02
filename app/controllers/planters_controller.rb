@@ -45,7 +45,7 @@ class PlantersController < ApplicationController
   private
 
   def planter_params
-    params.require(:planter).permit(:name, :size, :orientation, :color)
+    params.require(:planter).permit(:name, :size, :sun, :color)
   end
 
   def set_planter
