@@ -2,14 +2,14 @@
 #
 # Table name: planters
 #
-#  id          :bigint           not null, primary key
-#  color       :string
-#  name        :string
-#  orientation :string
-#  size        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :bigint
+#  id         :bigint           not null, primary key
+#  color      :string
+#  name       :string
+#  size       :string
+#  sun        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint
 #
 # Indexes
 #
