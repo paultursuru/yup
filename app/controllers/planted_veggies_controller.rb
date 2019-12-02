@@ -36,9 +36,11 @@ class PlantedVeggiesController < ApplicationController
   def plant
     # @veggy_to_do.initial = true
     @veggy = @planted_veggy.veggy.name
-    @watering = ToDoTemplate.new(name: 'watering  💦', description: "Today, you should water your #{@veggy.downcase}")
+    @watering_period = @planted_veggy.veggy.watering_period
+
+    @watering = ToDoTemplate.new(name: 'watering  💦', description: "You should water your #{@veggy.downcase}")
     @watering.save!
-    @thining = ToDoTemplate.new(name: 'thining ✂️', description: "It's time to thin your #{@veggy.downcase}")
+    @thining = ToDoTemplate.new(name: 'thining ✂️', description: "Time to thin your #{@veggy.downcase}")
     @thining.save!
     @say_hi = ToDoTemplate.new(name: 'say hi 👋', description: "Go check on your favorite #{@veggy.downcase}")
     @say_hi.save!
@@ -63,10 +65,11 @@ class PlantedVeggiesController < ApplicationController
       ToDo.create(planted_veggy: @planted_veggy, to_do_template: @thining, due_at: thin_date.strftime("%Y-%m-%d"))
     end
     # computing the number of events needed
-    num_of_water = @planted_veggy.veggy.growing_time / 3
+    num_of_water = (@planted_veggy.veggy.growing_time / @watering_period).round
+    # binding.pry
     num_of_water.times do
       ToDo.create(planted_veggy: @planted_veggy, to_do_template: @watering, due_at: event_date.strftime("%Y-%m-%d"))
-      event_date += 3
+      event_date += @watering
     end
     # binding.pry
     hi_event = Date.today + (@planted_veggy.veggy.growing_time / 4)

@@ -15,7 +15,7 @@ class PlantersController < ApplicationController
   def create
     @planter = Planter.new(planter_params)
     @planter.user = current_user
-    @planter.color = ["#004445", "#2c7873", "#ffd800", "#016075", "#931621"].sample
+    @planter.color = ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise', 'lightgreen', 'mediumaquamarine'].sample
 
     # @planter.color = ["red", "green"].sample
 
@@ -45,7 +45,7 @@ class PlantersController < ApplicationController
   private
 
   def planter_params
-    params.require(:planter).permit(:name, :size, :orientation)
+    params.require(:planter).permit(:name, :size, :orientation, :color)
   end
 
   def set_planter
