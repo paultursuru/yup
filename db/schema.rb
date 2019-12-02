@@ -129,9 +129,9 @@ ActiveRecord::Schema.define(version: 2019_12_02_111744) do
     t.string "description"
     t.string "category"
     t.integer "thining_delay"
-    t.integer "price_cents", default: 0, null: false
     t.string "sun_need"
     t.integer "watering_period"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "veggy_to_dos", force: :cascade do |t|
