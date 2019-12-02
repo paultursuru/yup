@@ -22,11 +22,12 @@
   text-align: center;
   justify-content: space-around;
   align-items: center;
-  background: $yup-gray;
+  background: $yup-yellow;
   margin: 20px auto;
   border-radius: 50px;
   width: 80%;
 }
+
 
 #potager {
   border-radius: 50px 0 0 50px;
@@ -47,4 +48,9 @@
   }
 }
 
+#my-planters-title {
+  font-size: 40px;
+  padding-left: 23px;
+  color: $yup-green;
+}
 

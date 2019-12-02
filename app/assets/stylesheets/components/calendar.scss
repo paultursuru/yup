@@ -6,7 +6,7 @@
 }
 
 .fc-unthemed .fc-list-view {
-  border-color: $yup_blue !important;
+  border-color: #1B4445 !important;
 }
 
 
@@ -18,6 +18,8 @@
 .todo-layout {
   border-radius: 5px;
   padding: 12px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3)
 }
 
 #todolist .fc-button {
