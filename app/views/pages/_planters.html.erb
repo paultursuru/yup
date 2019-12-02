@@ -1,6 +1,6 @@
 <div class="planters mt-5 mb-3">
   <div class="d-flex justify-content-between mb-4">
-    <h2>My planters</h2>
+    <h1 id="my-planters-title">My planters</h1>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
       Add new Planter
@@ -41,13 +41,14 @@
     <div class="card-body-planter">
 
       <div class="d-flex justify-content-between">
-        <h2><%= planter.name %></h2>
+        <h2><%= planter.name.capitalize %></h2>
         <%= link_to "Delete", planter_path(planter), method: :delete, data: { confirm: "Delete #{planter.name}?" } %>
         </h2>
       </div>
+        <div class="orientation-container">
+          <p><i class="fas fa-sun"></i>     &nbsp    <%= planter.orientation %></p>
 
-        <p><%= planter.orientation %></p>
-        <p>My Veggies:</p>
+        </div>
         <div class="cards">
         <% if planter.planted_veggies.present? %>
         <% planter.planted_veggies.each do |planted_veggy| %>
@@ -147,7 +148,7 @@
           <% (5 - planter.planted_veggies.count).times do %>
           <div class="planted-veggy-card">
             <div class="w-100 card-image">
-              <%= cl_image_tag("cl-terre-card", class: "w-100 add-veggy-image", height: 200, crop: :fill) %>
+              <%= cl_image_tag("cl-terre-card", class: "w-100 add-veggy-image", height: 211, crop: :fill) %>
 
               <!-- <div class="card-body"> -->
               <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
