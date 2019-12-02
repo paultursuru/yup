@@ -12,7 +12,7 @@ puts "Generating veggies..."
 
 carrot = Veggy.new(
   name: "Carrot",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 3,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -31,7 +31,7 @@ carrot.save!
 
 radish = Veggy.new(
   name: "Radish",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -50,7 +50,7 @@ radish.save!
 
 arugula = Veggy.new(
   name: "Arugula",
-  sun_need: "full shade",
+  sun_need: "Full shade",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -68,7 +68,7 @@ arugula.save!
 
 onion = Veggy.new(
   name: "Onion",
-  sun_need: "full sun",
+  sun_need: "Full sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -86,7 +86,7 @@ onion.save!
 
 garlic = Veggy.new(
   name: "Garlic",
-  sun_need: "full sun",
+  sun_need: "Full sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -104,7 +104,7 @@ garlic.save!
 
 bears_garlic = Veggy.new(
   name: "Bear's Garlic",
-  sun_need: "full shade",
+  sun_need: "Full shade",
   seed_level: 3,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -122,7 +122,7 @@ bears_garlic.save!
 
 snow_pea = Veggy.new(
   name: "Snow Pea",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -140,7 +140,7 @@ snow_pea.save!
 
 tomato = Veggy.new(
   name: "Tomato",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -158,7 +158,7 @@ tomato.save!
 
 cherry_tomato = Veggy.new(
   name: "Cherry Tomato",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -176,7 +176,7 @@ cherry_tomato.save!
 
 zuchini = Veggy.new(
   name: "Zucchini",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 2,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -195,7 +195,7 @@ zuchini.save!
 
 sun_root = Veggy.new(
   name: "Sun Root",
-  sun_need: "part sun",
+  sun_need: "Part sun",
   seed_level: 1,
   sowing_start_date: "",
   sowing_end_date: "",
@@ -211,6 +211,95 @@ sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 sun_root.save!
 
+cucumber = Veggy.new(
+  name: "Cucumber",
+  sun_need: "Part sun",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-02-22",
+  planting_end_date: "2020-04-21",
+  growing_time: 120,
+  thining_delay: 0,
+  watering_period: 3,
+  description: 'Cucumber is a widely cultivated plant in the gourd family, Cucurbitaceae.'
+  )
+file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-24345_1200x1200-concombre-jieyangdiaogua-ab.net.jpg')
+cucumber.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+cucumber.save!
+
+squash = Veggy.new(
+  name: "Squash",
+  sun_need: "Full sun",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-02-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 240,
+  thining_delay: 0,
+  watering_period: 5,
+  description: 'The fruits of the genus Cucurbita are good sources of nutrients, such as vitamin A and vitamin C, among other nutrients.'
+  )
+file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-25540_1200x1200-potiron-courge-du-perou-ab.net.jpg')
+squash.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+squash.save!
+
+pepper = Veggy.new(
+  name: "Cayenne Pepper",
+  sun_need: "Full sun",
+  seed_level: 3,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-01-22",
+  planting_end_date: "2020-03-21",
+  growing_time: 150,
+  thining_delay: 0,
+  watering_period: 4,
+  description: 'The cayenne pepper is a type of Capsicum annuum. It is usually a moderately hot chili pepper used to flavor dishes.'
+  )
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-6394_1200x1200-piment-de-cayenne-ab.net.jpg')
+pepper.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+pepper.save!
+
+rosemary = Veggy.new(
+  name: "Rosemary",
+  sun_need: "Full sun",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-04-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 240,
+  thining_delay: 0,
+  watering_period: 5,
+  description: 'Salvia rosmarinus, commonly known as rosemary, is a woody, perennial herb with fragrant, evergreen, needle-like leaves and white, pink, purple, or blue flowers, native to the Mediterranean region.'
+  )
+file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23132_1200x1200-romarin-ab.net.jpg')
+rosemary.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+rosemary.save!
+
+basil = Veggy.new(
+  name: "Genovese basil",
+  sun_need: "Full sun",
+  seed_level: 2,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-04-22",
+  planting_end_date: "2020-06-21",
+  growing_time: 200,
+  thining_delay: 0,
+  watering_period: 2,
+  description: 'Genovese basil is a cultivar of Ocimum basilicum. It is one of the most popular basils for culinary use, particularly for its use in pesto, the traditional Genoese sauce.'
+  )
+file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-24862_1200x1200-basilic-genovese-ab.net.jpg')
+basil.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+basil.save!
 
 # puts "generated 11 veggies"
 
