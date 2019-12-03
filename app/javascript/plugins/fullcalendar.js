@@ -10,7 +10,7 @@ const calendar = () => {
   const todoEl = document.getElementById('todolist');
 
   if (calendarEl) {
-    //document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
       const calendar = new Calendar(calendarEl, {
         plugins: [ dayGridPlugin],
         events: '/api/events',
@@ -18,7 +18,7 @@ const calendar = () => {
       });
 
       calendar.render();
-    //});
+    });
   }
 
   if (todoEl) {

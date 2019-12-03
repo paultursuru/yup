@@ -1,0 +1,12 @@
+function closeModal(id) {
+  $(`#planter_veggy_modal_${id}`).modal('hide');
+}
+
+function reloadCard() {
+  closeModal('<%= @planter.id%>');
+  const mudCard = document.getElementById("<%= @token %>");
+  mudCard.innerHTML = "<%= j render 'pages/planted_veggy_card', planted_veggy: @planted_veggy %>"
+  console.log('<%= @planter.id%>');
+}
+
+reloadCard();

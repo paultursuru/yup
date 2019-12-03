@@ -1,8 +1,8 @@
-document.querySelector("[data-veggy-id='planted-veggy-id-<%= @planted_veggy.id %>'").remove();
+function plantVeggy() {
+  document.querySelector("[data-veggy-id='planted-veggy-id-<%= @planted_veggy.id %>'").remove();
+  const todoEl = document.getElementById('todolist');
+  reloadToDo(todoEl);
+}
 
 
-
-const todoEl = document.getElementById('todolist');
-reloadToDo(todoEl);
-
-
+plantVeggy();
