@@ -18,6 +18,7 @@ class PlantedVeggiesController < ApplicationController
 
     @planted_veggy.planter = @planter
 
+    @token = params[:planted_veggy][:token]
     if @planted_veggy.save
       respond_to do |format|
         format.html { redirect_to dashboard_path }
@@ -109,6 +110,7 @@ class PlantedVeggiesController < ApplicationController
     @new_planted_veggy = PlantedVeggy.new
     @planter = @planted_veggy.planter
     @planted_veggy.destroy
+    @token = rand(36**8).to_s(36)
     respond_to do |format|
         format.html { redirect_to dashboard_path }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
