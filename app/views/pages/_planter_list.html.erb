@@ -1,23 +1,21 @@
       <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px;">
         <div class="card-body-planter">
           <div class="d-flex justify-content-between">
-            <h2><%= planter.name %></h2>
+            <h1><%= planter.name %></h1>
             <%= link_to "Delete", planter_path(planter), method: :delete, data: { confirm: "Delete #{planter.name}?" } %>
             </h2>
           </div>
           <div class="orientation-container">
             <% if planter.sun == "Full sun" %>
-            <p><i class="fas fa-sun"></i>     &nbsp    <%= planter.sun %></p>
+              <p><i class="fas fa-sun"></i>     &nbsp    <%= planter.sun %></p>
             <% elsif planter.sun =="Part sun" %>
               <p><i class="fas fa-cloud-sun"></i>    &nbsp    <%= planter.sun %></p>
             <% else %>
               <p><i class="fas fa-cloud"></i>    &nbsp    <%= planter.sun %></p>
-
-
             <% end %>
 
           </div>
-            <p>My Veggies:</p>
+            <h3 class="mb-3">My Veggies:</h3>
             <div class="cards">
             <% if planter.planted_veggies.present? %>
             <% planter.planted_veggies.each do |planted_veggy| %>
@@ -75,7 +73,7 @@
                     </div>
                   <!-- </div> -->
               </div>
-              <% elsif planter.size == "Planter-small" && planter.planted_veggies.count < 3 %>
+              <% elsif planter.size == "Small planter" && planter.planted_veggies.count < 3 %>
               <% (3 - planter.planted_veggies.count).times do %>
               <div class="planted-veggy-card">
                 <div class="w-100 card-image">
@@ -107,7 +105,7 @@
                   <!-- </div> -->
               </div>
               <% end  %>
-              <% elsif planter.size == "Planter-large" && planter.planted_veggies.count < 5 %>
+              <% elsif planter.size == "Large planter" && planter.planted_veggies.count < 5 %>
               <% (5 - planter.planted_veggies.count).times do %>
               <div class="planted-veggy-card">
                 <div class="w-100 card-image">

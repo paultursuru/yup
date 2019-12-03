@@ -357,19 +357,22 @@ paul_pot = Planter.create!(
   user: paul,
   size: "Pot",
   sun: "Full shadow"
+  color: "purple"
   )
 
 paul_jardinere1 = Planter.create!(
   name: 'Kitchen Planter',
   user: paul,
-  size: "Planter-small",
+  size: "Small planter",
   sun: "Full sun"
+  color: "green"
   )
 paul_jardinere2 = Planter.create!(
   name: 'Living Room Planter',
   user: paul,
-  size: "Planter-large",
+  size: "Large planter",
   sun: "Part sun"
+  color: "orange"
   )
 
 puts "Generating planted veggies..."
