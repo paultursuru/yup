@@ -6,6 +6,7 @@ import '@fullcalendar/list/main.css';
 import { initiateDashboardTab } from '../components/dashboard_tabs'
 // import { hidePlantButton } from '../components/planted'
 
+
 window.reloadToDo = reloadToDo;
 window.$ = $;
 calendar();

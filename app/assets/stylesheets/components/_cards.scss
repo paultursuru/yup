@@ -2,6 +2,11 @@
   position: relative;
 }
 
+#planter-title {
+  color: white;
+  font-size: 30px;
+}
+
 .card-image >img {
   border-radius: 5px;
 }
@@ -58,14 +63,6 @@ grid-gap: 16px;
 .planted-veggy-card:hover {
   #delete-planted-veggy a {
     opacity: 1;
-  }
-  #add-veggy-to-plant {
-  position: absolute;
-  // top: 60px; left: 65px;
-  font-size: 4.5rem;
-  color: white;
-  transition: ease .3s;
-  font-weight: lighter;
   }
 }
 
