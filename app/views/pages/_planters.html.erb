@@ -20,7 +20,75 @@
       <%= cl_image_tag("map_to_garden_xkcfly", id:"map_to_garden", class: "w-100") %>
     <% else %>
       <% @planters.each do |planter| %>
-        <%= render 'planter_list', planter: planter %>
+        <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px;">
+        <div class="card-body-planter">
+          <div class="d-flex justify-content-between">
+            <h1><%= planter.name %></h1>
+            <%= link_to "Delete", planter_path(planter), method: :delete, data: { confirm: "Delete #{planter.name}?" } %>
+            </h2>
+          </div>
+          <div class="orientation-container">
+            <% if planter.sun == "Full sun" %>
+              <p><i class="fas fa-sun"></i>     &nbsp    <%= planter.sun %></p>
+            <% elsif planter.sun =="Part sun" %>
+              <p><i class="fas fa-cloud-sun"></i>    &nbsp    <%= planter.sun %></p>
+            <% else %>
+              <p><i class="fas fa-cloud"></i>    &nbsp    <%= planter.sun %></p>
+            <% end %>
+
+          </div>
+            <div class="cards">
+
+            <% if planter.planted_veggies.present? %>
+            <% planter.planted_veggies.each do |planted_veggy| %>
+            <div class="planted-veggy-card" id="planted-veggy-card-id-<%=planted_veggy.id%>">
+              <div class="card-image">
+                <%= cl_image_tag planted_veggy.veggy.photo.key, class: "w-100" %>
+                <p id="delete-planted-veggy"><%= link_to planted_veggy_path(planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" }, remote: true do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end  %>
+                </p>
+              </div>
+              <div class="class-body-planter ">
+                <p id="planted-veg-name"><%= planted_veggy.veggy.name.capitalize %></p>
+                <% if planted_veggy.planting_day.nil? %>
+                <div class='planted-veggies' data-veggy-id="planted-veggy-id-<%= planted_veggy.id %>">
+                  <!-- <button type="button" class="btn btn-info w-100" data-dismiss="modal">Add to cart (<%= planted_veggy.veggy.price %> €)</button> -->
+                  <%= form_tag order_items_path do %>
+                    <%= hidden_field_tag 'veggy_id', planted_veggy.veggy.id %>
+                    <%= submit_tag "Add to cart (#{planted_veggy.veggy.price}€)", class: 'btn btn-info w-100' %>
+                  <% end %>
+                  <%= link_to "Plant now!", plant_planted_veggy_path(planted_veggy), method: :post, class: 'btn btn-outline-secondary w-100 mt-2', remote: true %>
+                </div>
+              <% end %>
+              </div>
+            </div>
+            <% end %>
+            <% end %>
+            <% if planter.size == "Pot" && planter.planted_veggies.empty? %>
+              <div class="planted-veggy-card ">
+                <%= render 'card_mud', planter: planter %>
+              </div>
+
+              <% elsif planter.size == "Small planter" && planter.planted_veggies.count < 3 %>
+              <% (3 - planter.planted_veggies.count).times do %>
+              <div class="planted-veggy-card">
+                <%= render 'card_mud', planter: planter %>
+                  <!-- </div> -->
+              </div>
+              <% end  %>
+
+              <% elsif planter.size == "Large planter" && planter.planted_veggies.count < 5 %>
+              <% (5 - planter.planted_veggies.count).times do %>
+              <div class="planted-veggy-card">
+                <%= render 'card_mud', planter: planter %>
+                  <!-- </div> -->
+              </div>
+              <% end  %>
+            <% end %>
+        </div>
+      </div>
+      </div>
       <% end %>
     <% end %>
 
