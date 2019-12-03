@@ -14,6 +14,7 @@ class PlantedVeggiesController < ApplicationController
   def create
     @planted_veggy = PlantedVeggy.new(planter_params)
     @planter = Planter.find(params[:planter_id])
+    @new_planted_veggy = PlantedVeggy.new
 
     @planted_veggy.planter = @planter
 

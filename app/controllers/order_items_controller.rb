@@ -5,10 +5,8 @@ class OrderItemsController < ApplicationController
       OrderItem.create!(veggy: @veggy, order: current_user.orders.find_by(state: 'pending'))
     else
       order = Order.create!(user: current_user, state: 'pending')
-      OrderItem.create!(veggy: @veggy, order: order)
+      OrderItem.create!(veggy: @veggy, order: current_user.orders.find_by(state: 'pending'))
     end
-  end
-
-  def add_to_cart
+    redirect_to dashboard_path
   end
 end

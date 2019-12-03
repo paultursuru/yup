@@ -15,14 +15,13 @@
             <% end %>
 
           </div>
-            <h3 class="mb-3">My Veggies:</h3>
             <div class="cards">
             <% if planter.planted_veggies.present? %>
             <% planter.planted_veggies.each do |planted_veggy| %>
-            <div class="planted-veggy-card">
+            <div class="planted-veggy-card" id="planted-veggy-card-id-<%=planted_veggy.id%>">
               <div class="card-image">
                 <%= cl_image_tag planted_veggy.veggy.photo.key, class: "w-100" %>
-                <p id="delete-planted-veggy"><%= link_to planter_planted_veggy_path(planted_veggy.planter, planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" }, remote: true do %>
+                <p id="delete-planted-veggy"><%= link_to planted_veggy_path(planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" }, remote: true do %>
                   <i class="far fa-trash-alt"></i>
                 <% end  %>
                 </p>
@@ -45,95 +44,21 @@
             <% end %>
             <% if planter.size == "Pot" && planter.planted_veggies.empty? %>
               <div class="planted-veggy-card ">
-                <div class="card-image">
-                  <%= cl_image_tag("cl-terre-card", class: "w-100") %>
-                  <!-- <div class="card-body"> -->
-                  <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
-                </div>
-                    <div class="modal fade" id="planter_veggy_modal_<%= planter.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <%= f.association :veggy %>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
-                          </div>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  <!-- </div> -->
+                <%= render 'pages/card_mud', planter: planter %>
               </div>
+
               <% elsif planter.size == "Small planter" && planter.planted_veggies.count < 3 %>
               <% (3 - planter.planted_veggies.count).times do %>
               <div class="planted-veggy-card">
-                <div class="w-100 card-image">
-                  <%= cl_image_tag("cl-terre-card", class: "w-100") %>
-                  <!-- <div class="card-body"> -->
-                  <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
-                </div>
-                    <div class="modal fade" id="planter_veggy_modal_<%= planter.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <%= f.association :veggy %>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
-                          </div>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
+                <%= render 'pages/card_mud', planter: planter %>
                   <!-- </div> -->
               </div>
               <% end  %>
+
               <% elsif planter.size == "Large planter" && planter.planted_veggies.count < 5 %>
               <% (5 - planter.planted_veggies.count).times do %>
               <div class="planted-veggy-card">
-                <div class="w-100 card-image">
-                  <%= cl_image_tag("cl-terre-card", class: "w-100 add-veggy-image", height: 200, crop: :fill) %>
-                  <!-- <div class="card-body"> -->
-                  <i class="far fa-plus-square" id="add-veggy-to-plant" data-toggle="modal" data-target="#planter_veggy_modal_<%= planter.id %>"></i>
-                </div>
-                    <div class="modal fade" id="planter_veggy_modal_<%= planter.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <%= simple_form_for [planter, @new_planted_veggy] do |f| %>
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Add a planter</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <%= f.association :veggy %>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
-                          </div>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
+                <%= render 'pages/card_mud', planter: planter %>
                   <!-- </div> -->
               </div>
               <% end  %>
