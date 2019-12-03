@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
         currency: 'eur',
         quantity: 1
       }],
-      success_url: 'http://localhost:3000/confirmation',
+      success_url: confirmation_url,
       cancel_url: order_url(order)
     )
 
