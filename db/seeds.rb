@@ -351,6 +351,7 @@ paul = User.create!(
 
 puts "Generating 3 planters"
 
+
 paul_pot = Planter.create!(
   name: 'Bedroom Pot',
   user: paul,
