@@ -12,14 +12,13 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-
     if params[:query].present?
       @veggies = Veggy.search_by_veggy_and_season(params[:query])
     else
       @veggies = Veggy.all
     end
 
-    @planters = current_user.planters
+    @planters = current_user.planters.includes(planted_veggies: :veggy)
     @planter = Planter.new
     @new_planted_veggy = PlantedVeggy.new
 
@@ -30,5 +29,4 @@ class PagesController < ApplicationController
       end
     end
   end
-
 end

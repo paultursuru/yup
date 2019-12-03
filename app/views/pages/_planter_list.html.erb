@@ -27,8 +27,9 @@
                 <%= render 'pages/card_mud', planter: planter, token: token %>
               </div>
 
-              <% elsif planter.size == "Small planter" && planter.planted_veggies.count < 3 %>
-              <% (3 - planter.planted_veggies.count).times do %>
+
+              <% elsif planter.size == "Small planter" && planter.planted_veggies.size < 3 %>
+              <% (3 - planter.planted_veggies.size).times do %>
                 <% token = rand(36**8).to_s(36) %>
                 <div class="planted-veggy-card" id="<%= token%>">
                   <%= render 'pages/card_mud', planter: planter, token: token %>
@@ -36,8 +37,8 @@
                 </div>
               <% end  %>
 
-              <% elsif planter.size == "Large planter" && planter.planted_veggies.count < 5 %>
-              <% (5 - planter.planted_veggies.count).times do %>
+              <% elsif planter.size == "Large planter" && planter.planted_veggies.size < 5 %>
+              <% (5 - planter.planted_veggies.size).times do %>
                 <% token = rand(36**8).to_s(36) %>
                 <div class="planted-veggy-card" id="<%= token %>">
                   <%= render 'pages/card_mud', planter: planter, token: token %>

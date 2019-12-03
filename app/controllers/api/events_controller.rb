@@ -9,7 +9,7 @@ class Api::EventsController < Api::BaseController
         title: todo.name,
         start: todo.due_at.strftime("%Y-%m-%d"),
         allDay: true,
-        lazyFetching: false,
+        lazyFetching: true,
         extendedProps: {
           description: todo.description,
           todo_id: todo.id,
@@ -22,12 +22,9 @@ class Api::EventsController < Api::BaseController
     render json: events
   end
 
-
-
   private
 
   def to_do_params
     params.require(:to_do).permit(:completed_at, :due_at, :done)
   end
-
 end

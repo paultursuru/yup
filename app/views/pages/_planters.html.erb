@@ -15,7 +15,7 @@
     </div>
   </div>
   <div id="planter-list">
-    <% if @planters.count == 0 %>
+    <% if @planters.size == 0 %>
       <%= cl_image_tag("map_to_garden_xkcfly", id:"map_to_garden", class: "w-100") %>
     <% else %>
       <% @planters.each do |planter| %>
