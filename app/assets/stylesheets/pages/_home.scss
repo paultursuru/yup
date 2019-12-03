@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+.home-bg {
+   background-color: #F9F9F9;
+}
+
+
 .banner {
   height: 80vh;
   display: flex;
@@ -25,14 +30,15 @@
 }
 
 .howitworks {
+  padding: 20px 0;
   h1 {
     color: white;
     font-size: 40px;
   }
   p {
     font-size: 18px;
+   }
   }
-}
 
 .home-cards {
   display: flex;

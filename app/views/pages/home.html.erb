@@ -1,31 +1,34 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.food52.com/r0cQCla_56j45Y8KwS9YSEBBYLc=/2000x2000/2bf98408-a402-4327-ac29-352049fa3062--2016-0330_modern-sprout_eco-planter-herb-kits_mid_alpha-smoot_229.jpg);">
-  <div class="container row d-flex justify-content-between align-items-center">
-  <div class="title col-12 col-lg-8">
-    <h1>Yup, your urban potager!</h1>
-    <p>Easily grow your vegetables in your apartment.</p>
-  </div>
-  <div class="signup-form col-12 col-lg-4">
-    <% unless user_signed_in? %>
-    <%= render 'home_signup_form' %>
-    <% end %>
-  </div>
+
+<div class="home-bg">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.food52.com/r0cQCla_56j45Y8KwS9YSEBBYLc=/2000x2000/2bf98408-a402-4327-ac29-352049fa3062--2016-0330_modern-sprout_eco-planter-herb-kits_mid_alpha-smoot_229.jpg);">
+    <div class="container row d-flex justify-content-between align-items-center">
+      <div class="title col-12 col-lg-8">
+        <h1>Yup, your urban potager!</h1>
+        <p>Easily grow your vegetables in your apartment.</p>
+      </div>
+      <div class="signup-form col-12 col-lg-4">
+        <% unless user_signed_in? %>
+        <%= render 'home_signup_form' %>
+        <% end %>
+      </div>
   </div>
 </div>
 
-<div class="howitworks container mt-5 mb-5">
-  <h1>How it works</h1>
-  <div class="home-cards">
-    <div class="home-card col-12 col-md-6 col-lg-4">
-      <p><b>1.</b> Select vegetables you want to grow</p>
-      <%= image_tag 'step1.png' %>
-    </div>
-    <div class="home-card col-12 col-md-6 col-lg-4">
-      <p><b>2.</b> Order the seeds to your home</p>
-      <%= image_tag 'step2.png' %>
-    </div>
-    <div class="home-card col-12 col-md-6 col-lg-4">
-      <p><b>3.</b> Manage your potager!</p>
-      <%= image_tag 'step3.png' %>
+  <div class="howitworks container mt-3">
+    <h1>How it works</h1>
+    <div class="home-cards">
+      <div class="home-card col-12 col-md-6 col-lg-4">
+        <p><b>1.</b> Select vegetables you want to grow</p>
+        <%= image_tag 'step1.png' %>
+      </div>
+      <div class="home-card col-12 col-md-6 col-lg-4">
+        <p><b>2.</b> Order the seeds to your home</p>
+        <%= image_tag 'step2.png' %>
+      </div>
+      <div class="home-card col-12 col-md-6 col-lg-4">
+        <p><b>3.</b> Manage your potager!</p>
+        <%= image_tag 'step3.png' %>
+      </div>
     </div>
   </div>
 </div>
