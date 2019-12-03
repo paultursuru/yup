@@ -15,9 +15,11 @@ function resetModal(html) {
   content.innerHTML = html;
 }
 function addPlanter(html) {
-  document.getElementById('map_to_garden').remove();
   const planter_list = document.getElementById('planter-list');
   planter_list.insertAdjacentHTML('afterbegin', html);
+  // if document.getElementById('map_to_garden') != true
+  //   { document.getElementById('map_to_garden').remove(); }
+  // end
 }
 
 <% if @planter.errors.any? %>
