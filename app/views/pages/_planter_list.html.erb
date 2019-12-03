@@ -47,16 +47,16 @@
                 <%= render 'pages/card_mud', planter: planter %>
               </div>
 
-              <% elsif planter.size == "Small planter" && planter.planted_veggies.count < 3 %>
-              <% (3 - planter.planted_veggies.count).times do %>
+              <% elsif planter.size == "Small planter" && planter.planted_veggies.size < 3 %>
+              <% (3 - planter.planted_veggies.size).times do %>
               <div class="planted-veggy-card">
                 <%= render 'pages/card_mud', planter: planter %>
                   <!-- </div> -->
               </div>
               <% end  %>
 
-              <% elsif planter.size == "Large planter" && planter.planted_veggies.count < 5 %>
-              <% (5 - planter.planted_veggies.count).times do %>
+              <% elsif planter.size == "Large planter" && planter.planted_veggies.size < 5 %>
+              <% (5 - planter.planted_veggies.size).times do %>
               <div class="planted-veggy-card">
                 <%= render 'pages/card_mud', planter: planter %>
                   <!-- </div> -->
