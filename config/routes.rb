@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   # get 'all_my_planted_veggies', to: 'pages#all_my_planted_veggies', as: :all_my_planted_veggies
   resources :planters do
-    resources :planted_veggies do
-    end
+    resources :planted_veggies, only: [:create, :new]
   end
+  resources :planted_veggies, only: [:destroy]
 
   resources :planted_veggies, only: [] do
     member do

@@ -1,5 +1,5 @@
 class PlantedVeggiesController < ApplicationController
-  before_action :set_planted_veggy, only: %I[show edit update destroy plant]
+  before_action :set_planted_veggy, only: %I[show edit update destroy plant add_to_cart]
   def index
     @planted_veggies = PlantedVeggy.all
   end
@@ -32,6 +32,7 @@ class PlantedVeggiesController < ApplicationController
 
   def edit
   end
+
 
   def plant
     # @veggy_to_do.initial = true
@@ -84,7 +85,7 @@ class PlantedVeggiesController < ApplicationController
 
 
       respond_to do |format|
-        #format.html { redirect_to restaurant_path(@restaurant) }
+        format.html { redirect_to dashboard_path}
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
     end
@@ -104,8 +105,13 @@ class PlantedVeggiesController < ApplicationController
   end
 
   def destroy
+    @new_planted_veggy = PlantedVeggy.new
+    @planter = @planted_veggy.planter
     @planted_veggy.destroy
-    redirect_to dashboard_path
+    respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   private
