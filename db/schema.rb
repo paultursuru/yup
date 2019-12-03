@@ -132,7 +132,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_094620) do
     t.string "sun_need"
     t.integer "watering_period"
     t.integer "price_cents", default: 0, null: false
-
     t.string "season"
   end
 
