@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :veggies, only: [:index]
+
   resources :planted_veggies, only: [] do
     member do
       post 'plant'

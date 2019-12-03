@@ -12,9 +12,23 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @veggies = Veggy.all
+
+    if params[:query].present?
+      @veggies = Veggy.search_by_veggy_and_season(params[:query])
+    else
+      @veggies = Veggy.all
+    end
+
     @planters = current_user.planters
     @planter = Planter.new
     @new_planted_veggy = PlantedVeggy.new
+
+    if params[:query]
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
+    end
   end
+
 end

@@ -59,10 +59,10 @@ const reloadToDo = (todoEl) => {
       // const check = info.el.insertAdjacentHTML('beforeend', `<td class='fc-list-item-title fc-widget-content'><i class="fas fa-check "></i></td>`);
       info.el.insertAdjacentHTML('beforeend', html);
 
-      document.querySelectorAll("td.fc-widget-header").forEach((headercal) => {
-        console.log(headercal);
-        headercal.setAttribute('colspan', 4);
-      });
+      // document.querySelectorAll("td.fc-widget-header").forEach((headercal) => {
+      //   console.log(headercal);
+      //   headercal.setAttribute('colspan', 4);
+      //});
 
     },
   });

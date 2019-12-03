@@ -1,5 +1,7 @@
 puts 'Destroying all databases...'
 
+OrderItem.destroy_all
+Order.destroy_all
 ToDo.destroy_all
 ToDoTemplate.destroy_all
 PlantedVeggy.destroy_all

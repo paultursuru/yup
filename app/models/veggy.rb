@@ -11,6 +11,7 @@
 #  planting_end_date   :date
 #  planting_start_date :date
 #  price_cents         :integer          default(0), not null
+#  season              :string
 #  seed_level          :integer
 #  sowing_end_date     :date
 #  sowing_start_date   :date
@@ -28,4 +29,11 @@ class Veggy < ApplicationRecord
   has_many :to_do_templates, through: :veggy_to_dos
   has_one_attached :photo
   monetize :price_cents
+
+   include PgSearch::Model
+    pg_search_scope :search_by_veggy_and_season,
+    against: [:name, :season],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
