@@ -14,15 +14,24 @@ class PlantersController < ApplicationController
 
   def create
     @planter = Planter.new(planter_params)
+    @new_planted_veggy = PlantedVeggy.new
+    @veggies = Veggy.all
+    @planters = current_user.planters
     @planter.user = current_user
-    @planter.color = ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise', 'lightgreen', 'mediumaquamarine'].sample
+    @planter.color = ['red', 'blue', 'green', 'purple', 'orange'].sample
 
     # @planter.color = ["red", "green"].sample
 
     if @planter.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
     else
-      render :new
+      # @errors = @planter.errors
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
