@@ -1,0 +1,40 @@
+// if no errors
+// select modal and close it
+// else
+// select modal-content
+// replace content with new_plant partial
+function closeModal() {
+  $('#new-planter-modal').modal('hide');
+  console.log($('#new-planter-modal'))
+}
+
+function resetModal(html) {
+  const modal = document.getElementById('new-planter-modal');
+  const content = modal.querySelector('.modal-content');
+  // console.log('hello');
+  content.innerHTML = html;
+}
+function addPlanter(html) {
+  const planter_list = document.getElementById('planter-list');
+  planter_list.insertAdjacentHTML('afterbegin', html);
+  // if document.getElementById('map_to_garden') != true
+  //   { document.getElementById('map_to_garden').remove(); }
+  // end
+}
+
+<% if @planter.errors.any? %>
+  resetModal("<%= j render 'pages/new_planter', new_planter: @planter %>");
+<% else %>
+  addPlanter("<%= j render 'pages/planter_list', planter: @planter %> ");
+  resetModal("<%= j render 'pages/new_planter', new_planter: Planter.new %>");
+  closeModal();
+<% end %>
+
+// document.querySelector('body').classList.remove('modal-open')
+// modal.classList.remove('show')
+// modal.style.display = 'none'
+// modal.setAttribute("aria-hidden","true")
+// modal.removeAttribute ("aria-modal")
+// document.querySelector('.modal-backdrop').remove();
+
+// const modal_content = '<%#= render 'pages/new_planter', new_planter: @new_planter%>';

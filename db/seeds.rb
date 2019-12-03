@@ -1,5 +1,7 @@
 puts 'Destroying all databases...'
 
+OrderItem.destroy_all
+Order.destroy_all
 ToDo.destroy_all
 ToDoTemplate.destroy_all
 PlantedVeggy.destroy_all
@@ -88,6 +90,8 @@ onion.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jp
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 onion.save!
 
+puts "25%..."
+
 garlic = Veggy.new(
   name: "Garlic",
   sun_need: "Full sun",
@@ -164,6 +168,8 @@ tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/j
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 tomato.save!
 
+puts "50%..."
+
 cherry_tomato = Veggy.new(
   name: "Cherry Tomato",
   sun_need: "Part sun",
@@ -231,6 +237,7 @@ cucumber = Veggy.new(
   planting_start_date: "2020-02-22",
   planting_end_date: "2020-04-21",
   growing_time: 120,
+  price_cents: 550,
   thining_delay: 0,
   watering_period: 3,
   description: 'Cucumber is a widely cultivated plant in the gourd family, Cucurbitaceae.'
@@ -239,6 +246,8 @@ file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-24345_1200x1200-co
 cucumber.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 cucumber.save!
+
+puts "75%..."
 
 squash = Veggy.new(
   name: "Squash",
@@ -250,6 +259,7 @@ squash = Veggy.new(
   planting_end_date: "2020-06-21",
   growing_time: 240,
   thining_delay: 0,
+  price_cents: 650,
   watering_period: 5,
   description: 'The fruits of the genus Cucurbita are good sources of nutrients, such as vitamin A and vitamin C, among other nutrients.'
   )
@@ -267,6 +277,7 @@ pepper = Veggy.new(
   planting_start_date: "2020-01-22",
   planting_end_date: "2020-03-21",
   growing_time: 150,
+  price_cents: 840,
   thining_delay: 0,
   watering_period: 4,
   description: 'The cayenne pepper is a type of Capsicum annuum. It is usually a moderately hot chili pepper used to flavor dishes.'
@@ -285,6 +296,7 @@ rosemary = Veggy.new(
   planting_start_date: "2020-04-22",
   planting_end_date: "2020-06-21",
   growing_time: 240,
+  price_cents: 560,
   thining_delay: 0,
   watering_period: 5,
   description: 'Salvia rosmarinus, commonly known as rosemary, is a woody, perennial herb with fragrant, evergreen, needle-like leaves and white, pink, purple, or blue flowers, native to the Mediterranean region.'
@@ -303,6 +315,7 @@ basil = Veggy.new(
   planting_start_date: "2020-04-22",
   planting_end_date: "2020-06-21",
   growing_time: 200,
+  price_cents: 280,
   thining_delay: 0,
   watering_period: 2,
   description: 'Genovese basil is a cultivar of Ocimum basilicum. It is one of the most popular basils for culinary use, particularly for its use in pesto, the traditional Genoese sauce.'
@@ -336,59 +349,45 @@ basil.save!
 #   first_name: "Jean"
 #   )
 
-puts "Generating 1 user: Brigitte..."
+puts "Generating 1 user: Paul..."
 
-brigitte = User.create!(
-  email: 'brigitte@yup.com',
+paul = User.create!(
+  email: 'paul@gmail.com',
   password: '123456',
-  first_name: "Brigitte"
+  first_name: "Paul"
   )
 
-# puts "generated Brigitte"
 puts "Generating 3 planters"
 
-brigitte_pot = Planter.create!(
-  name: 'My little pot',
-  user: brigitte,
-  size: "Pot"
+
+paul_pot = Planter.create!(
+  name: 'Bedroom Pot',
+  user: paul,
+  size: "Pot",
+  sun: "Full shadow",
+  color: "purple"
   )
 
-brigitte_jardinere1 = Planter.create!(
-  name: 'My small planter',
-  user: brigitte,
-  size: "Planter-small"
+paul_jardinere1 = Planter.create!(
+  name: 'Kitchen Planter',
+  user: paul,
+  size: "Small planter",
+  sun: "Full sun",
+  color: "green"
   )
-brigitte_jardinere2 = Planter.create!(
-  name: 'My large planter',
-  user: brigitte,
-  size: "Planter-large"
+paul_jardinere2 = Planter.create!(
+  name: 'Living Room Planter',
+  user: paul,
+  size: "Large planter",
+  sun: "Part sun",
+  color: "orange"
   )
-# puts "generated three planters"
-
-# jean_jardinere = Planter.new(
-#   name: 'autrejard'
-#   )
-
-# jean_jardinere.user_id = jean
-# jean_jardinere.save!
-
-# jean_jardinere2 = Planter.new(
-#   name: 'autrejard2'
-#   )
-
-# jean_jardinere2.user_id = jean
-# jean_jardinere2.save!
-
-# planted_tomato = PlantedVeggy.new
-# planted_tomato.veggy_id = tomato
-# planted_tomato.planter_id = brigitte_jardinere
-# planted_tomato.save!
 
 puts "Generating planted veggies..."
 
 planted_carrot = PlantedVeggy.create!(
-  veggy: carrot,
-  planter: brigitte_pot
+  veggy: cherry_tomato,
+  planter: paul_pot
   )
 
 # planted_salad = PlantedVeggy.new

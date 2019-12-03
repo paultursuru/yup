@@ -8,6 +8,7 @@ import { initiateDashboardTab } from '../components/dashboard_tabs'
 
 
 window.reloadToDo = reloadToDo;
+window.$ = $;
 calendar();
 initiateDashboardTab();
 // hidePlantButton();

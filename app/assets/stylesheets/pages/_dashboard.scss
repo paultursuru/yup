@@ -5,14 +5,6 @@
   }
 }
 
-// .potager {
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-
-
-
 .fc-toolbar.fc-header-toolbar {
     margin: 0 auto;
   }
@@ -22,12 +14,12 @@
   text-align: center;
   justify-content: space-around;
   align-items: center;
-  background: $yup-yellow;
+  background: $yup-light-green;
   margin: 20px auto;
   border-radius: 50px;
   width: 80%;
+  color: white;
 }
-
 
 #potager {
   border-radius: 50px 0 0 50px;
@@ -43,8 +35,9 @@
   width: 33.333%;
   transition: all 0.7s ease;
   &.active {
-    background: $yup_light_green;
-    color: white;
+    background: $yup_yellow;
+    color: black;
+    font-weight: bold;
   }
 }
 

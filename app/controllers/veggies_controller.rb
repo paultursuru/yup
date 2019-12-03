@@ -2,7 +2,7 @@ class VeggiesController < ApplicationController
   before_action :set_veggy, only: %I[show]
 
   def index
-    @veggies = Veggy.all
+      @veggies = Veggy.all
   end
 
   def show
