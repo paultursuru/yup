@@ -88,6 +88,8 @@ onion.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jp
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 onion.save!
 
+puts "25%..."
+
 garlic = Veggy.new(
   name: "Garlic",
   sun_need: "Full sun",
@@ -163,6 +165,8 @@ file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-24854_1200x1200-to
 tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 tomato.save!
+
+puts "50%..."
 
 cherry_tomato = Veggy.new(
   name: "Cherry Tomato",
@@ -240,6 +244,8 @@ file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-24345_1200x1200-co
 cucumber.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 cucumber.save!
+
+puts "75%..."
 
 squash = Veggy.new(
   name: "Squash",
@@ -356,7 +362,7 @@ paul_pot = Planter.create!(
   name: 'Bedroom Pot',
   user: paul,
   size: "Pot",
-  sun: "Full shadow"
+  sun: "Full shadow",
   color: "purple"
   )
 
@@ -364,14 +370,14 @@ paul_jardinere1 = Planter.create!(
   name: 'Kitchen Planter',
   user: paul,
   size: "Small planter",
-  sun: "Full sun"
+  sun: "Full sun",
   color: "green"
   )
 paul_jardinere2 = Planter.create!(
   name: 'Living Room Planter',
   user: paul,
   size: "Large planter",
-  sun: "Part sun"
+  sun: "Part sun",
   color: "orange"
   )
 
