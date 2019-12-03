@@ -15,6 +15,15 @@
   margin: 0 auto;
 }
 
+.fc {
+  margin-top: 35px;
+  font-size: 1em;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
 .todo-layout {
   border-radius: 5px;
   padding: 12px;
@@ -44,6 +53,13 @@
 
 .fas.fa-check.light {
   color: #C2C2C2;
+}
+
+.todo-layout {
+  border-radius: 5px;
+  padding: 0px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #todolist .fc-scroller {
