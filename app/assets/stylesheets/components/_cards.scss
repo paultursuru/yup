@@ -93,11 +93,20 @@ grid-gap: 16px;
 //   font-size: 90px;
 //   color: white;
 // }
+.card-calendar {
+margin-top: 30px;
+background-color: #F1F1F1;
+padding: 30px 15px;
+border-radius: 10px;
+}
 
 .cards-library {
 display: flex;
 flex-wrap: wrap;
 margin-top: 30px;
+background-color: #F1F1F1;
+padding: 30px 15px;
+border-radius: 10px;
 }
 
 .card-library > img {
@@ -158,6 +167,8 @@ margin-top: 30px;
 }
 
 
-
+.veggy-image-shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
 

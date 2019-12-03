@@ -2,13 +2,14 @@
   <%#= f.input :query, class: "form-control", placeholder:"Find a veggy" %>
   <%#= f.submit "Search", class: "btn btn-primary" %>
 <%# end %>
-
-<%= form_tag dashboard_path, method: :get, remote: true do %>
+<div class="text-center">
+<%= form_tag dashboard_path, method: :get, remote: true, class: 'search-bar' do %>
   <%= text_field_tag :query,
   params[:query],
-  placeholder: 'Search veggies' %>
-  <%= submit_tag 'Search' %>
+  placeholder: 'Search by veggy or season', class: 'text' %>
+  <%= submit_tag 'Search', class: 'd-none' %>
 <% end %>
+</div>
 
 <div class="cards-library">
   <%= render 'veggies_result', veggies: @veggies %>
