@@ -16,6 +16,10 @@
   left: 85%;
 }
 
+.planted-veggies {
+  // display: flex;
+  // justify-content: between;
+}
 
 .card-planter {
   border-radius: 8px;
@@ -92,7 +96,7 @@ grid-gap: 16px;
 .cards-library {
 display: flex;
 flex-wrap: wrap;
-margin-top: 20px;
+margin-top: 30px;
 }
 
 .card-library > img {

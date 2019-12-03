@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def calendar
   end
 
+  def confirmation
+  end
+
   def dashboard
     @veggies = Veggy.all
     @planters = current_user.planters
