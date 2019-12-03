@@ -1,0 +1,8 @@
+function deletePlantedVeggy() {
+  const plantedVeggy = document.querySelector("#planted-veggy-card-id-<%=@planted_veggy.id%>");
+  console.log(plantedVeggy.innerHTML);
+  plantedVeggy.innerHTML = "<%= j render 'pages/card_mud', planter: @planter %>"
+
+}
+
+deletePlantedVeggy();
