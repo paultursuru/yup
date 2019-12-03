@@ -15,11 +15,10 @@
             <% end %>
 
           </div>
-            <h3 class="mb-3">My Veggies:</h3>
             <div class="cards">
             <% if planter.planted_veggies.present? %>
             <% planter.planted_veggies.each do |planted_veggy| %>
-            <div class="planted-veggy-card">
+            <div class="planted-veggy-card" id="planted-veggy-card-id-<%=planted_veggy.id%>">
               <div class="card-image">
                 <%= cl_image_tag planted_veggy.veggy.photo.key, class: "w-100" %>
                 <p id="delete-planted-veggy"><%= link_to planted_veggy_path(planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" }, remote: true do %>
@@ -45,13 +44,13 @@
             <% end %>
             <% if planter.size == "Pot" && planter.planted_veggies.empty? %>
               <div class="planted-veggy-card ">
-                <%= render 'card_mud', planter: planter %>
+                <%= render 'pages/card_mud', planter: planter %>
               </div>
 
               <% elsif planter.size == "Small planter" && planter.planted_veggies.count < 3 %>
               <% (3 - planter.planted_veggies.count).times do %>
               <div class="planted-veggy-card">
-                <%= render 'card_mud', planter: planter %>
+                <%= render 'pages/card_mud', planter: planter %>
                   <!-- </div> -->
               </div>
               <% end  %>
@@ -59,7 +58,7 @@
               <% elsif planter.size == "Large planter" && planter.planted_veggies.count < 5 %>
               <% (5 - planter.planted_veggies.count).times do %>
               <div class="planted-veggy-card">
-                <%= render 'card_mud', planter: planter %>
+                <%= render 'pages/card_mud', planter: planter %>
                   <!-- </div> -->
               </div>
               <% end  %>
