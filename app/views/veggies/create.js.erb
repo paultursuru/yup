@@ -1,0 +1,9 @@
+const veggiesResult = document.querySelector('.cards-library')
+
+function reloadVeggies(html) {
+  console.log('coucou')
+  veggiesResult.innerHTML = html
+  console.log('alors')
+}
+
+reloadVeggies("<%= j render 'veggies_result', veggies: @veggies %>");

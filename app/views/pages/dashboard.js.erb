@@ -1,0 +1,9 @@
+// const veggiesResult = document.querySelector('.cards-library')
+
+// function reloadVeggies(html) {
+//   veggiesResult.innerHTML = html
+// }
+
+// reloadVeggies("<%= j render 'veggies_result', veggies: @veggies %>");
+
+document.querySelector('.cards-library').innerHTML = "<%= j render 'veggies_result', veggies: @veggies %>";
