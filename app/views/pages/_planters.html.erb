@@ -15,7 +15,10 @@
   </div>
   <div id="planter-list">
     <% if @planters.size == 0 %>
-      <%= cl_image_tag("map_to_garden_xkcfly", id:"map_to_garden", class: "w-100") %>
+      <%#= cl_image_tag("map_to_garden_xkcfly", id:"map_to_garden", class: "w-100") %>
+      <span id= "add-planter-image">
+        <%= image_tag 'Planter-empty-image.png', class: "image-new-planter ml-5 pl-5" %>
+      </span>
     <% else %>
       <% @planters.each do |planter| %>
         <%= render 'planter_list', planter: planter %>
