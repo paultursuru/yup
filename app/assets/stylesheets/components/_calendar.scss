@@ -1,3 +1,18 @@
+
+
+  .tabs a {
+    text-decoration: none;
+  }
+
+.calstyle {
+  color: white;
+   &:hover {
+    color: white;
+  }
+}
+
+
+
 .fc-list-item {
 
   &:hover {

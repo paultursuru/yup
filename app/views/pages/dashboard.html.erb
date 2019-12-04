@@ -5,7 +5,8 @@
       My potager
     </div>
     <div id='calentab' class="tab">
-      Calendar
+
+    <%= link_to 'Calendar', calendar_path, class: "calstyle" %>
     </div>
     <div id='library' class="tab">
       Veggie library
@@ -24,9 +25,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id='calentab-content' class="tab-content card-calendar d-none calendar">
-        <%= render 'calendar' %>
     </div>
     <div id='library-content' class="tab-content d-none library">
       <%= render 'library' %>
