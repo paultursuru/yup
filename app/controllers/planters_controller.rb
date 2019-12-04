@@ -18,7 +18,7 @@ class PlantersController < ApplicationController
     @veggies = Veggy.all
     @planters = current_user.planters
     @planter.user = current_user
-    @planter.color = ['red', 'blue', 'green', 'purple', 'orange'].sample
+    # @planter.color = ['red', 'blue', 'green', 'purple', 'orange'].sample
 
     # @planter.color = ["red", "green"].sample
 

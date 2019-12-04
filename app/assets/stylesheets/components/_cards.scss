@@ -25,9 +25,11 @@
   // display: flex;
   // justify-content: between;
 }
-
+.todo-card{
+  margin-top: 26px;
+}
 .card-planter {
-  border-radius: 8px;
+  border-radius: 5px;
   margin: 20px;
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
