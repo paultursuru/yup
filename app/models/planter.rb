@@ -28,4 +28,5 @@ class Planter < ApplicationRecord
   validates :name, presence: true
   validates :sun, presence: true
   validates :size, presence: true
+  validates :color, presence: true
 end

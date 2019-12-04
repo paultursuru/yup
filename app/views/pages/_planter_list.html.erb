@@ -1,7 +1,10 @@
-      <div class="card-planter" style="border-style: solid; border-color: <%= planter.color %>; border-width: 2px;">
+      <div class="card-planter">
         <div class="card-body-planter">
           <div class="d-flex justify-content-between">
-            <h1><%= planter.name %></h1>
+            <div class="d-flex">
+              <h1><i class="fas fa-seedling mr-3" style="color: <%= planter.color %>;"></i></h1>
+              <h1><%= planter.name %></h1>
+            </div>
             <%= link_to "Delete", planter_path(planter), method: :delete, data: { confirm: "Delete #{planter.name}?" } %>
             </h2>
           </div>

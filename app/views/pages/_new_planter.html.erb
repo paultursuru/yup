@@ -7,12 +7,11 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body text-center">
     <%= f.input :name, placeholder: 'Kitchen Planter' %>
-    <%= f.input :sun, collection: ['Full sun', 'Part sun', 'Full shade'] %>
-    <%#= f.input :size, collection: ['Pot', 'Planter-small', 'Planter-large' ] %>
-    <%= f.input :size, collection: ['Pot', 'Small planter', 'Large planter' ] %>
-    <%#= f.input :color, as: :radio_buttons, collection: ['khaki', 'lavenderblush', 'palegreen', 'paleturquoise','lightgreen', 'mediumaquamarine'] %>
+    <%= f.input :sun, as: :radio_buttons, collection: ['Full sun', 'Part sun', 'Full shade'], wrapper: :vertical_collection_inline %>
+    <%= f.input :size, as: :radio_buttons, collection: ['Pot', 'Small planter', 'Large planter' ], wrapper: :vertical_collection_inline %>
+    <%= f.input :color, as: :radio_buttons, collection: ['red', 'blue', 'green', 'purple', 'orange'], wrapper: :vertical_collection_inline %>
   </div>
   <div class="modal-footer">
     <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
