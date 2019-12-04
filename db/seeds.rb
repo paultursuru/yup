@@ -469,6 +469,8 @@ puts "Generating veggy-todos..."
 
 watering = ToDoTemplate.new(name: 'Water  💦', description: "your radish")
 watering.save!
+watering_garlic = ToDoTemplate.new(name: 'Water  💦', description: "your garlic")
+watering_garlic.save!
 watering_tomato = ToDoTemplate.new(name: 'Water  💦', description: "your tomatoes")
 watering_tomato.save!
 say_hi = ToDoTemplate.new(name: 'Say hi 👋', description: "to your favorite garlic")
@@ -485,22 +487,22 @@ eat_event = Date.today
 eat_radish = ToDo.create(planted_veggy: planted_radish, to_do_template: food_time, due_at: eat_event.strftime("%Y-%m-%d"))
 eat_radish.save
 
-water_garlic0 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today - 3).strftime("%Y-%m-%d"))
-water_garlic0.save
+water_radish0 = ToDo.create(planted_veggy: planted_radish, to_do_template: watering, due_at: (Date.today - 3).strftime("%Y-%m-%d"))
+water_radish0.save
 
-water_garlic1 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
+water_garlic1 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
 water_garlic1.save
 
-water_garlic2 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 5).strftime("%Y-%m-%d"))
+water_garlic2 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 5).strftime("%Y-%m-%d"))
 water_garlic2.save
 
-water_garlic3 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 9).strftime("%Y-%m-%d"))
+water_garlic3 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 9).strftime("%Y-%m-%d"))
 water_garlic3.save
 
-water_garlic4 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
+water_garlic4 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
 water_garlic4.save
 
-water_garlic5 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 17).strftime("%Y-%m-%d"))
+water_garlic5 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 17).strftime("%Y-%m-%d"))
 water_garlic5.save
 
 
