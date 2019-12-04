@@ -14,7 +14,9 @@
       <div data-veggy-id="veggy-<%= planted_veggy.veggy.id %>" >
         <%= form_tag order_items_path do %>
           <%= hidden_field_tag 'veggy_id', planted_veggy.veggy.id %>
-          <%= submit_tag "Add", class: 'btn btn-info btn-block' %>
+          <%= button_tag(type: "submit", class: "btn btn-info btn-block") do %>
+            <i class="fa fa-shopping-cart"></i>
+          <% end %>
         <% end %>
       </div>
       <%= link_to "Plant", plant_planted_veggy_path(planted_veggy), method: :post, class: 'btn btn-secondary btn-block', remote: true %>
