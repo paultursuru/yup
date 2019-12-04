@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def calendar
+
   end
 
   def confirmation

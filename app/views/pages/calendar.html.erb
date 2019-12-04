@@ -1,0 +1,21 @@
+
+<div class="container dashboard">
+  <div class="tabs">
+    <div id='potager' class="tab ">
+       <%= link_to 'My potager', dashboard_path %>
+    </div>
+    <div id='calentab' class="tab active">
+      Calendar
+    </div>
+    <div id='library' class="tab">
+        <%= link_to 'My Veggie library', dashboard_path %>
+    </div>
+  </div>
+
+  <div class="tabs-contents">
+    <div id='calentab-content' class="tab-content calendar">
+        <div id='calendar'></div>
+    </div>
+  </div>
+</div>
+
