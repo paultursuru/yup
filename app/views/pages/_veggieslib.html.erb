@@ -1,7 +1,5 @@
-<% if @veggies.size == 0 %>
-  <h4>Sorry, there is no result</h4>
-<% else %>
-  <% veggies.each do |veggy| %>
+
+  <% @veggies.each do |veggy| %>
     <div class="card-library col-12 col-md-6 col-lg-3" data-toggle="modal" data-target="#veggy_<%= veggy.id %>">
       <div class="modal fade" id="veggy_<%= veggy.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -57,7 +55,7 @@
       <p class="veg-name" ><%= veggy.name %></p>
     </div>
   <% end %>
-<% end %>
+
 
 
 

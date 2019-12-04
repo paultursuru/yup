@@ -9,5 +9,61 @@
 </div>
 
 <div class="cards-library">
-  <%= render 'veggies_result', veggies: @veggies %>
+  <% @veggies.each do |veggy| %>
+    <div class="card-library col-12 col-md-6 col-lg-3" data-toggle="modal" data-target="#veggy_<%= veggy.id %>">
+      <div class="modal fade" id="veggy_<%= veggy.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title veg-name" id="exampleModalLabel"><%= veggy.name %></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body d-flex">
+              <div class="modal-body-image mr-3">
+                <%= cl_image_tag veggy.photo.key %>
+                <div class="mt-3">
+                  <p>Price: <b><%= veggy.price %> €</b></p>
+                </div>
+              </div>
+              <div>
+                <p><%= veggy.description %></p>
+                <p>Sun need: <b><%= veggy.sun_need.capitalize %></b></p>
+                <% if veggy.seed_level == 1 %>
+                  <p>Difficulty: <b>Easy</b></p>
+                <% elsif veggy.seed_level == 2 %>
+                  <p>Difficulty: <b>Average</b></p>
+                <% else %>
+                  <p>Difficulty: <b>Demanding</b></p>
+                <% end %>
+                <p>Planting season: <b><%= veggy.planting_start_date.strftime('%b') %> - <%= veggy.planting_end_date.strftime('%b') %></b></p>
+                <p>Grows in: <b><%= veggy.growing_time / 7 %> weeks</b></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add to a planter
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <% @planters.each do |planter| %>
+                    <% if planter.size == "Small planter" && planter.planted_veggies.size < 3 || planter.size == "Large planter" && planter.planted_veggies.size < 5 || planter.size == "Pot" && planter.planted_veggies.empty? %>
+                      <%= link_to planter.name, planter_planted_veggies_path(planter, planted_veggy: { veggy_id: veggy.id }), method: :post, class: 'dropdown-item' %>
+                    <% else %>
+                      <button class="dropdown-item disabled"><%= planter.name %> (full)</button>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= cl_image_tag veggy.photo.key, height: 200, crop: :fill, class: "veggy-image-shadow" %>
+      <p class="veg-name" ><%= veggy.name %></p>
+    </div>
+  <% end %>
+  <% render 'veggies_result', veggies: @veggies %>
 </div>
