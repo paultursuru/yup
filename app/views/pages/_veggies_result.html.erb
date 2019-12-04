@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <%= cl_image_tag veggy.photo.key, class: "veggy-image-shadow"%>
+      <%= cl_image_tag veggy.photo.key, height: 200, crop: :fill, class: "veggy-image-shadow" %>
       <p class="veg-name" ><%= veggy.name %></p>
     </div>
   <% end %>

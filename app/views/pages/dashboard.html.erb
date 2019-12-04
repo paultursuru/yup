@@ -1,20 +1,20 @@
 
 <div class="container dashboard">
   <div class="tabs">
-    <div id='potager' class="tab active">
+    <div id='potager' class="tab <%= "active" if ["potager", nil].include?(params[:active_tab]) %>">
       My potager
     </div>
     <div id='calentab' class="tab">
 
     <%= link_to 'Calendar', calendar_path, class: "calstyle" %>
     </div>
-    <div id='library' class="tab">
+    <div id='library' class="tab <%= "active" if params[:active_tab] == "library" %>">
       Veggie library
     </div>
   </div>
 
   <div class="tabs-contents">
-    <div id='potager-content' class="tab-content">
+    <div id='potager-content' class="tab-content <%= "d-none" unless ["potager", nil].include?(params[:active_tab]) %>">
       <div class="row d-flex">
         <div class="col-sm-12 col-md-8">
           <%= render 'planters' %>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div id='library-content' class="tab-content d-none library">
+    <div id='library-content' class="tab-content <%= "d-none" unless params[:active_tab] == "library" %> library">
       <%= render 'library' %>
     </div>
   </div>

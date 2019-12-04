@@ -1,9 +1,6 @@
-<%#= simple_form_for :search_by_veggy_and_season, url: dashboard_path, method: :get, remote: true do |f| %>
-  <%#= f.input :query, class: "form-control", placeholder:"Find a veggy" %>
-  <%#= f.submit "Search", class: "btn btn-primary" %>
-<%# end %>
+
 <div class="text-center">
-<%= form_tag dashboard_path, method: :get, remote: true, class: 'search-bar  ' do %>
+<%= form_tag dashboard_path, method: :get, remote: true, class: 'search-bar' do %>
   <%= text_field_tag :query,
   params[:query],
   placeholder: 'Search by veggy or season', class: 'text pt-1 pb-1 pg-form' %>
