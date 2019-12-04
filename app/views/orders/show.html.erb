@@ -3,20 +3,30 @@
     <div class="card-body">
       <h1>Cart</h1>
       <% @order.order_items.each do |item| %>
-        <div class="container mt-4 d-flex justify-content-between align-items-center">
+      <div id="order-item-id-<%=item.id%>">
+        <div class="container mt-4 d-flex justify-content-between align-items-center" >
           <div>
             <%= cl_image_tag item.veggy.photo.key, class: "checkout-img" %>
             <%= item.veggy.name %>
           </div>
-          <div><%= item.veggy.price %> €</div>
+          <div>
+            <span class="order-item-price"> <%= item.veggy.price %> €</span>
+
+            <%= link_to order_item_path(item), method: :delete, remote: true do %>
+              <i class="far fa-trash-alt pl-3"></i>
+            <% end  %>
+          </div>
         </div>
         <hr>
+      </div>
       <% end %>
-      <div class="text-right"><b>Total: <%= @order.amount_cents %> €</b></div>
+      <div class="text-right pr-5"><b id="total_price_euros">Total: <%= @order.amount_cents %> €</b></div>
+      <span id = "purchase-button">
       <%= simple_form_for @order do |f| %>
         <%= f.input :amount_cents_cents, as: :hidden %>
         <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
       <% end %>
+      </span>
     </div>
   </div>
 </div>

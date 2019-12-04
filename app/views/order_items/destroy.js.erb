@@ -1,0 +1,20 @@
+function deleteOrderItem() {
+  const orderItem = document.querySelector("#order-item-id-<%=@order_item.id%>");
+  orderItem.innerHTML = "";
+}
+
+function calculateTotalPrice() {
+  // const orderItemPrices = document.querySelectorAll(".order-item-price");
+  // let sum = 0;
+  // orderItemPrices.forEach((orderItemPrice) => {
+  //   sum += parseFloat(orderItemPrice.textContent).toFixed(2);
+  // });
+  const totalOrderPrice = document.querySelector("#total_price_euros");
+  totalOrderPrice.innerHTML = `Total: <%= @order.amount_cents %> €`;
+  const hiddenInput = document.querySelector("#order_amount_cents_cents");
+  hiddenInput.value = <%= @order.amount_cents_cents %>
+}
+
+
+deleteOrderItem();
+calculateTotalPrice();
