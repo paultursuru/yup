@@ -8,10 +8,14 @@
     </button>
   </div>
   <div class="modal-body text-center">
+    <h4>Name of your planter</h4>
     <%= f.input :name, placeholder: 'Kitchen Planter' %>
+    <h5>Exposure</h5>
     <%= f.input :sun, as: :radio_buttons, collection: ['Full sun', 'Part sun', 'Full shade'], wrapper: :vertical_collection_inline %>
+    <h5>Planter Size</h5>
     <%= f.input :size, as: :radio_buttons, collection: ['Pot', 'Small planter', 'Large planter' ], wrapper: :vertical_collection_inline %>
-    <%= f.input :color, as: :radio_buttons, collection: ['red', 'blue', 'green', 'purple', 'orange'], wrapper: :vertical_collection_inline %>
+    <h5>Notifications Colour</h5>
+    <%= f.input :color, as: :radio_buttons, collection: ['#ff6978', '#b1ede8', '#ffe1a8', '#dbb1bc'], wrapper: :vertical_collection_inline %>
   </div>
   <div class="modal-footer">
     <%= f.submit 'Submit', class: 'btn btn-primary ml-2' %>
