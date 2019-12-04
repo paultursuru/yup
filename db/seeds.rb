@@ -381,7 +381,7 @@ paul_pot = Planter.create!(
   user: paul,
   size: "Pot",
   sun: "Full shadow",
-  color: "purple"
+  color: "#ff6978"
   )
 
 paul_jardinere1 = Planter.create!(
@@ -389,22 +389,49 @@ paul_jardinere1 = Planter.create!(
   user: paul,
   size: "Small planter",
   sun: "Full sun",
-  color: "green"
+  color: "#b1ede8"
   )
 paul_jardinere2 = Planter.create!(
   name: 'Living Room Planter',
   user: paul,
   size: "Large planter",
   sun: "Part sun",
-  color: "orange"
+  color: "#ffe1a8"
   )
 
 puts "Generating planted veggies..."
 
 planted_carrot = PlantedVeggy.create!(
-  veggy: cherry_tomato,
+  veggy: carrot,
+  planter: paul_jardinere1
+  )
+
+planted_radish = PlantedVeggy.create!(
+  veggy: radish,
+  planter: paul_jardinere1
+  )
+
+planted_garlic = PlantedVeggy.create!(
+  veggy: garlic,
+  planter: paul_jardinere1
+  )
+
+planted_tomato = PlantedVeggy.create!(
+  veggy: tomato,
   planter: paul_pot
   )
+
+planted_radish.planting_day = Date.today - 35
+planted_radish.status = true
+planted_radish.save
+
+planted_garlic.planting_day = Date.today - 35
+planted_garlic.status = true
+planted_garlic.save
+
+planted_tomato.planting_day = Date.today - 35
+planted_tomato.status = true
+planted_tomato.save
 
 # planted_salad = PlantedVeggy.new
 # planted_salad.veggy_id = salad
@@ -439,6 +466,79 @@ planted_carrot = PlantedVeggy.create!(
 # salad_to_do.save!
 
 puts "Generating veggy-todos..."
+
+watering = ToDoTemplate.new(name: 'Water  💦', description: "your radish")
+watering.save!
+watering_tomato = ToDoTemplate.new(name: 'Water  💦', description: "your tomatoes")
+watering_tomato.save!
+say_hi = ToDoTemplate.new(name: 'Say hi 👋', description: "to your favorite garlic")
+say_hi.save!
+give_love = ToDoTemplate.new(name: 'Give love ❤️', description: "to your garlic")
+give_love.save!
+food_time = ToDoTemplate.new(name: 'Harvest 🍴', description: "your radish!")
+food_time.save!
+thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your tomatoes")
+thining.save!
+
+
+eat_event = Date.today
+eat_radish = ToDo.create(planted_veggy: planted_radish, to_do_template: food_time, due_at: eat_event.strftime("%Y-%m-%d"))
+eat_radish.save
+
+water_garlic0 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today - 3).strftime("%Y-%m-%d"))
+water_garlic0.save
+
+water_garlic1 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
+water_garlic1.save
+
+water_garlic2 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 5).strftime("%Y-%m-%d"))
+water_garlic2.save
+
+water_garlic3 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 9).strftime("%Y-%m-%d"))
+water_garlic3.save
+
+water_garlic4 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
+water_garlic4.save
+
+water_garlic5 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering, due_at: (Date.today + 17).strftime("%Y-%m-%d"))
+water_garlic5.save
+
+
+water_tomato0 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today - 3).strftime("%Y-%m-%d"))
+water_tomato0.save
+
+water_tomato1 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
+water_tomato1.save
+
+water_tomato2 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 4).strftime("%Y-%m-%d"))
+water_tomato2.save
+
+water_tomato3 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 7).strftime("%Y-%m-%d"))
+water_tomato3.save
+
+water_tomato4 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 10).strftime("%Y-%m-%d"))
+water_tomato4.save
+
+water_tomato5 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
+water_tomato5.save
+
+water_tomato6 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 16).strftime("%Y-%m-%d"))
+water_tomato6.save
+
+water_tomato7 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 19).strftime("%Y-%m-%d"))
+water_tomato7.save
+
+water_tomato8 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 22).strftime("%Y-%m-%d"))
+water_tomato8.save
+
+water_tomato9 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 25).strftime("%Y-%m-%d"))
+water_tomato9.save
+
+water_tomato10 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 28).strftime("%Y-%m-%d"))
+water_tomato10.save
+
+thin_tomato = ToDo.create(planted_veggy: planted_tomato, to_do_template: thining, due_at: (Date.today + 2 ).strftime("%Y-%m-%d"))
+
 
 # VeggyToDo.create!(
 #   veggy: carrot,
