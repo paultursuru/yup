@@ -12,8 +12,5 @@ window.reloadToDo = reloadToDo;
 window.$ = $;
 calendar();
 initiateDashboardTab();
-const form = document.querySelector('.pg-form')
-if form {
 veggiesSearch();
-}
 // hidePlantButton();
