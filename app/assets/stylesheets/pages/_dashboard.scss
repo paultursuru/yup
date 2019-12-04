@@ -38,7 +38,10 @@
 }
 
 .tab {
-  padding: 10px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0px;
   width: 33.333%;
   transition: all 0.7s ease;
@@ -46,6 +49,14 @@
     background: $yup_yellow;
     color: black;
     font-weight: bold;
+  }
+  > a {
+    display: block;
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
