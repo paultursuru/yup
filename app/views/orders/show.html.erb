@@ -1,7 +1,8 @@
-<div class="container mt-3 d-flex justify-content-center">
+<div class="container order-show-container d-flex justify-content-center">
   <div class="card col-10 col-lg-6">
     <div class="card-body">
-      <h1>Cart</h1>
+      <h1 class="text-center">My shopping cart</h1>
+      <hr class="mb-3">
       <% @order.order_items.each do |item| %>
       <div id="order-item-id-<%=item.id%>">
         <div class="container mt-4 d-flex justify-content-between align-items-center" >
