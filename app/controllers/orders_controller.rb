@@ -19,8 +19,11 @@ class OrdersController < ApplicationController
         currency: 'eur',
         quantity: 1
       }],
-      success_url: confirmation_url,
-      cancel_url: order_url(order)
+      # success_url: confirmation_url,
+      success_url: "http://www.yoururbanpotager.com/confirmation",
+      cancel_url: "http://www.yoururbanpotager.com/dashboard"
+      # success_url: Rails.env == 'development' ? dashboard_path : "https://www.yoururbanpotager.com/confirmation",
+      # cancel_url: dashboard_path
     )
 
     order.update(checkout_session_id: session.id)
