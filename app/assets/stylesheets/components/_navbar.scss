@@ -14,6 +14,7 @@
   top: -8px;
   text-shadow: 2px 3px 5px #004445;
   transform: rotate(-5deg);
+  transition: all 0.2s ease-out;
 }
 
 .fa-shopping-cart {
@@ -21,7 +22,14 @@
   font-size: 20px;
 }
 
-.yup-logo {}
+.navbar-brand h1 {
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05) rotate(-5deg);
+    transition: all 0.2s ease-in;
+    text-shadow: 5px 6px 10px #004445;
+  }
+}
 
 .dropdown-toggle::after {
   display: inline-block;
