@@ -29,6 +29,12 @@ p {
   font-size: 12px;
 }
 
+#pages_home {
+  .container-yup {
+    margin-top: -60px;
+  }
+}
+
 .container-yup {
   min-height: calc(100vh - 126px);
 }
@@ -36,5 +42,5 @@ p {
 body {
   // background: linear-gradient(180deg, #2c7873c9, white);
   // background-color: blue;
-  background: #589490;
+  background: linear-gradient(to top, #A6C6C4, 1%, #589490);
 }
