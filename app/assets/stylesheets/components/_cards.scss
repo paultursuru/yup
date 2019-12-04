@@ -1,5 +1,9 @@
 .card-image {
   position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
 }
 
 #planter-title {
@@ -48,11 +52,24 @@
 }
 
 .cards {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-auto-rows: auto;
-grid-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 16px;
 }
+
+@media(max-width: 1200px) {
+  .cards {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 #delete-planted-veggy a {
   text-decoration: none;
@@ -82,7 +99,8 @@ grid-gap: 16px;
 
 #add-veggy-to-plant {
   position: absolute;
-  top: 35%; left: 35%;
+  top: 35%;
+  left: 38%;
   font-size: 4rem;
   font-weight: lighter;
   color: white;
@@ -90,12 +108,10 @@ grid-gap: 16px;
 
 
 
-// #add-veggy-to-plant:hover {
-//   position: absolute;
-//   top: 55px; left: 65px;
-//   font-size: 90px;
-//   color: white;
-// }
+#add-veggy-to-plant:hover {
+  cursor: pointer;
+
+}
 .card-calendar {
 margin-top: 30px;
 background-color: #F1F1F1;
