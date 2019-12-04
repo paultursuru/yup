@@ -134,6 +134,10 @@ border-radius: 10px;
   object-fit: cover;
 }
 
+.card-library:hover{
+  cursor: pointer;
+}
+
 .card-library > img {
   height: 200px;
   width: 100%;
