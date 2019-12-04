@@ -38,7 +38,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <% @planters.each do |planter| %>
-                    <% if planter.size == "Planter-small" && planter.planted_veggies.size < 3 || planter.size == "Planter-large" && planter.planted_veggies.size < 5 || planter.size == "Pot" && planter.planted_veggies.empty? %>
+                    <% if planter.size == "Small planter" && planter.planted_veggies.size < 3 || planter.size == "Large planter" && planter.planted_veggies.size < 5 || planter.size == "Pot" && planter.planted_veggies.empty? %>
                       <%= link_to planter.name, planter_planted_veggies_path(planter, planted_veggy: { veggy_id: veggy.id }), method: :post, class: 'dropdown-item' %>
                     <% else %>
                       <button class="dropdown-item disabled"><%= planter.name %> (full)</button>

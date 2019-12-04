@@ -3,11 +3,11 @@
   <%#= f.submit "Search", class: "btn btn-primary" %>
 <%# end %>
 <div class="text-center">
-<%= form_tag dashboard_path, method: :get, remote: true, class: 'search-bar' do %>
+<%= form_tag dashboard_path, method: :get, remote: true, class: 'search-bar  ' do %>
   <%= text_field_tag :query,
   params[:query],
-  placeholder: 'Search by veggy or season', class: 'text' %>
-  <%= submit_tag 'Search', class: 'd-none' %>
+  placeholder: 'Search by veggy or season', class: 'text pt-1 pb-1 pg-form' %>
+  <%= submit_tag 'Search', class: 'd-none pg-btn' %>
 <% end %>
 </div>
 
