@@ -2,7 +2,7 @@
   justify-content: space-between;
   background: none;
   position: relative;
-  top: 0;
+  top: 5px;
   width: 100vw;
 }
 
@@ -15,7 +15,7 @@
   color: white;
   left: 15px;
   top: -8px;
-  text-shadow: 2px 3px 5px #004445;
+  text-shadow: 1px 2px 8px #000000A1;
   transform: rotate(-5deg);
   transition: all 0.2s ease-out;
 }
@@ -47,7 +47,7 @@
     cursor: pointer;
     transform: scale(1.05) rotate(-5deg);
     transition: all 0.2s ease-in;
-    text-shadow: 5px 6px 10px #004445;
+    text-shadow: 5px 6px 10px black;
   }
 }
 
