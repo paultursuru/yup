@@ -28,11 +28,12 @@
 .howitworks {
   padding: 20px 0;
   h1 {
-    color: $yup-green;
+    color: white;
     font-size: 40px;
   }
   p {
     font-size: 18px;
+    color: white;
    }
   }
 
@@ -51,5 +52,7 @@
 .home-card img {
   height: 150px;
   width: auto;
-  color: $yup-green;
+  color: #004445;
+  opacity: 0.8;
+  filter: invert(1);
 }
