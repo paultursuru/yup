@@ -1,6 +1,5 @@
 <div class="planted-veggy-card" id="planted-veggy-card-id-<%=planted_veggy.id%>">
-  <div class="card-image">
-    <%= cl_image_tag planted_veggy.veggy.photo.key, width: 200, crop: :fill %>
+  <div class="card-image" style="background-image: url('<%= cl_image_path planted_veggy.veggy.photo.key, crop: :fill %>');">
     <p id="delete-planted-veggy"><%= link_to planted_veggy_path(planted_veggy), method: :delete, data: { confirm: "Delete #{planted_veggy.veggy.name}?" }, remote: true do %>
       <i class="far fa-trash-alt"></i>
     <% end  %>
