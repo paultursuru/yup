@@ -12,6 +12,9 @@
     color: white;
     font-weight: bold;
     font-size: 50px;
+    @media (max-width: 768px) {
+    margin-top: 40px;
+    }
   }
   p {
     color: white;
@@ -31,6 +34,9 @@
   h1 {
     color: white;
     font-size: 40px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
   p {
     font-size: 18px;
