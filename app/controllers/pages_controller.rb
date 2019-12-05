@@ -19,7 +19,7 @@ class PagesController < ApplicationController
       @veggies = Veggy.all
     end
 
-    @planters = current_user.planters.includes(planted_veggies: :veggy)
+    @planters = current_user.planters.includes(planted_veggies: :veggy).order("created_at DESC")
     @planter = Planter.new
     @new_planted_veggy = PlantedVeggy.new
 

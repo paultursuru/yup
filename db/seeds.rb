@@ -337,20 +337,20 @@ paul = User.create!(
 
 puts "Generating 3 planters"
 
-paul_jardinere1 = Planter.create!(
-  name: 'Kitchen Planter',
-  user: paul,
-  size: "Small planter",
-  sun: "Full sun",
-  color: "#b1ede8"
-  )
-
 paul_pot = Planter.create!(
   name: 'Bedroom Pot',
   user: paul,
   size: "Pot",
   sun: "Full shadow",
   color: "#ff6978"
+  )
+
+paul_jardinere1 = Planter.create!(
+  name: 'Kitchen Planter',
+  user: paul,
+  size: "Small planter",
+  sun: "Full sun",
+  color: "#b1ede8"
   )
 
 # paul_jardinere2 = Planter.create!(
