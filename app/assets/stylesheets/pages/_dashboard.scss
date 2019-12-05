@@ -9,6 +9,14 @@
   }
 }
 
+
+  .tabs a {
+    text-decoration: none;
+    color: white;
+  }
+
+
+
 .fc-toolbar.fc-header-toolbar {
     margin: 0 auto;
   }
@@ -23,7 +31,6 @@
   margin-bottom: 30px;
   border-radius: 50px;
   width: 80%;
-  color: white;
   &:hover {
     cursor: pointer;
   }
@@ -47,7 +54,6 @@
   transition: all 0.7s ease;
   &.active {
     background: $yup_yellow;
-    color: black;
     font-weight: bold;
   }
   > a {
@@ -58,6 +64,10 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.tab.active a {
+    color: black;
 }
 
 #my-planters-title {
