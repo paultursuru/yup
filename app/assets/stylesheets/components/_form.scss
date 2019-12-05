@@ -1,5 +1,5 @@
 #planter_name {
-    text-align: center;
+    // text-align: center;
     // width: 50%;
 }
 
@@ -18,35 +18,43 @@ legend {
 #new_planter input[type="radio"] + label[for="planter_sun_full_sun"] {
     background-image: url(full-sun.png);
     background-size: cover;
+    width: 30px;
+    height: 30px;
 }
 
 #new_planter input[type="radio"] + label[for="planter_sun_part_sun"] {
     background-image: url(part-sun.png);
     background-size: cover;
+    width: 30px;
+    height: 30px;
 }
 
 #new_planter input[type="radio"] + label[for="planter_sun_full_shade"] {
     background-image: url(full-shade.png);
     background-size: cover;
+    width: 30px;
+    height: 30px;
 }
 
 #new_planter input[type="radio"] + label[for="planter_size_pot"] {
     background-image: url(pot.jpg);
     background-size: cover;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 
 #new_planter input[type="radio"] + label[for="planter_size_small_planter"] {
     background-image: url(planter.jpg);
     background-size: cover;
+    width: 40px;
+    height: 40px;
 }
 
 #new_planter input[type="radio"] + label[for="planter_size_large_planter"] {
     background-image: url(planter-large.jpg);
     background-size: cover;
-    width:75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
 }
 
 #new_planter input[type="radio"] + label {
@@ -60,8 +68,8 @@ legend {
 #new_planter input[type="radio"] + label[for="planter_color_ff6978"] {
     background: #ff6978;
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     color: transparent;
 }
@@ -69,8 +77,8 @@ legend {
 #new_planter input[type="radio"] + label[for="planter_color_b1ede8"] {
     background: #b1ede8;
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     color: transparent;
 }
@@ -78,8 +86,8 @@ legend {
 // #new_planter input[type="radio"] + label[for="planter_color_b9929f"] {
 //     background: #b9929f;
 //     display: inline-block;
-//     width: 40px;
-//     height: 40px;
+//     width: 30px;
+//     height: 30px;
 //     border-radius: 50%;
 //     color: transparent;
 // }
@@ -87,8 +95,8 @@ legend {
 #new_planter input[type="radio"] + label[for="planter_color_ffe1a8"] {
     background: #ffe1a8;
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     color: transparent;
 }
@@ -96,8 +104,8 @@ legend {
 #new_planter input[type="radio"] + label[for="planter_color_dbb1bc"] {
     background: #dbb1bc;
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     color: transparent;
 }
