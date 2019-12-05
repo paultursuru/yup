@@ -30,7 +30,6 @@ carrot = Veggy.new(
 
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-23624_1200x1200-carotte-rothild-ab.net.jpg')
 carrot.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 carrot.save!
 
 radish = Veggy.new(
@@ -51,7 +50,6 @@ radish = Veggy.new(
 
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-25593_1200x1200-radis-national-2-ab.net.jpg')
 radish.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 radish.save!
 
 arugula = Veggy.new(
@@ -71,7 +69,6 @@ arugula = Veggy.new(
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
 arugula.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 arugula.save!
 
 onion = Veggy.new(
@@ -91,7 +88,6 @@ onion = Veggy.new(
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-23155_1200x1200-oignon-jaune-stuttgart-ab.net.jpg')
 onion.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 onion.save!
 
 puts "25%..."
@@ -113,7 +109,6 @@ garlic = Veggy.new(
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-17823_1200x1200-ail-blanc-messidrome-nt.net.jpg')
 garlic.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 garlic.save!
 
 bears_garlic = Veggy.new(
@@ -153,7 +148,6 @@ snow_pea = Veggy.new(
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-26015_1200x1200-pois-a-rames-caroubel-mangetout-nt.net.jpg')
 snow_pea.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 snow_pea.save!
 
 tomato = Veggy.new(
@@ -173,7 +167,6 @@ tomato = Veggy.new(
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-24854_1200x1200-tomate-saint-pierre-ab.net.jpg')
 tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 tomato.save!
 
 puts "50%..."
@@ -195,7 +188,6 @@ cherry_tomato = Veggy.new(
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-22509_1200x1200-tomate-cerise-ab.net.jpg')
 cherry_tomato.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 cherry_tomato.save!
 
 zuchini = Veggy.new(
@@ -215,7 +207,6 @@ zuchini = Veggy.new(
   )
 file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-24838_1200x1200-courgette-verte-de-milan-ab.net.jpg')
 zuchini.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 zuchini.save!
 
 
@@ -236,7 +227,6 @@ sun_root = Veggy.new(
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-18782_1200x1200-topinambour-patate-ab.net.jpg')
 sun_root.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 sun_root.save!
 
 cucumber = Veggy.new(
@@ -256,7 +246,6 @@ cucumber = Veggy.new(
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-24345_1200x1200-concombre-jieyangdiaogua-ab.net.jpg')
 cucumber.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 cucumber.save!
 
 puts "75%..."
@@ -278,7 +267,6 @@ squash = Veggy.new(
   )
 file = URI.open('https://cdn1.fermedesaintemarthe.com/I-Autre-25540_1200x1200-potiron-courge-du-perou-ab.net.jpg')
 squash.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 squash.save!
 
 pepper = Veggy.new(
@@ -298,7 +286,6 @@ pepper = Veggy.new(
   )
 file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-6394_1200x1200-piment-de-cayenne-ab.net.jpg')
 pepper.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 pepper.save!
 
 rosemary = Veggy.new(
@@ -318,7 +305,6 @@ rosemary = Veggy.new(
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-23132_1200x1200-romarin-ab.net.jpg')
 rosemary.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 rosemary.save!
 
 basil = Veggy.new(
@@ -338,32 +324,8 @@ basil = Veggy.new(
   )
 file = URI.open('https://cdn3.fermedesaintemarthe.com/I-Autre-24862_1200x1200-basilic-genovese-ab.net.jpg')
 basil.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
 basil.save!
 
-# puts "generated 11 veggies"
-
-# salad = Veggy.create!(
-#   name: "salad",
-#   sun_need: "nord-ouest",
-#   planting_start_date: "2019-12-15",
-#   planting_end_date: "2020-02-10",
-#   growing_time: 100
-#   )
-
-# tomato = Veggy.create!(
-#   name: "tomato",
-#   sun_need: "sud",
-#   planting_start_date: "2019-11-26",
-#   planting_end_date: "2020-01-18",
-#   growing_time: 300
-#   )
-
-# jean = User.create!(
-#   email: 'jean@yup.com',
-#   password: '123456',
-#   first_name: "Jean"
-#   )
 
 puts "Generating 1 user: Paul..."
 
@@ -375,6 +337,13 @@ paul = User.create!(
 
 puts "Generating 3 planters"
 
+paul_jardinere1 = Planter.create!(
+  name: 'Kitchen Planter',
+  user: paul,
+  size: "Small planter",
+  sun: "Full sun",
+  color: "#b1ede8"
+  )
 
 paul_pot = Planter.create!(
   name: 'Bedroom Pot',
@@ -384,250 +353,128 @@ paul_pot = Planter.create!(
   color: "#ff6978"
   )
 
-paul_jardinere1 = Planter.create!(
-  name: 'Kitchen Planter',
-  user: paul,
-  size: "Small planter",
-  sun: "Full sun",
-  color: "#b1ede8"
-  )
-paul_jardinere2 = Planter.create!(
-  name: 'Living Room Planter',
-  user: paul,
-  size: "Large planter",
-  sun: "Part sun",
-  color: "#ffe1a8"
-  )
+# paul_jardinere2 = Planter.create!(
+#   name: 'Living Room Planter',
+#   user: paul,
+#   size: "Large planter",
+#   sun: "Part sun",
+#   color: "#ffe1a8"
+#   )
+
+puts "Generating an empty cart..."
+
+order = Order.create!(user: paul, state: 'pending')
+
 
 puts "Generating planted veggies..."
 
-planted_carrot = PlantedVeggy.create!(
-  veggy: carrot,
-  planter: paul_jardinere1
-  )
+# planted_carrot = PlantedVeggy.create!(
+#   veggy: carrot,
+#   planter: paul_jardinere1
+#   )
 
 planted_radish = PlantedVeggy.create!(
   veggy: radish,
   planter: paul_jardinere1
   )
 
-planted_garlic = PlantedVeggy.create!(
-  veggy: garlic,
+planted_rosemary = PlantedVeggy.create!(
+  veggy: rosemary,
   planter: paul_jardinere1
   )
 
-planted_tomato = PlantedVeggy.create!(
-  veggy: tomato,
+planted_garlic = PlantedVeggy.create!(
+  veggy: garlic,
   planter: paul_pot
   )
 
 planted_radish.planting_day = Date.today - 35
 planted_radish.status = true
-planted_radish.save
+planted_radish.save!
+
+# planted_rosemary.planting_day = Date.today - 35
+# planted_rosemary.status = true
+# planted_rosemary.save!
 
 planted_garlic.planting_day = Date.today - 35
 planted_garlic.status = true
-planted_garlic.save
+planted_garlic.save!
 
-planted_tomato.planting_day = Date.today - 35
-planted_tomato.status = true
-planted_tomato.save
-
-# planted_salad = PlantedVeggy.new
-# planted_salad.veggy_id = salad
-# planted_salad.planter_id = jean_jardinere
-# planted_salad.save!
-
-# planted_salad2 = PlantedVeggy.new
-# planted_salad2.veggy_id = salad
-# planted_salad2.planter_id = jean_jardinere2
-# planted_salad2.save!
-# puts "generating todo templates"
-
-
-# watering = ToDoTemplate.create!(
-#   name: 'watering',
-#   description: "it's time to water your plant"
-# )
-
-# thining = ToDoTemplate.create!(
-#   name: 'thining',
-#   description: "it's time to thin your plant"
-# )
-
-# tomato_to_do = VeggyToDo.new
-# tomato_to_do.veggy_id = tomato
-# tomato_to_do.to_do_template = thining
-# tomato_to_do.save!
-
-# salad_to_do = VeggyToDo.new
-# salad_to_do.veggy_id = salad
-# salad_to_do.to_do_template = watering
-# salad_to_do.save!
 
 puts "Generating veggy-todos..."
 
 watering = ToDoTemplate.new(name: 'Water  💦', description: "your radish")
 watering.save!
+# watering_rosemary = ToDoTemplate.new(name: 'Water  💦', description: "your rosemary")
+# watering_rosemary.save!
 watering_garlic = ToDoTemplate.new(name: 'Water  💦', description: "your garlic")
 watering_garlic.save!
-watering_tomato = ToDoTemplate.new(name: 'Water  💦', description: "your tomatoes")
-watering_tomato.save!
-say_hi = ToDoTemplate.new(name: 'Say hi 👋', description: "to your favorite garlic")
-say_hi.save!
-give_love = ToDoTemplate.new(name: 'Give love ❤️', description: "to your garlic")
-give_love.save!
+# say_hi = ToDoTemplate.new(name: 'Say hi 👋', description: "to your favorite rosemary")
+# say_hi.save!
+# give_love = ToDoTemplate.new(name: 'Give love ❤️', description: "to your rosemary")
+# give_love.save!
 food_time = ToDoTemplate.new(name: 'Harvest 🍴', description: "your radish!")
 food_time.save!
-thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your tomatoes")
+thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your garlic")
 thining.save!
-
 
 eat_event = Date.today
 eat_radish = ToDo.create(planted_veggy: planted_radish, to_do_template: food_time, due_at: eat_event.strftime("%Y-%m-%d"))
 eat_radish.save
 
-water_radish0 = ToDo.create(planted_veggy: planted_radish, to_do_template: watering, due_at: (Date.today - 3).strftime("%Y-%m-%d"))
+water_radish0 = ToDo.create(planted_veggy: planted_radish, to_do_template: watering, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
 water_radish0.save
+
+# water_rosemary1 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
+# water_rosemary1.save
+
+# water_rosemary2 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 5).strftime("%Y-%m-%d"))
+# water_rosemary2.save
+
+# water_rosemary3 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 9).strftime("%Y-%m-%d"))
+# water_rosemary3.save
+
+# water_rosemary4 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
+# water_rosemary4.save
+
+# water_rosemary5 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 17).strftime("%Y-%m-%d"))
+# water_rosemary5.save
+
+
+water_garlic0 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
+water_garlic0.save
 
 water_garlic1 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
 water_garlic1.save
 
-water_garlic2 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 5).strftime("%Y-%m-%d"))
+water_garlic2 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 4).strftime("%Y-%m-%d"))
 water_garlic2.save
 
-water_garlic3 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 9).strftime("%Y-%m-%d"))
+water_garlic3 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 7).strftime("%Y-%m-%d"))
 water_garlic3.save
 
-water_garlic4 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
+water_garlic4 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 10).strftime("%Y-%m-%d"))
 water_garlic4.save
 
-water_garlic5 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 17).strftime("%Y-%m-%d"))
+water_garlic5 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
 water_garlic5.save
 
+water_garlic6 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 16).strftime("%Y-%m-%d"))
+water_garlic6.save
 
-water_tomato0 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today - 3).strftime("%Y-%m-%d"))
-water_tomato0.save
+water_garlic7 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 19).strftime("%Y-%m-%d"))
+water_garlic7.save
 
-water_tomato1 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
-water_tomato1.save
+water_garlic8 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 22).strftime("%Y-%m-%d"))
+water_garlic8.save
 
-water_tomato2 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 4).strftime("%Y-%m-%d"))
-water_tomato2.save
+water_garlic9 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 25).strftime("%Y-%m-%d"))
+water_garlic9.save
 
-water_tomato3 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 7).strftime("%Y-%m-%d"))
-water_tomato3.save
+water_garlic10 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 28).strftime("%Y-%m-%d"))
+water_garlic10.save
 
-water_tomato4 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 10).strftime("%Y-%m-%d"))
-water_tomato4.save
+thin_garlic = ToDo.create(planted_veggy: planted_garlic, to_do_template: thining, due_at: (Date.today + 2 ).strftime("%Y-%m-%d"))
 
-water_tomato5 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
-water_tomato5.save
-
-water_tomato6 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 16).strftime("%Y-%m-%d"))
-water_tomato6.save
-
-water_tomato7 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 19).strftime("%Y-%m-%d"))
-water_tomato7.save
-
-water_tomato8 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 22).strftime("%Y-%m-%d"))
-water_tomato8.save
-
-water_tomato9 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 25).strftime("%Y-%m-%d"))
-water_tomato9.save
-
-water_tomato10 = ToDo.create(planted_veggy: planted_tomato, to_do_template: watering_tomato, due_at: (Date.today + 28).strftime("%Y-%m-%d"))
-water_tomato10.save
-
-thin_tomato = ToDo.create(planted_veggy: planted_tomato, to_do_template: thining, due_at: (Date.today + 2 ).strftime("%Y-%m-%d"))
-
-
-# VeggyToDo.create!(
-#   veggy: carrot,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: carrot,
-#   to_do_template: thining
-# )
-
-# VeggyToDo.create!(
-#   veggy: argula,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: argula,
-#   to_do_template: thining
-# )
-
-# VeggyToDo.create!(
-#   veggy: radish,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: radish,
-#   to_do_template: thining
-# )
-
-# VeggyToDo.create!(
-#   veggy: onion,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: garlic,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: bears_garlic,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: snow_pea,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: snow_pea,
-#   to_do_template: thining
-# )
-
-# VeggyToDo.create!(
-#   veggy: tomato,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: tomato,
-#   to_do_template: thining
-# )
-
-# VeggyToDo.create!(
-#   veggy: cherry_tomato,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: zuchini,
-#   to_do_template: watering
-# )
-
-# VeggyToDo.create!(
-#   veggy: sun_root,
-#   to_do_template: watering
-# )
-
-
-puts "Generating all the things..."
-
-# action1 = ToDo.new
-# action1.due_at = '2019-11-26'
-# action1.planted_veggy_id = planted_tomato
-# action1.to_do_template_id =
 
 puts "Finished!"
