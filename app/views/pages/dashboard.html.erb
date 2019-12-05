@@ -4,7 +4,7 @@
 
 <div class="container dashboard">
   <div class="tabs">
-    <div id='potager' class="tab <%= "active" if params[:active_tab] == "potager"%>">
+    <div id='potager' class="tab <%= "active" if params[:active_tab] == "potager" || params[:active_tab] == nil %>">
        <%= link_to 'My potager', dashboard_path(active_tab: "potager") %>
     </div>
     <div id='calentab' class="tab">
@@ -17,7 +17,7 @@
   </div>
 
   <div class="tabs-contents">
-    <div id='potager-content' class="tab-content <%= "d-none" unless params[:active_tab] == "potager" %>">
+    <div id='potager-content' class="tab-content <%= "d-none" unless params[:active_tab] == "potager" || params[:active_tab] == nil %>">
       <div class="row d-flex">
         <div class="col-sm-12 col-md-8">
           <%= render 'planters' %>
