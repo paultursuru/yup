@@ -12,6 +12,25 @@ User.destroy_all
 
 puts "Generating veggies..."
 
+arugula = Veggy.new(
+  name: "Arugula",
+  sun_need: "Full shade",
+  seed_level: 1,
+  sowing_start_date: "",
+  sowing_end_date: "",
+  planting_start_date: "2020-03-22",
+  planting_end_date: "2020-09-21",
+  growing_time: 60,
+  price_cents: 450,
+  thining_delay: 10,
+  watering_period: 3,
+  description: "Arugula is known for its smooth and loosely bunched leaves. It is rich in essential nutrients and can add a great nutritional value to salads and sandwiches.",
+  season: "Summer"
+  )
+file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
+arugula.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+arugula.save!
+
 carrot = Veggy.new(
   name: "Carrot",
   sun_need: "Part sun",
@@ -44,7 +63,7 @@ radish = Veggy.new(
   price_cents: 900,
   thining_delay: 16,
   watering_period: 4,
-  description: "Radishes are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, carrots are also rich in dietary fibers. Having a carrot rich diet could enhance the immune system and also reduce the symptoms of premature aging.",
+  description: "Radishes are rich in vitamin A, C, K, iron and magnesium. Like other vegetables, radishes are also rich in dietary fibers. Having a radish rich diet could enhance the immune system and also reduce the symptoms of premature aging.",
   season: "Spring"
   )
 
@@ -52,24 +71,6 @@ file = URI.open('https://cdn4.fermedesaintemarthe.com/I-Autre-25593_1200x1200-ra
 radish.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 radish.save!
 
-arugula = Veggy.new(
-  name: "Arugula",
-  sun_need: "Full shade",
-  seed_level: 1,
-  sowing_start_date: "",
-  sowing_end_date: "",
-  planting_start_date: "2020-03-22",
-  planting_end_date: "2020-09-21",
-  growing_time: 60,
-  price_cents: 450,
-  thining_delay: 10,
-  watering_period: 3,
-  description: "Arugula is known for its smooth and loosely bunched leaves. It is rich in essential nutrients and can add a great nutritional value to salads and sandwiches.",
-  season: "Summer"
-  )
-file = URI.open('https://cdn5.fermedesaintemarthe.com/I-Autre-4324_1200x1200-roquette-cultivee-ab.net.jpg')
-arugula.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
-arugula.save!
 
 onion = Veggy.new(
   name: "Onion",
@@ -335,7 +336,8 @@ paul = User.create!(
   first_name: "Paul"
   )
 
-puts "Generating 3 planters"
+
+puts "Generating 2 planters..."
 
 paul_pot = Planter.create!(
   name: 'Bedroom Pot',
@@ -353,13 +355,6 @@ paul_jardinere1 = Planter.create!(
   color: "#b1ede8"
   )
 
-# paul_jardinere2 = Planter.create!(
-#   name: 'Living Room Planter',
-#   user: paul,
-#   size: "Large planter",
-#   sun: "Part sun",
-#   color: "#ffe1a8"
-#   )
 
 puts "Generating an empty cart..."
 
@@ -368,18 +363,18 @@ order = Order.create!(user: paul, state: 'pending')
 
 puts "Generating planted veggies..."
 
-# planted_carrot = PlantedVeggy.create!(
-#   veggy: carrot,
-#   planter: paul_jardinere1
-#   )
-
 planted_radish = PlantedVeggy.create!(
   veggy: radish,
   planter: paul_jardinere1
   )
 
-planted_rosemary = PlantedVeggy.create!(
-  veggy: rosemary,
+planted_carrot = PlantedVeggy.create!(
+  veggy: carrot,
+  planter: paul_jardinere1
+  )
+
+planted_sun_root = PlantedVeggy.create!(
+  veggy: sun_root,
   planter: paul_jardinere1
   )
 
@@ -392,9 +387,9 @@ planted_radish.planting_day = Date.today - 35
 planted_radish.status = true
 planted_radish.save!
 
-# planted_rosemary.planting_day = Date.today - 35
-# planted_rosemary.status = true
-# planted_rosemary.save!
+planted_carrot.planting_day = Date.today - 35
+planted_carrot.status = true
+planted_carrot.save!
 
 planted_garlic.planting_day = Date.today - 35
 planted_garlic.status = true
@@ -403,43 +398,37 @@ planted_garlic.save!
 
 puts "Generating veggy-todos..."
 
-watering = ToDoTemplate.new(name: 'Water  💦', description: "your radish")
-watering.save!
-# watering_rosemary = ToDoTemplate.new(name: 'Water  💦', description: "your rosemary")
-# watering_rosemary.save!
-watering_garlic = ToDoTemplate.new(name: 'Water  💦', description: "your garlic")
+watering_radish = ToDoTemplate.new(name: 'Water  💦', description: "your radishes")
+watering_radish.save!
+
+watering_carrot = ToDoTemplate.new(name: 'Water  💦', description: "your carrots")
+watering_carrot.save!
+
+watering_garlic = ToDoTemplate.new(name: 'Water  💦', description: "your garlics")
 watering_garlic.save!
-# say_hi = ToDoTemplate.new(name: 'Say hi 👋', description: "to your favorite rosemary")
-# say_hi.save!
-# give_love = ToDoTemplate.new(name: 'Give love ❤️', description: "to your rosemary")
-# give_love.save!
-food_time = ToDoTemplate.new(name: 'Harvest 🍴', description: "your radish!")
-food_time.save!
-thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your garlic")
+
+food_time_radish = ToDoTemplate.new(name: 'Harvest 🍴', description: "your radishes")
+food_time_radish.save!
+
+food_time_carrot = ToDoTemplate.new(name: 'Harvest 🍴', description: "your carrots")
+food_time_carrot.save!
+
+thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your garlics")
 thining.save!
 
-eat_event = Date.today
-eat_radish = ToDo.create(planted_veggy: planted_radish, to_do_template: food_time, due_at: eat_event.strftime("%Y-%m-%d"))
+
+eat_radish = ToDo.create(planted_veggy: planted_radish, to_do_template: food_time_radish, due_at: Date.today.strftime("%Y-%m-%d"))
 eat_radish.save
 
-water_radish0 = ToDo.create(planted_veggy: planted_radish, to_do_template: watering, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
+water_radish0 = ToDo.create(planted_veggy: planted_radish, to_do_template: watering_radish, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
 water_radish0.save
 
-# water_rosemary1 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
-# water_rosemary1.save
 
-# water_rosemary2 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 5).strftime("%Y-%m-%d"))
-# water_rosemary2.save
+eat_carrot = ToDo.create(planted_veggy: planted_carrot, to_do_template: food_time_carrot, due_at: Date.today.strftime("%Y-%m-%d"))
+eat_carrot.save
 
-# water_rosemary3 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 9).strftime("%Y-%m-%d"))
-# water_rosemary3.save
-
-# water_rosemary4 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
-# water_rosemary4.save
-
-# water_rosemary5 = ToDo.create(planted_veggy: planted_rosemary, to_do_template: watering_rosemary, due_at: (Date.today + 17).strftime("%Y-%m-%d"))
-# water_rosemary5.save
-
+water_carrot0 = ToDo.create(planted_veggy: planted_carrot, to_do_template: watering_carrot, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
+water_carrot0.save
 
 water_garlic0 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
 water_garlic0.save
