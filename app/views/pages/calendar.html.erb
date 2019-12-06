@@ -1,4 +1,3 @@
-
 <div class="container dashboard">
   <div class="tabs">
     <div id='potager' class="tab ">
@@ -13,9 +12,16 @@
   </div>
 
   <div class="tabs-contents">
-    <div id='calentab-content' class="tab-content calendar">
+    <div id='calentab-content' class="tab-content calendar legend">
+      <div class="calendar-legend">
+        <div class="legend-icon text-center">
+        <% @planters.each do |planter|%>
+         <!-- <h3> <i class="fas fa-seedling mr-3" style="color: <%= planter.color %>;"></i><%= planter.name %></h3> -->
+          <i class="fas fa-seedling" style="color: <%= planter.color %>;"></i> <span><%=planter.name %></span>
+        <% end %>
+        </div>
         <div id='calendar'></div>
+      </div>
     </div>
   </div>
 </div>
-

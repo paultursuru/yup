@@ -1,4 +1,26 @@
 
+.calendar-legend {
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 20px;
+
+}
+
+
+.legend-icon {
+  padding-right: 15px;
+}
+
+.legend-icon span {
+  padding-right: 15px;
+}
+
+.legend h3 {
+
+  font-size: 1em;
+  color: #2d1f1f;
+  padding-left: 5%;
+}
 
 .calstyle {
   color: white;
@@ -14,6 +36,7 @@
   }
 }
 
+
 .fc-unthemed .fc-list-view {
   border-color: #1B4445 !important;
 }
@@ -25,10 +48,9 @@
 }
 
 .fc {
-  margin-top: 35px;
   font-size: 1em;
   background: white;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   margin-bottom: 30px;
 }
