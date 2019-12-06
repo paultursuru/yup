@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def calendar
+    @planters = current_user.planters.includes(planted_veggies: :veggy)
 
   end
 
