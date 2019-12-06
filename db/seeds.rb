@@ -416,6 +416,9 @@ food_time_carrot.save!
 thining = ToDoTemplate.new(name: 'Thin ✂️', description: "your garlics")
 thining.save!
 
+food_time_garlic = ToDoTemplate.new(name: 'Harvest 🍴', description: "your garlics")
+food_time_garlic.save!
+
 
 eat_radish = ToDo.create(planted_veggy: planted_radish, to_do_template: food_time_radish, due_at: Date.today.strftime("%Y-%m-%d"))
 eat_radish.save
@@ -442,23 +445,8 @@ water_garlic3.save
 water_garlic4 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 10).strftime("%Y-%m-%d"))
 water_garlic4.save
 
-water_garlic5 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
-water_garlic5.save
-
-water_garlic6 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 16).strftime("%Y-%m-%d"))
-water_garlic6.save
-
-water_garlic7 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 19).strftime("%Y-%m-%d"))
-water_garlic7.save
-
-water_garlic8 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 22).strftime("%Y-%m-%d"))
-water_garlic8.save
-
-water_garlic9 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 25).strftime("%Y-%m-%d"))
-water_garlic9.save
-
-water_garlic10 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 28).strftime("%Y-%m-%d"))
-water_garlic10.save
+eat_garlic = ToDo.create(planted_veggy: planted_garlic, to_do_template: food_time_garlic, due_at: (Date.today + 13).strftime("%Y-%m-%d"))
+eat_garlic.save
 
 thin_garlic = ToDo.create(planted_veggy: planted_garlic, to_do_template: thining, due_at: (Date.today + 1 ).strftime("%Y-%m-%d"))
 
