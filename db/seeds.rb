@@ -433,9 +433,6 @@ water_carrot0.save
 water_garlic0 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today - 3).strftime("%Y-%m-%d"), done: true)
 water_garlic0.save
 
-water_garlic1 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 1).strftime("%Y-%m-%d"))
-water_garlic1.save
-
 water_garlic2 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 4).strftime("%Y-%m-%d"))
 water_garlic2.save
 
@@ -463,7 +460,7 @@ water_garlic9.save
 water_garlic10 = ToDo.create(planted_veggy: planted_garlic, to_do_template: watering_garlic, due_at: (Date.today + 28).strftime("%Y-%m-%d"))
 water_garlic10.save
 
-thin_garlic = ToDo.create(planted_veggy: planted_garlic, to_do_template: thining, due_at: (Date.today + 2 ).strftime("%Y-%m-%d"))
+thin_garlic = ToDo.create(planted_veggy: planted_garlic, to_do_template: thining, due_at: (Date.today + 1 ).strftime("%Y-%m-%d"))
 
 
 puts "Finished!"
